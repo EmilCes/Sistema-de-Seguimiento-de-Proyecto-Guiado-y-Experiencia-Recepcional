@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="512.0" maxWidth="402.0" minHeight="512.0" minWidth="402.0" prefHeight="512.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLInicioSesionController">
+   <children>
+      <Pane prefHeight="512.0" prefWidth="402.0" style="-fx-background-color: White;">
+         <children>
+            <Label layoutX="122.0" layoutY="76.0" text="Iniciar Sesión">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfUsuario" layoutX="55.0" layoutY="173.0" prefHeight="40.0" prefWidth="267.0" promptText="Usuario" />
+            <Button layoutX="208.0" layoutY="368.0" mnemonicParsing="false" onAction="#clicIniciarSesion" prefHeight="42.0" prefWidth="102.0" text="Entrar" />
+            <Label layoutX="55.0" layoutY="157.0" text="Usuario" />
+            <Label layoutX="55.0" layoutY="263.0" text="Contraseña" />
+            <Label fx:id="lbErrorUsuario" layoutX="55.0" layoutY="213.0" prefHeight="17.0" prefWidth="267.0" textFill="RED" />
+            <Label fx:id="lbErrorPassword" layoutX="55.0" layoutY="319.0" prefHeight="17.0" prefWidth="267.0" textFill="RED" />
+            <PasswordField fx:id="tfPassword" layoutX="55.0" layoutY="279.0" prefHeight="40.0" prefWidth="267.0" promptText="Contraseña" />
+            <Line endX="100.0" layoutX="12.0" layoutY="255.0" rotate="90.0" scaleX="2.57" startX="-100.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
