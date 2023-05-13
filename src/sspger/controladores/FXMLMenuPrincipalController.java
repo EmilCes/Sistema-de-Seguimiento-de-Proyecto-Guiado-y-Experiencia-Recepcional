@@ -1,26 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package sspger.controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author cesar
- */
+
+
+
 public class FXMLMenuPrincipalController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private AnchorPane listaAnteproyectos;
+    @FXML
+    private AnchorPane registroAnteproyectos;
+
+
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void clicBtnOpcion2(ActionEvent event) {
+        registroAnteproyectos.setVisible(false);
+        listaAnteproyectos.setVisible(true);
+    }
+
+    @FXML
+    private void clicBtnOpcion1(ActionEvent event) {
+        listaAnteproyectos.setVisible(false);
+        registroAnteproyectos.setVisible(true);
+    }
     
 }

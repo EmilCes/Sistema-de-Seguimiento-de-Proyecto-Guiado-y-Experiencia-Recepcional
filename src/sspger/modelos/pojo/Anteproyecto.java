@@ -20,7 +20,7 @@ public class Anteproyecto {
     private String profesor;
     private String estado;
     private int numeroEstudiantes;
-    private int duracionAproximada;
+    private String duracionAproximada;
     private int idLGAC;
     private int idTipoAnteproyecto;
     private int idCuerpoAcademico;
@@ -31,7 +31,14 @@ public class Anteproyecto {
     public Anteproyecto() {
     }
 
-    public Anteproyecto(String nombreProyectoInvestigacion, String nombreTrabajoRecepcional, String requisitos, String resultadosEsperados, String fechaPublicacion, String decripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, String bibliografiaRecomendada, String lineaInvestigacion, String notas, String nombreLGAC, String tipoAnteproyecto, String cuerpoAcademico, String profesor, String estado, int numeroEstudiantes, int duracionAproximada, int idLGAC, int idTipoAnteproyecto, int idCuerpoAcademico, int idProfesor, int idEstado) {
+    public Anteproyecto(String nombreProyectoInvestigacion, String nombreTrabajoRecepcional, 
+            String requisitos, String resultadosEsperados, String fechaPublicacion, 
+            String decripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, 
+            String bibliografiaRecomendada, String lineaInvestigacion, String notas, String nombreLGAC, 
+            String tipoAnteproyecto, String cuerpoAcademico, String profesor, String estado, 
+            String duracionAproximada, int numeroEstudiantes, int idLGAC, int idTipoAnteproyecto, 
+            int idCuerpoAcademico, int idProfesor, int idEstado) {
+        
         this.nombreProyectoInvestigacion = nombreProyectoInvestigacion;
         this.nombreTrabajoRecepcional = nombreTrabajoRecepcional;
         this.requisitos = requisitos;
@@ -120,7 +127,7 @@ public class Anteproyecto {
         return numeroEstudiantes;
     }
 
-    public int getDuracionAproximada() {
+    public String getDuracionAproximada() {
         return duracionAproximada;
     }
 
@@ -208,7 +215,7 @@ public class Anteproyecto {
         this.numeroEstudiantes = numeroEstudiantes;
     }
 
-    public void setDuracionAproximada(int duracionAproximada) {
+    public void setDuracionAproximada(String duracionAproximada) {
         this.duracionAproximada = duracionAproximada;
     }
 
