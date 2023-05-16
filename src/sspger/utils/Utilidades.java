@@ -6,6 +6,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import sspger.SSPGER;
@@ -34,9 +35,10 @@ public class Utilidades {
             
     }
     
-    public static void centerStage(Stage stage) {
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setX((screenBounds.getWidth() - stage.getWidth()) / 2);
-        stage.setY((screenBounds.getHeight() - stage.getHeight()) / 2);
+    public static void centrarEscenario(Stage escenario) {
+        Rectangle2D limitesPantalla = Screen.getPrimary().getVisualBounds();
+        escenario.setX((limitesPantalla.getWidth() - escenario.getWidth()) / 2);
+        escenario.setY((limitesPantalla.getHeight() - escenario.getHeight()) / 2);
     }
+    
 }
