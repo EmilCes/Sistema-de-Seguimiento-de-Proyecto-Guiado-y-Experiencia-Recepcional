@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import sspger.utils.Utilidades;
 
 
 
@@ -46,6 +48,20 @@ public class FXMLMenuPrincipalController implements Initializable {
     private void clicBtnOpcion1(ActionEvent event) {
         listaAnteproyectos.setVisible(false);
         cambiarPane("/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
+    }
+    
+    private void irInicioSesion(){
+        Stage escenarioBase = (Stage) apMenuPrincipal.getScene().getWindow();
+        escenarioBase.setScene(Utilidades.inicializarEscena("vistas/FXMLInicioSesion.fxml"));
+        Utilidades.centrarEscenario(escenarioBase);
+        escenarioBase.setTitle("Inicio Sesíon");    
+        escenarioBase.show();   
+    }
+
+    @FXML
+    private void clicBtnCerrarSesion(ActionEvent event) {
+        irInicioSesion();
+        
     }
     
 }
