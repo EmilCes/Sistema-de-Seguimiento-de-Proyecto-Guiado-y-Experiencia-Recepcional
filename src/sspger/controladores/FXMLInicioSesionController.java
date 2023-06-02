@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import sspger.modelos.dao.SesionDAO;
 import sspger.modelos.pojo.Usuario;
@@ -32,6 +34,7 @@ public class FXMLInicioSesionController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        enviarConEnter();
     }    
 
     @FXML
@@ -39,6 +42,24 @@ public class FXMLInicioSesionController implements Initializable {
         lbErrorUsuario.setText("");
         lbErrorPassword.setText("");
         validarCampos();
+    }
+    
+    public void enviarConEnter(){
+        tfUsuario.setOnKeyPressed((KeyEvent event) -> {
+            if(event.getCode() == KeyCode.ENTER){
+                lbErrorUsuario.setText("");
+                lbErrorPassword.setText("");
+                validarCampos();
+            }
+        });
+        
+        tfPassword.setOnKeyPressed((KeyEvent event) -> {
+            if(event.getCode() == KeyCode.ENTER){
+                lbErrorUsuario.setText("");
+                lbErrorPassword.setText("");
+                validarCampos();
+            }
+        });
     }
     
     private void validarCampos(){
