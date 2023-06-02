@@ -12,21 +12,21 @@ https://docs.google.com/document/d/1TkoVEQFX--J9014oJ_9Fqc6FcD63xB63DfZ_f0Qn4-U/
 
 # Casos de Uso
 Kirbith
-Registrar Usuario
-Consultar Avances
-Consultar Avances por Estudiante
-Modificar actividad
-Entregar actividad
-Modificar entrega
-Evaluar Avance
-Consultar Actividades de Proyectos
+1. Registrar Usuario
+2. Consultar Avances
+3. Consultar Avances por Estudiante
+4. Modificar actividad
+5. Entregar actividad
+6. Modificar entrega
+7. Evaluar Avance
+8. Consultar Actividades de Proyectos
 
 César
-Crear anteproyecto
-Modificar anteproyecto
-Postular Anteproyecto
-Consultar Anteproyectos Disponibles
-Consultar Detalles Anteproyecto
-Asignar estudiante a anteproyecto
-Consultar Anteproyectos por Director
-Añadir Actividad a Cronograma
+1. Crear anteproyecto
+2. Modificar anteproyecto
+3. Postular Anteproyecto
+4. Consultar Anteproyectos Disponibles
+5. Consultar Detalles Anteproyecto
+6. Asignar estudiante a anteproyecto
+7. Consultar Anteproyectos por Director
+8. Añadir Actividad a Cronograma
