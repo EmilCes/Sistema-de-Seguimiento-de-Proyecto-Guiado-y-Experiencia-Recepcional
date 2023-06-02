@@ -10,3 +10,9 @@
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
 }
+
+.combobox{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
+}
