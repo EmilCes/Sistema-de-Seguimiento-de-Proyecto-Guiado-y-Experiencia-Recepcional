@@ -1,0 +1,12 @@
+
+.pane-label{
+    -fx-background-radius: 8px;
+    -fx-background-color: #000000;
+}
+
+.textfield{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
