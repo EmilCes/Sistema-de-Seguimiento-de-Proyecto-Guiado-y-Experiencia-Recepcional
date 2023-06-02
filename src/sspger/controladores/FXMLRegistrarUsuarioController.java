@@ -1,12 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package sspger.controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -14,6 +13,9 @@ import javafx.fxml.Initializable;
  * @author kirbithalbertocubillashernandez
  */
 public class FXMLRegistrarUsuarioController implements Initializable {
+
+    @FXML
+    private AnchorPane apCrearAnteproyecto;
 
     /**
      * Initializes the controller class.
