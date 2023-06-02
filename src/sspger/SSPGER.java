@@ -14,9 +14,6 @@ public class SSPGER extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLInicioSesion.fxml"));
-        //Parent root = FXMLLoader.load(getClass().getResource("vistas/FXMLCrearAnteproyecto.fxml"));
-
-        
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
