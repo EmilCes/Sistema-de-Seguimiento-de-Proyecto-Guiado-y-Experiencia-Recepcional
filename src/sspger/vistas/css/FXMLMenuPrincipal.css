@@ -11,7 +11,7 @@
 }
 
 .nav-form{
-    -fx-background-color: linear-gradient(to bottom right, #272b3f, #04ccb5);
+    -fx-background-color: linear-gradient(to bottom right, #000000, #666666);
 }
 
 .nav-btn{
@@ -23,7 +23,7 @@
 }
 
 .nav-btn:hover{
-    -fx-text-fill: #04ccb5;
+    -fx-text-fill: #b5b5b5;
     -fx-cursor: hand;
 }
 
@@ -38,13 +38,15 @@
 }
 
 .logout{
-    -fx-background-color: #2bb5a5;
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
     -fx-background-radius: 10px;
     -fx-cursor: hand;
 }
 
 .logout:hover{
-    -fx-background-color: #137065;
+    -fx-background-color: WHITE;
 }
 
 .shadow{
