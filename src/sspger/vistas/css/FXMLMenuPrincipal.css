@@ -46,7 +46,7 @@
 }
 
 .logout:hover{
-    -fx-background-color: WHITE;
+    -fx-background-color: #b5b5b5;
 }
 
 .shadow{
