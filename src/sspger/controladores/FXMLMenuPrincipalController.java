@@ -42,6 +42,7 @@ public class FXMLMenuPrincipalController implements Initializable {
     private void clicBtnOpcion2(ActionEvent event) {
         apMenuPrincipal.getChildren().clear();
         listaAnteproyectos.setVisible(true);
+        cambiarPane("/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
     @FXML

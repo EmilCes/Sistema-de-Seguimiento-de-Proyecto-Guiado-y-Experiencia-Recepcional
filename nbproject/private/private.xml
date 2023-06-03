@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/UsuarioDAO.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/AnteproyectoDAO.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/ConexionBD.java</file>
-            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/css/FXMLGeneral.css</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLMenuPrincipalController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/pojo/Usuario.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/css/FXMLMenuPrincipal.css</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLAnteproyectoFormulario.fxml</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLRegistrarUsuarioController.java</file>
