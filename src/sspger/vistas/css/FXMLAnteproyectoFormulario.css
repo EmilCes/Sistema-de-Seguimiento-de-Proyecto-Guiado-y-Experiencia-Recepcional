@@ -1,0 +1,7 @@
+.scroll-pane{
+    -fx-background-color: white;
+}
+
+.scroll-pane:focus{
+    -fx-focus-color: transparent;
+}
