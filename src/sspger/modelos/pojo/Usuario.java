@@ -1,5 +1,7 @@
 package sspger.modelos.pojo;
 
+import java.awt.Image;
+
 
 
 public class Usuario {
@@ -12,14 +14,33 @@ public class Usuario {
     private String numeroTelefonico;
     private String nombreUsuario;
     private String password;
+    private Image imagen;
     private int idTipoUsuario;
     private int codigoRespuesta;
 
     public Usuario() {
     }
 
+    public Usuario(String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, int idTipoUsuario, int codigoRespuesta) {
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.correoInstitucional = correoInstitucional;
+        this.numeroTelefonico = numeroTelefonico;
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
+        this.idTipoUsuario = idTipoUsuario;
+        this.codigoRespuesta = codigoRespuesta;
+    }
+
+    
+    
     public int getIdUsuario() {
         return idUsuario;
+    }
+
+    public Image getImagen() {
+        return imagen;
     }
 
     public String getNombre() {
@@ -66,6 +87,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    public void setImagen(Image imagen) {
+        this.imagen = imagen;
+    }
+
+    
     public void setApellidoPaterno(String apellidoPaterno) {
         this.apellidoPaterno = apellidoPaterno;
     }
