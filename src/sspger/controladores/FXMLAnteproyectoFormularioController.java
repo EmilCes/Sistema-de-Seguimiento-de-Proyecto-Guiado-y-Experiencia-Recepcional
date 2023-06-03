@@ -17,10 +17,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import sspger.modelos.dao.CuerpoAcademicoDAO;
 import sspger.modelos.dao.LGACDAO;
+import sspger.modelos.dao.TipoAnteproyectoDAO;
 import sspger.modelos.pojo.CuerpoAcademico;
 import sspger.modelos.pojo.CuerpoAcademicoRespuesta;
 import sspger.modelos.pojo.LGAC;
 import sspger.modelos.pojo.LGACRespuesta;
+import sspger.modelos.pojo.TipoAnteproyecto;
+import sspger.modelos.pojo.TipoAnteproyectoRespuesta;
 import sspger.utils.Constantes;
 import sspger.utils.Utilidades;
 
@@ -41,7 +44,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     @FXML
     private TextField tfDuracionAproximada;
     @FXML
-    private ComboBox<?> cbModalidadTrabajoRecepcional;
+    private ComboBox<TipoAnteproyecto> cbModalidadTrabajoRecepcional;
     @FXML
     private TextField tfNombreTrabajoRecepcional;
     @FXML
@@ -61,10 +64,12 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     
     private ObservableList<CuerpoAcademico> cuerposAcademicos;
     private ObservableList<LGAC> lgac;
+    private ObservableList<TipoAnteproyecto> tipoAnteproyectos;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cargarInformacionCuerposAcademicos();
+        cargarInformacionTiposAnteproyectos();
         cbCuerpoAcademico.valueProperty().addListener(new ChangeListener<CuerpoAcademico>(){
             @Override
             public void changed(ObservableValue<? extends CuerpoAcademico> observable, CuerpoAcademico oldValue, CuerpoAcademico newValue){
@@ -115,6 +120,22 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 lgac.addAll(lgacBD.getLgac());
                 cbLGAC.setItems(lgac);
                 break;
+        }
+    }
+    
+    private void cargarInformacionTiposAnteproyectos(){
+        tipoAnteproyectos = FXCollections.observableArrayList();
+        TipoAnteproyectoRespuesta tiposAnteproyectosBD = TipoAnteproyectoDAO.obtenerTiposAnteproyectos();
+        switch (tiposAnteproyectosBD.getCodigoRespuesta()) {
+            case Constantes.ERROR_CONEXION:
+                Utilidades.mostrarDialogoSimple("Error de Conexión", "Error en la conexción", Alert.AlertType.ERROR);
+                break;
+            case(Constantes.ERROR_CONSULTA):
+                Utilidades.mostrarDialogoSimple("Error de Consulta", "Error en la consulta", Alert.AlertType.WARNING);
+                break;
+            case(Constantes.OPERACION_EXITOSA):
+                tipoAnteproyectos.addAll(tiposAnteproyectosBD.getTipoAnteproyectos());
+                cbModalidadTrabajoRecepcional.setItems(tipoAnteproyectos);
         }
     }
     

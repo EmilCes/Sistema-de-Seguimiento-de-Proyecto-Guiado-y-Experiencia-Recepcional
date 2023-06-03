@@ -30,5 +30,12 @@ public class TipoAnteproyecto {
     public void setNombreTipoProyecto(String nombreTipoProyecto) {
         this.nombreTipoProyecto = nombreTipoProyecto;
     }
+
+    @Override
+    public String toString() {
+        return nombreTipoProyecto;
+    }
+    
+    
     
 }
