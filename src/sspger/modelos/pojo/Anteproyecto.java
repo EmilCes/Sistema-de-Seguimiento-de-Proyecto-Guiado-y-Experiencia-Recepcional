@@ -4,63 +4,56 @@ package sspger.modelos.pojo;
 
 public class Anteproyecto {
 
+    private int idAnteproyecto;
     private String nombreProyectoInvestigacion;
     private String nombreTrabajoRecepcional;
     private String requisitos;
     private String resultadosEsperados;
+    private int numeroEstudiantes;
     private String fechaPublicacion;
-    private String decripcionTrabajoRecepcional;
+    private String duracionAproximada;
+    private String descripcionTrabajoRecepcional;
     private String descripcionProyectoInvestigacion;
     private String bibliografiaRecomendada;
     private String lineaInvestigacion;
     private String notas;
-    private String nombreLGAC;
-    private String tipoAnteproyecto;
-    private String cuerpoAcademico;
-    private String profesor;
-    private String estado;
-    private int numeroEstudiantes;
-    private String duracionAproximada;
-    private int idLGAC;
+    private int idLAGC;
     private int idTipoAnteproyecto;
     private int idCuerpoAcademico;
-    private int idProfesor; //Hace referencia al director
+    private int idProfesor;
     private int idEstado;
-    //private firmas
 
     public Anteproyecto() {
+        
     }
 
-    public Anteproyecto(String nombreProyectoInvestigacion, String nombreTrabajoRecepcional, 
-            String requisitos, String resultadosEsperados, String fechaPublicacion, 
-            String decripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, 
-            String bibliografiaRecomendada, String lineaInvestigacion, String notas, String nombreLGAC, 
-            String tipoAnteproyecto, String cuerpoAcademico, String profesor, String estado, 
-            String duracionAproximada, int numeroEstudiantes, int idLGAC, int idTipoAnteproyecto, 
-            int idCuerpoAcademico, int idProfesor, int idEstado) {
-        
+    public Anteproyecto(int idAnteproyecto, String nombreProyectoInvestigacion, String nombreTrabajoRecepcional,
+                        String requisitos, String resultadosEsperados, int numeroEstudiantes, String fechaPublicacion,
+                        String duracionAproximada, String descripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, 
+                        String bibliografiaRecomendada, String lineaInvestigacion, String notas, int idLAGC, int idTipoAnteproyecto, 
+                        int idCuerpoAcademico, int idProfesor, int idEstado) {
+        this.idAnteproyecto = idAnteproyecto;
         this.nombreProyectoInvestigacion = nombreProyectoInvestigacion;
         this.nombreTrabajoRecepcional = nombreTrabajoRecepcional;
         this.requisitos = requisitos;
         this.resultadosEsperados = resultadosEsperados;
+        this.numeroEstudiantes = numeroEstudiantes;
         this.fechaPublicacion = fechaPublicacion;
-        this.decripcionTrabajoRecepcional = decripcionTrabajoRecepcional;
+        this.duracionAproximada = duracionAproximada;
+        this.descripcionTrabajoRecepcional = descripcionTrabajoRecepcional;
         this.descripcionProyectoInvestigacion = descripcionProyectoInvestigacion;
         this.bibliografiaRecomendada = bibliografiaRecomendada;
         this.lineaInvestigacion = lineaInvestigacion;
         this.notas = notas;
-        this.nombreLGAC = nombreLGAC;
-        this.tipoAnteproyecto = tipoAnteproyecto;
-        this.cuerpoAcademico = cuerpoAcademico;
-        this.profesor = profesor;
-        this.estado = estado;
-        this.numeroEstudiantes = numeroEstudiantes;
-        this.duracionAproximada = duracionAproximada;
-        this.idLGAC = idLGAC;
+        this.idLAGC = idLAGC;
         this.idTipoAnteproyecto = idTipoAnteproyecto;
         this.idCuerpoAcademico = idCuerpoAcademico;
         this.idProfesor = idProfesor;
         this.idEstado = idEstado;
+    }
+
+    public int getIdAnteproyecto() {
+        return idAnteproyecto;
     }
 
     public String getNombreProyectoInvestigacion() {
@@ -79,12 +72,20 @@ public class Anteproyecto {
         return resultadosEsperados;
     }
 
+    public int getNumeroEstudiantes() {
+        return numeroEstudiantes;
+    }
+
     public String getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public String getDecripcionTrabajoRecepcional() {
-        return decripcionTrabajoRecepcional;
+    public String getDuracionAproximada() {
+        return duracionAproximada;
+    }
+
+    public String getDescripcionTrabajoRecepcional() {
+        return descripcionTrabajoRecepcional;
     }
 
     public String getDescripcionProyectoInvestigacion() {
@@ -103,36 +104,8 @@ public class Anteproyecto {
         return notas;
     }
 
-    public String getNombreLGAC() {
-        return nombreLGAC;
-    }
-
-    public String getTipoAnteproyecto() {
-        return tipoAnteproyecto;
-    }
-
-    public String getCuerpoAcademico() {
-        return cuerpoAcademico;
-    }
-
-    public String getProfesor() {
-        return profesor;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public int getNumeroEstudiantes() {
-        return numeroEstudiantes;
-    }
-
-    public String getDuracionAproximada() {
-        return duracionAproximada;
-    }
-
-    public int getIdLGAC() {
-        return idLGAC;
+    public int getIdLAGC() {
+        return idLAGC;
     }
 
     public int getIdTipoAnteproyecto() {
@@ -151,6 +124,10 @@ public class Anteproyecto {
         return idEstado;
     }
 
+    public void setIdAnteproyecto(int idAnteproyecto) {
+        this.idAnteproyecto = idAnteproyecto;
+    }
+
     public void setNombreProyectoInvestigacion(String nombreProyectoInvestigacion) {
         this.nombreProyectoInvestigacion = nombreProyectoInvestigacion;
     }
@@ -167,12 +144,20 @@ public class Anteproyecto {
         this.resultadosEsperados = resultadosEsperados;
     }
 
+    public void setNumeroEstudiantes(int numeroEstudiantes) {
+        this.numeroEstudiantes = numeroEstudiantes;
+    }
+
     public void setFechaPublicacion(String fechaPublicacion) {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public void setDecripcionTrabajoRecepcional(String decripcionTrabajoRecepcional) {
-        this.decripcionTrabajoRecepcional = decripcionTrabajoRecepcional;
+    public void setDuracionAproximada(String duracionAproximada) {
+        this.duracionAproximada = duracionAproximada;
+    }
+
+    public void setDescripcionTrabajoRecepcional(String descripcionTrabajoRecepcional) {
+        this.descripcionTrabajoRecepcional = descripcionTrabajoRecepcional;
     }
 
     public void setDescripcionProyectoInvestigacion(String descripcionProyectoInvestigacion) {
@@ -191,36 +176,8 @@ public class Anteproyecto {
         this.notas = notas;
     }
 
-    public void setNombreLGAC(String nombreLGAC) {
-        this.nombreLGAC = nombreLGAC;
-    }
-
-    public void setTipoAnteproyecto(String tipoAnteproyecto) {
-        this.tipoAnteproyecto = tipoAnteproyecto;
-    }
-
-    public void setCuerpoAcademico(String cuerpoAcademico) {
-        this.cuerpoAcademico = cuerpoAcademico;
-    }
-
-    public void setProfesor(String profesor) {
-        this.profesor = profesor;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public void setNumeroEstudiantes(int numeroEstudiantes) {
-        this.numeroEstudiantes = numeroEstudiantes;
-    }
-
-    public void setDuracionAproximada(String duracionAproximada) {
-        this.duracionAproximada = duracionAproximada;
-    }
-
-    public void setIdLGAC(int idLGAC) {
-        this.idLGAC = idLGAC;
+    public void setIdLAGC(int idLAGC) {
+        this.idLAGC = idLAGC;
     }
 
     public void setIdTipoAnteproyecto(int idTipoAnteproyecto) {
@@ -237,9 +194,5 @@ public class Anteproyecto {
 
     public void setIdEstado(int idEstado) {
         this.idEstado = idEstado;
-    }
-    
-    
-
-    
+    }  
 }
