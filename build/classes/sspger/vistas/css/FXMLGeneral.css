@@ -12,6 +12,20 @@
 }
 
 
+.textarea{
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+}
+
+.textarea:focused{
+    -fx-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
 .combobox{
     -fx-background-color: white;
     -fx-border-color: black;

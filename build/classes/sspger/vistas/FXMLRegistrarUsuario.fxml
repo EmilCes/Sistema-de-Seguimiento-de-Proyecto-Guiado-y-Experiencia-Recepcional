@@ -116,7 +116,7 @@
             <TextField fx:id="tfNumeroTelefonico" alignment="CENTER" layoutX="344.0" layoutY="363.0" promptText="2288776655" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
             <Pane layoutX="585.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: black;">
                <children>
-                  <ImageView fx:id="imgImagenPerfil" fitHeight="196.0" fitWidth="196.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="196.0" fitWidth="196.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../Recursos/456212.png" />
                      </image>

@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="SSPGER.jar" size="38976" download="eager" />
-=======
-    <jar href="SSPGER.jar" size="20848" download="eager" />
->>>>>>> e099cb548378451e6daf7d1e318cba917016ed0c
+    <jar href="SSPGER.jar" size="47108" download="eager" />
     <jar href="lib/fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib/mysql-connector-java-5.1.49.jar" size="1006904" download="eager" />
   </resources>
