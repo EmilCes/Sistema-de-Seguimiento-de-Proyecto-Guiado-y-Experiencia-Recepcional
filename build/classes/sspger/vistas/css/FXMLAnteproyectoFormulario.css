@@ -5,3 +5,21 @@
 .scroll-pane:focus{
     -fx-focus-color: transparent;
 }
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: black;
+    -fx-background-radius: 100px;
+}
+
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: white;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6, 0, 0, 0);
+}
+
+.white-bg{
+    -fx-background-color: #fff;
+    -fx-background-radius: 8px;
+}

@@ -11,7 +11,7 @@
  Target Server Version : 80030 (8.0.30)
  File Encoding         : 65001
 
- Date: 01/06/2023 08:28:01
+ Date: 02/06/2023 20:32:49
 */
 
 SET NAMES utf8mb4;
@@ -169,16 +169,18 @@ CREATE TABLE `CuerposAcademicos` (
   `idCuerpoAcademico` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `descripcion` text,
-  `idProfesor` int NOT NULL,
+  `idProfesor` int DEFAULT NULL,
   PRIMARY KEY (`idCuerpoAcademico`),
   KEY `FK_CuerposAcademicosProfesores_CuerposAcademicos` (`idProfesor`),
   CONSTRAINT `FK_CuerposAcademicosProfesores_CuerposAcademicos` FOREIGN KEY (`idProfesor`) REFERENCES `Profesores` (`idProfesor`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of CuerposAcademicos
 -- ----------------------------
 BEGIN;
+INSERT INTO `CuerposAcademicos` (`idCuerpoAcademico`, `nombre`, `descripcion`, `idProfesor`) VALUES (1, 'Ingenieria y Tecnología de Software', 'El trabajo del Grupo se orienta al estudio de los procesos de desarrollo, operación, gestión y mantenimiento de software, con vistas a analizar, diseñar, desarrollar, adaptar, evaluar y aplicar modelos, métodos y herramientas para la sistematización y cuantificación de tales procesos y sus productos, con énfasis en el logro de la calidad y en los aspectos humanos.\n\nEl trabajo del Grupo se orienta al estudio de los procesos de desarrollo, operación, gestión y mantenimiento de software, con vistas a analizar, diseñar, desarrollar, adaptar, evaluar y aplicar modelos, métodos y herramientas para la sistematización y cuantificación de tales procesos y sus productos, con énfasis en el logro de la calidad y en los aspectos humanos.\n\nEl trabajo del Grupo se orienta al estudio de los procesos de desarrollo, operación, gestión y mantenimiento de software, con vistas a analizar, diseñar, desarrollar, adaptar, evaluar y aplicar modelos, métodos y herramientas para la sistematización y cuantificación de tales procesos y sus productos, con énfasis en el logro de la calidad y en los aspectos humanos.\n\nEl trabajo del Grupo se orienta al estudio de los procesos de desarrollo, operación, gestión y mantenimiento de software, con vistas a analizar, diseñar, desarrollar, adaptar, evaluar y aplicar modelos, métodos y herramientas para la sistematización y cuantificación de tales procesos y sus productos, con énfasis en el logro de la calidad y en los aspectos humanos.\n\n', NULL);
+INSERT INTO `CuerposAcademicos` (`idCuerpoAcademico`, `nombre`, `descripcion`, `idProfesor`) VALUES (2, 'Tecnología Computacional y Educativa', 'Analizar y evaluar software relacionado con las innovaciones educativas desde el enfoque pedagógico y técnico.', NULL);
 COMMIT;
 
 -- ----------------------------
@@ -270,15 +272,21 @@ COMMIT;
 DROP TABLE IF EXISTS `LGAC`;
 CREATE TABLE `LGAC` (
   `idLGAC` int NOT NULL AUTO_INCREMENT,
-  `nombreLGAC` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `nombreLGAC` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `descripcionLGAC` text,
-  PRIMARY KEY (`idLGAC`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `idCuerpoAcademico` int NOT NULL,
+  PRIMARY KEY (`idLGAC`),
+  KEY `FK_LGAC_CuerposAcademicos` (`idCuerpoAcademico`),
+  CONSTRAINT `FK_LGAC_CuerposAcademicos` FOREIGN KEY (`idCuerpoAcademico`) REFERENCES `CuerposAcademicos` (`idCuerpoAcademico`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of LGAC
 -- ----------------------------
 BEGIN;
+INSERT INTO `LGAC` (`idLGAC`, `nombreLGAC`, `descripcionLGAC`, `idCuerpoAcademico`) VALUES (4, 'Gestión, modelado y desarrollo de software', 'Se orienta al estudio de los diversos métodos y enfoques para la gestión, modelado y desarrollo de software, de manera que se obtenga software de calidad. Gestión de las diversas etapas del proceso de desarrollo, incluyendo hasta la medición del proceso y artefactos. Modelado de los diversos artefactos en las distintas etapas del proceso de desarrollo.', 1);
+INSERT INTO `LGAC` (`idLGAC`, `nombreLGAC`, `descripcionLGAC`, `idCuerpoAcademico`) VALUES (5, 'Tecnologías de software', 'Se orienta al estudio de diversas propiedades, enfoques, métodos de modelado y herramientas que conforman cada una de las diversas tecnologías aplicables al desarrollo del software con vistas a su adaptación, mejora y sustitución en el medio nacional.', 1);
+INSERT INTO `LGAC` (`idLGAC`, `nombreLGAC`, `descripcionLGAC`, `idCuerpoAcademico`) VALUES (6, 'Tecnología Computacional en la Educación y la Sociedad', 'Tendiente  a  lograr  un  enfoque  transdisciplinar  se  analizan  y  evalúan  fenómenos  complejos  que  mediante  una  variedad  de  técnicas  educativas,  sociales,  emotivas,  cognitivas,  y  computacionales  permitan  plantear  soluciones,  prototipos,  metodologías y servicios para el avance de la ciencia y la sociedad.', 2);
 COMMIT;
 
 -- ----------------------------
@@ -352,14 +360,22 @@ COMMIT;
 DROP TABLE IF EXISTS `TipoAnteproyecto`;
 CREATE TABLE `TipoAnteproyecto` (
   `idTipoProyecto` int NOT NULL AUTO_INCREMENT,
-  `nombreTipoProyecto` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `nombreTipoProyecto` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`idTipoProyecto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of TipoAnteproyecto
 -- ----------------------------
 BEGIN;
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (7, 'Tesina');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (8, 'Tesis');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (9, 'Monografía');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (10, 'Memoria');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (11, 'Reporte');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (12, 'Trabajo Práctico-Técnico');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (13, 'Trabajo Práctico-Científico');
+INSERT INTO `TipoAnteproyecto` (`idTipoProyecto`, `nombreTipoProyecto`) VALUES (14, 'Proyecto de Inversión');
 COMMIT;
 
 -- ----------------------------

@@ -22,6 +22,7 @@
     -fx-focus-color: transparent;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
+}
 
 .combobox{
     -fx-background-color: white;
