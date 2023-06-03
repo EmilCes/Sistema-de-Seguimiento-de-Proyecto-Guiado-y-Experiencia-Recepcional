@@ -442,3 +442,10 @@ BEGIN;
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+SELECT idCuerpoAcademico, nombre, descripcion, idProfesor FROM CuerposAcademicos;
+SELECT idLGAC, nombreLGAC, descripcionLGAC, idCuerpoAcademico FROM LGAC;
+SELECT * FROM TipoAnteproyecto;
+
+ALTER TABLE LGAC ADD CONSTRAINT FK_LGAC_CuerposAcademicos FOREIGN KEY(idCuerpoAcademico) REFERENCES CuerposAcademicos(idCuerpoAcademico) ON DELETE CASCADE;
+

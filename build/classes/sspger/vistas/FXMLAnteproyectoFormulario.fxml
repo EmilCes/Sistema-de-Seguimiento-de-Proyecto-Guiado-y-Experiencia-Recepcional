@@ -9,41 +9,101 @@
 
 <AnchorPane fx:id="apCrearAnteproyecto" layoutX="191.0" layoutY="124.0" prefHeight="600.0" prefWidth="889.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAnteproyectoFormularioController">
     <children>
-      <ScrollPane fx:id="spAnteproyectoFormulario" cacheShape="false" centerShape="false" hbarPolicy="NEVER" prefHeight="876.0" prefWidth="839.0" stylesheets="@css/FXMLAnteproyectoFormulario.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+      <ScrollPane fx:id="spAnteproyectoFormulario" cacheShape="false" centerShape="false" hbarPolicy="NEVER" prefHeight="1058.0" prefWidth="839.0" stylesheets="@css/FXMLAnteproyectoFormulario.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <content>
-              <Pane focusTraversable="true" prefHeight="900.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css">
+              <Pane focusTraversable="true" layoutY="150.0" prefHeight="870.0" prefWidth="816.0" stylesheets="@css/FXMLMenuPrincipal.css">
                   <styleClass>
                       <String fx:value="white-bg" />
                       <String fx:value="shadow" />
                   </styleClass>
                   <children>
-                      <TextField layoutX="301.0" layoutY="50.0" prefWidth="400.0" promptText="Proyecto Investigación" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-                      <ComboBox layoutX="301.0" layoutY="90.0" prefWidth="400.0" promptText="LGAC" />
-                      <TextArea focusTraversable="false" layoutX="301.0" layoutY="130.0" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" prefWidth="400.0" promptText="Línea de Investigación" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-                      <TextField layoutX="301.0" layoutY="240.0" prefWidth="400.0" promptText="Duración Apróximada" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-                      <ComboBox layoutX="301.0" layoutY="280.0" prefHeight="27.0" prefWidth="400.0" promptText="Modalidad Trabajo Recepcional" />
-                      <TextField layoutX="301.0" layoutY="320.0" prefWidth="400.0" promptText="Trabajo Recepcional" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-                      <TextArea layoutX="301.0" layoutY="360.0" prefHeight="60.0" prefWidth="400.0" promptText="Requisitos" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-                      <ComboBox layoutX="301.0" layoutY="435.0" prefWidth="400.0" promptText="Numero Estudiantes" />
-                      <TextArea layoutX="301.0" layoutY="475.0" prefHeight="60.0" prefWidth="400.0" promptText="Descripción del Proyecto de Investigación" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-                      <TextArea layoutX="301.0" layoutY="550.0" prefHeight="60.0" prefWidth="400.0" promptText="Descripción del Trabajo Recepcional" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-                      <TextArea layoutX="301.0" layoutY="625.0" prefHeight="60.0" prefWidth="400.0" promptText="Resultados Esperados" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-                      <TextArea layoutX="301.0" layoutY="700.0" prefHeight="100.0" prefWidth="400.0" promptText="Bibliografía Recomendada" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-                  <Button layoutX="625.0" layoutY="820.0" mnemonicParsing="false" prefWidth="165.0" text="Enviar para su Aprobación" />
-                  <Button layoutX="450.0" layoutY="820.0" mnemonicParsing="false" prefWidth="165.0" text="Guardar Borrador" />
-                  <Label layoutX="65.0" layoutY="50.0" text="Nombre del Proyecto de Investigación">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="170.0" layoutY="90.0" text="LGAC que alimenta">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                      <TextField fx:id="tfNombreProyectoInvestigacion" layoutX="340.0" layoutY="50.0" prefWidth="400.0" promptText="Proyecto Investigación" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+                      <ComboBox fx:id="cbLGAC" layoutX="340.0" layoutY="90.0" prefWidth="400.0" promptText="LGAC" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
+                      <TextArea fx:id="taLineaInvestigacion" focusTraversable="false" layoutX="340.0" layoutY="130.0" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" prefWidth="400.0" promptText="Línea de Investigación" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+                      <TextField fx:id="tfDuracionAproximada" layoutX="340.0" layoutY="240.0" prefWidth="400.0" promptText="Duración Apróximada" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+                      <ComboBox fx:id="cbModalidadTrabajoRecepcional" layoutX="340.0" layoutY="280.0" prefHeight="27.0" prefWidth="400.0" promptText="Modalidad Trabajo Recepcional" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
+                      <TextField fx:id="tfNombreTrabajoRecepcional" layoutX="340.0" layoutY="320.0" prefWidth="400.0" promptText="Trabajo Recepcional" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+                      <TextArea fx:id="taRequisitos" layoutX="340.0" layoutY="360.0" prefHeight="60.0" prefWidth="400.0" promptText="Requisitos" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+                      <ComboBox fx:id="cbNumeroEstudiantes" layoutX="340.0" layoutY="435.0" prefWidth="400.0" promptText="Numero Estudiantes" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
+                      <TextArea fx:id="taDescripcionProyectoInvestigacion" layoutX="340.0" layoutY="475.0" prefHeight="60.0" prefWidth="400.0" promptText="Descripción del Proyecto de Investigación" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+                      <TextArea fx:id="taDescripcionTrabajoRecepcional" layoutX="340.0" layoutY="550.0" prefHeight="60.0" prefWidth="400.0" promptText="Descripción del Trabajo Recepcional" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+                      <TextArea fx:id="taResultadosEsperados" layoutX="340.0" layoutY="625.0" prefHeight="60.0" prefWidth="400.0" promptText="Resultados Esperados" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+                      <TextArea fx:id="taBibliografiaRecomendada" layoutX="340.0" layoutY="700.0" prefHeight="100.0" prefWidth="400.0" promptText="Bibliografía Recomendada" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+                  <Button layoutX="575.0" layoutY="820.0" mnemonicParsing="false" onAction="#clicBtnEnviarParaAprobacion" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Enviar para su Aprobación" textFill="WHITE" />
+                  <Button layoutX="400.0" layoutY="820.0" mnemonicParsing="false" onAction="#clicBtnGuardarBorrador" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Guardar Borrador" textFill="WHITE" />
+                  <Pane layoutX="90.0" layoutY="50.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="15.0" layoutY="6.0" text="Nombre del Proyecto de Investigación" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="90.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label alignment="CENTER" layoutX="65.0" layoutY="6.0" text="LGAC que alimenta" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="130.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="60.0" layoutY="6.0" text="Línea de Investigación" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="240.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="60.0" layoutY="6.0" text="Duración Apróximada" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="280.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="40.0" layoutY="6.0" text="Modalida Trabajo Recepcional" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="320.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="45.0" layoutY="6.0" text="Nombre Trabajo Recepcional" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="360.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="90.0" layoutY="6.0" text="Requisitos" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="435.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="65.0" layoutY="6.0" text="Alumnos Participantes" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="475.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="5.0" layoutY="6.0" text="Descripción del Proyecto de Investigación" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="550.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="18.0" layoutY="6.0" text="Descripción del Trabajo Recepcional" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="625.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="55.0" layoutY="6.0" text="Resultados Esperados" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="700.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="45.0" layoutY="6.0" text="Bibliografía Recomendada" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="90.0" layoutY="10.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                     <children>
+                        <Label layoutX="65.0" layoutY="6.0" text="Cuerpo Académico" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <ComboBox fx:id="cbCuerpoAcademico" layoutX="340.0" layoutY="10.0" prefWidth="400.0" promptText="Cuerpo Académico" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
                   </children>
               </Pane>
          </content>
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
       </ScrollPane>
         <Label layoutX="44.0" layoutY="11.0" text="Registrar Anteproyecto" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="11.0">
             <font>
