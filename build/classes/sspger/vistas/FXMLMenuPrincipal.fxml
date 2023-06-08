@@ -38,7 +38,15 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+<<<<<<< HEAD
+<<<<<<< HEAD
                               <Button layoutX="14.0" layoutY="289.0" mnemonicParsing="false" onAction="#clicBtnOpcion3" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Actividad">
+=======
+                              <Button layoutX="14.0" layoutY="289.0" mnemonicParsing="false" onAction="#clicBtnOpcion3" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Opcion 2">
+>>>>>>> main
+=======
+                              <Button layoutX="14.0" layoutY="289.0" mnemonicParsing="false" onAction="#clicBtnOpcion3" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Actividad">
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" text="" />
                                  </graphic>

@@ -33,6 +33,12 @@
                                  </font>
                               </Label>
                               <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+                              <Button layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#clicBtnOpcion2" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Registrar Usuario">
+=======
+=======
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
                               <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
@@ -48,10 +54,20 @@
                                  </font>
                               </Label>
                               <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnRegistrarUsuario" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Registrar Usuario">
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                              <Button layoutX="14.0" layoutY="289.0" mnemonicParsing="false" onAction="#clicBtnOpcion3" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Actividad">
+=======
+=======
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuDirector" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -69,6 +85,10 @@
                               </Label>
                               <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
                               <Button layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyectos" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Ver Anteproyectos">
+<<<<<<< HEAD
+>>>>>>> main
+=======
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
