@@ -29,12 +29,11 @@ public class FXMLMenuPrincipalController implements Initializable {
     }    
     
     @FXML
-
     private void clicBtnOpcion2(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
-
+    @FXML
     private void clicBtnOpcion1(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
     }
@@ -54,7 +53,7 @@ public class FXMLMenuPrincipalController implements Initializable {
         
     }
 
-
+    @FXML
     private void clicBtnOpcion3(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
     }
