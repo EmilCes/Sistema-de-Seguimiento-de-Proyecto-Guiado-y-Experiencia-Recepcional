@@ -46,6 +46,7 @@
     -fx-border-color: black;
 }
 
+<<<<<<< HEAD
 .pickDate{
     -fx-background-color: white;
     -fx-border-color: black;
@@ -59,4 +60,12 @@
     -fx-border-color: black;
     -fx-border-radius: 7px;
     -fx-background-radius: 7px;
+=======
+.buttonD:focused{
+    -fx-text-fill: black;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-color: white;
+    -fx-border-color: black;
+>>>>>>> main
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:id="apAsignarEstudiante" prefHeight="600.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAsignarEstudianteController">
+    <children>
+        <Pane layoutX="150.0" layoutY="126.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+            <styleClass>
+                <String fx:value="shadow" />
+                <String fx:value="white-bg" />
+            </styleClass>
+            <children>
+                <Pane layoutX="460.0" layoutY="40.0" prefHeight="416.0" prefWidth="336.0" stylesheets="@css/FXMLAsignarEstudiante.css">
+                    <styleClass>
+                        <String fx:value="estudiante-info" />
+                        <String fx:value="shadow" />
+                    </styleClass>
+                    <children>
+                        <Label layoutX="110.0" layoutY="20.0" text="Estudiante" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="187.0" fitWidth="200.0" layoutX="68.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="91.0" layoutY="220.0" size="15em" />
+                        <Label layoutX="18.0" layoutY="260.0" text="Nombre del Estudiante" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="290.0" text="César Emiliano Lezama López" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="320.0" text="Curso" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="18.0" layoutY="350.0" text="Nombre del Curso" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="165.0" layoutY="248.0" scaleX="1.4" startX="-100.0" stroke="WHITE" />
+                    </children>
+                </Pane>
+                <TextField layoutX="114.0" layoutY="180.0" prefHeight="30.0" prefWidth="180.0" promptText="Matricula" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+                <Pane layoutX="300.0" layoutY="180.0" prefHeight="30.0" prefWidth="48.0" styleClass="btn-buscar" stylesheets="@css/FXMLAsignarEstudiante.css">
+                    <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SEARCH" layoutX="18.0" layoutY="20.0" />
+                    </children>
+                </Pane>
+                <Button layoutX="100.0" layoutY="308.0" mnemonicParsing="false" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Agregar Estudiante" textFill="WHITE" />
+                <Button layoutX="250.0" layoutY="308.0" mnemonicParsing="false" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Cancelar" textFill="WHITE" />
+                <Label layoutX="72.0" layoutY="73.0" text="Ingresa el nombre del estudiante a agregar:">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Label layoutX="36.0" layoutY="35.0" text="Asignar Estudiante a Anteproyecto" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

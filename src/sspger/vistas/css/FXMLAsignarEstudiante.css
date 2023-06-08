@@ -1,0 +1,13 @@
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6, 0, 0, 0);
+}
+
+.estudiante-info{
+    -fx-background-color: #666666;
+    -fx-background-radius: 8px;
+}
+
+.btn-buscar{
+    -fx-background-color: black;
+    -fx-background-radius: 20px;
+}
