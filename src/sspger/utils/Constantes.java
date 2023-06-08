@@ -16,4 +16,8 @@ public class Constantes {
     public static final int DISPONILE = 4;
     public static final int ASIGNADO = 5;
     
+    //Tipo Usuario 
+    public static final int ADMINISTRADOR = 1;
+    public static final int PROFESOR = 2;
+    public static final int ESTUDIANTE = 3;
 }

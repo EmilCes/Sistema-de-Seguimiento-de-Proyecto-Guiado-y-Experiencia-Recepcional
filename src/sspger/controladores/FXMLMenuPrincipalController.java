@@ -17,66 +17,26 @@ import sspger.utils.Utilidades;
 public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
-    private AnchorPane apMenuPrincipal;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
+    private AnchorPane apMenuPrincipal;  
     @FXML
     private AnchorPane apRegistrarUsuario;
    
-=======
     @FXML
     private AnchorPane apMenuDirector;
->>>>>>> main
-=======
-    
-    @FXML
-    private AnchorPane apRegistrarUsuario;
-    @FXML
-    private AnchorPane apMenuDirector;
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
+   
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-    
-     @FXML
-    private void clicBtnOpcion1(ActionEvent event) {
-        apMenuPrincipal.getChildren().clear();
-        apRegistrarUsuario.setVisible(true);
-        cambiarPane("/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
-    }
     
     @FXML
-=======
->>>>>>> main
-=======
-    
-    @FXML
-
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     private void clicBtnOpcion2(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     @FXML
-    private void clicBtnOpcion3(ActionEvent event) {
-       apMenuPrincipal.getChildren().clear();
-        cambiarPane("/sspger/vistas/FXMLCrearActividad.fxml");
-=======
     private void clicBtnOpcion1(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
->>>>>>> main
-=======
-
-    private void clicBtnOpcion1(ActionEvent event) {
-        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     }
    
     
@@ -94,13 +54,7 @@ public class FXMLMenuPrincipalController implements Initializable {
         
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-=======
-
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
+    @FXML
     private void clicBtnOpcion3(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
     }
@@ -118,11 +72,5 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private void clicBtnRegistrarUsuario(ActionEvent event) {
     }
-<<<<<<< HEAD
-
-
->>>>>>> main
-=======
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     
 }
