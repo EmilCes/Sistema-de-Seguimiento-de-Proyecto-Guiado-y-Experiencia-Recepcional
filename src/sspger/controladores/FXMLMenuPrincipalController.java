@@ -17,12 +17,13 @@ import sspger.utils.Utilidades;
 public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
-    private AnchorPane apMenuPrincipal;
-    
+    private AnchorPane apMenuPrincipal;  
     @FXML
     private AnchorPane apRegistrarUsuario;
+   
     @FXML
     private AnchorPane apMenuDirector;
+   
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
