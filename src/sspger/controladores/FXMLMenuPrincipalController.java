@@ -19,6 +19,7 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private AnchorPane apMenuPrincipal;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     @FXML
     private AnchorPane apRegistrarUsuario;
@@ -27,10 +28,18 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private AnchorPane apMenuDirector;
 >>>>>>> main
+=======
+    
+    @FXML
+    private AnchorPane apRegistrarUsuario;
+    @FXML
+    private AnchorPane apMenuDirector;
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     
@@ -44,10 +53,16 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
 =======
 >>>>>>> main
+=======
+    
+    @FXML
+
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     private void clicBtnOpcion2(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     @FXML
     private void clicBtnOpcion3(ActionEvent event) {
@@ -57,6 +72,11 @@ public class FXMLMenuPrincipalController implements Initializable {
     private void clicBtnOpcion1(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
 >>>>>>> main
+=======
+
+    private void clicBtnOpcion1(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     }
    
     
@@ -75,13 +95,16 @@ public class FXMLMenuPrincipalController implements Initializable {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
+=======
+
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     private void clicBtnOpcion3(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
     }
-    
-    
+     
     //Director    
     @FXML
     private void clicBtnCrearAnteproyecto(ActionEvent event) {
@@ -95,8 +118,11 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private void clicBtnRegistrarUsuario(ActionEvent event) {
     }
+<<<<<<< HEAD
 
 
 >>>>>>> main
+=======
+>>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
     
 }
