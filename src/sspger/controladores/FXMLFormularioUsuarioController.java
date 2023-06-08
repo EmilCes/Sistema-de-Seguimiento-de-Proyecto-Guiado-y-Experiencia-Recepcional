@@ -1,9 +1,9 @@
-
 package sspger.controladores;
 
 import javafx.scene.image.Image;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,16 +14,19 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import sspger.modelos.dao.TipoUsuarioDAO;
 import sspger.modelos.dao.UsuarioDAO;
+import sspger.modelos.dao.UsuarioDAO;
+import sspger.modelos.pojo.TipoUsuario;
+import sspger.modelos.pojo.TipoUsuarioRespuesta;
 import sspger.modelos.pojo.Usuario;
+import sspger.utils.Constantes;
 import sspger.utils.Utilidades;
 
-public class FXMLRegistrarUsuarioController implements Initializable {
+public class FXMLFormularioUsuarioController implements Initializable {
 
     @FXML
-    private AnchorPane apCrearAnteproyecto;
-    @FXML
-    private ComboBox<String> cbTipoUsuario;
+    private ComboBox<TipoUsuario> cbTipoUsuario;
     @FXML
     private TextField tfNombre;
     @FXML
@@ -42,11 +45,12 @@ public class FXMLRegistrarUsuarioController implements Initializable {
     private TextField tfContraseña;
     @FXML
     private ImageView imgImagenPerfil;
+    
+    private ObservableList<TipoUsuario> tipoUsuarios;
+    @FXML
+    private AnchorPane apRegistrarUsuario;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
+ 
     public void initialize(URL url, ResourceBundle rb) {
         configurarCbTipoUsuario();
     }
@@ -66,13 +70,11 @@ public class FXMLRegistrarUsuarioController implements Initializable {
         String nombreUsuario = tfNombre.getText() + "_" + tfApellidoPaterno.getText();
         nombreUsuario = nombreUsuario.replaceAll("\\s", "");
         int tipoUsuario = 0;
-        String opcionSeleccionada = cbTipoUsuario.getValue();
+        TipoUsuario opcionSeleccionada = cbTipoUsuario.getValue();
         Image imagenPerfil = imgImagenPerfil.getImage();
 
-        if (opcionSeleccionada.equals("Estudiante")) {
-            tipoUsuario = 1;
-        } else if (opcionSeleccionada.equals("Profesor")) {
-            tipoUsuario = 2;
+        if (opcionSeleccionada != null) {
+            tipoUsuario = opcionSeleccionada.getIdTipoUsuario();
         }
 
         Usuario usuario = new Usuario();
@@ -101,7 +103,7 @@ public class FXMLRegistrarUsuarioController implements Initializable {
         String correoInstitucional = tfCorreo.getText();
         String numeroTelefonico = tfNumeroTelefonico.getText();
         String password = tfContraseña.getText();
-        String opcionSeleccionada = cbTipoUsuario.getValue();
+        TipoUsuario opcionSeleccionada = cbTipoUsuario.getValue();
 
         if (nombre.isEmpty()) {
             tfNombre.setStyle("-fx-border-color: red");
@@ -156,7 +158,20 @@ public class FXMLRegistrarUsuarioController implements Initializable {
     }
 
     private void configurarCbTipoUsuario() {
-        cbTipoUsuario.getItems().addAll("Estudiante", "Profesor");
+         tipoUsuarios = FXCollections.observableArrayList();
+         TipoUsuarioRespuesta tipoUsuarioBD = TipoUsuarioDAO.obtenerTipoUsuarioRespuesta();
+         switch (tipoUsuarioBD.getCodigoRespuesta()) {
+            case Constantes.ERROR_CONEXION:
+                Utilidades.mostrarDialogoSimple("Error de Conexión", "Error en la conexción", Alert.AlertType.ERROR);
+                break;
+            case(Constantes.ERROR_CONSULTA):
+                Utilidades.mostrarDialogoSimple("Error de Consulta", "Error en la consulta", Alert.AlertType.WARNING);
+                break;
+            case(Constantes.OPERACION_EXITOSA):
+                tipoUsuarios.addAll(tipoUsuarioBD.getTiposUsuarios());
+                cbTipoUsuario.setItems(tipoUsuarios);
+        
+         }
     }
 
     private void resetearEstilos() {

@@ -11,7 +11,6 @@
     -fx-background-radius: 10px;
 }
 
-
 .textarea{
     -fx-background-color: transparent;
     -fx-border-color: black;
@@ -24,7 +23,6 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
-
 
 .combobox{
     -fx-background-color: white;
@@ -46,4 +44,19 @@
     -fx-border-radius: 10px;
     -fx-background-color: white;
     -fx-border-color: black;
+}
+
+.pickDate{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+}
+
+.pickDate:hover{
+    -fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
 }
