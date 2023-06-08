@@ -4,9 +4,13 @@ package sspger.modelos.dao;
 import java.awt.image.BufferedImage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import sspger.modelos.ConexionBD;
+import sspger.modelos.pojo.TipoUsuario;
+import sspger.modelos.pojo.TipoUsuarioRespuesta;
 import sspger.modelos.pojo.Usuario;
 import sspger.utils.Constantes;
 
@@ -53,4 +57,5 @@ public class UsuarioDAO {
         
         return respuesta;
     }
+    
 }

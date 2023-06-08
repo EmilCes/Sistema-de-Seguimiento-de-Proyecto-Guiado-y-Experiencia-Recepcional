@@ -46,6 +46,21 @@
     -fx-border-color: black;
 }
 
+.pickDate{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+}
+
+.pickDate:hover{
+    -fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+}
+
 .buttonD:focused{
     -fx-text-fill: black;
     -fx-background-radius: 10px;

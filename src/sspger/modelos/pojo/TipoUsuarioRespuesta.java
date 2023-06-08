@@ -1,13 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package sspger.modelos.pojo;
 
-/**
- *
- * @author kirbithalbertocubillashernandez
- */
+import java.util.ArrayList;
+
 public class TipoUsuarioRespuesta {
+    private int codigoRespuesta;
+    private ArrayList<TipoUsuario> TiposUsuarios;
+
+    public TipoUsuarioRespuesta() {
+    }
+
+    public TipoUsuarioRespuesta(int codigoRespuesta, ArrayList<TipoUsuario> TiposUsuarios) {
+        this.codigoRespuesta = codigoRespuesta;
+        this.TiposUsuarios = TiposUsuarios;
+    }
+
+    public int getCodigoRespuesta() {
+        return codigoRespuesta;
+    }
+
+    public ArrayList<TipoUsuario> getTiposUsuarios() {
+        return TiposUsuarios;
+    }
+
+    public void setCodigoRespuesta(int codigoRespuesta) {
+        this.codigoRespuesta = codigoRespuesta;
+    }
+
+    public void setTiposUsuarios(ArrayList<TipoUsuario> TiposUsuarios) {
+        this.TiposUsuarios = TiposUsuarios;
+    }
+    
     
 }

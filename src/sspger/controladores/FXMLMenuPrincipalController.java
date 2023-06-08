@@ -18,20 +18,27 @@ public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
     private AnchorPane apMenuPrincipal;
+    
+    @FXML
+    private AnchorPane apRegistrarUsuario;
     @FXML
     private AnchorPane apMenuDirector;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
+    
+    @FXML
 
     private void clicBtnOpcion2(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
+
     private void clicBtnOpcion1(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
     }
+   
     
     private void irInicioSesion(){
         Stage escenarioBase = (Stage) apMenuPrincipal.getScene().getWindow();
@@ -47,11 +54,11 @@ public class FXMLMenuPrincipalController implements Initializable {
         
     }
 
+
     private void clicBtnOpcion3(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
     }
-    
-    
+     
     //Director    
     @FXML
     private void clicBtnCrearAnteproyecto(ActionEvent event) {
@@ -65,7 +72,5 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private void clicBtnRegistrarUsuario(ActionEvent event) {
     }
-
-
     
 }

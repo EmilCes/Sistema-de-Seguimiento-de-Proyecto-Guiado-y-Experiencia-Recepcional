@@ -2,6 +2,7 @@
 
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -9,13 +10,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apRegistrarUsuario" layoutX="191.0" layoutY="124.0" prefHeight="600.0" prefWidth="889.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLRegistrarUsuarioController">
-    <children>
-        <Pane prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
-            <styleClass>
-                <String fx:value="white-bg" />
-                <String fx:value="shadow" />
-            </styleClass>
+<AnchorPane fx:id="apEntregarActividadFormulario" prefHeight="600.0" prefWidth="889.0" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLFormularioUsuarioController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <children>
             <Pane layoutX="66.0" layoutY="142.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
                <children>
@@ -136,11 +133,15 @@
                </font>
             </Label>
          </children>
-        </Pane>
-      <Label layoutX="25.0" layoutY="8.0" text="Registrar Usuario">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="25.0" layoutY="8.0" text="Entregar Actividad">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-    </children>
+   </children>
 </AnchorPane>

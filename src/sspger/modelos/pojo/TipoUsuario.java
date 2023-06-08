@@ -6,31 +6,36 @@ package sspger.modelos.pojo;
 public class TipoUsuario {
     
      private int idTipoUsuario;
-     private String descirpcion;
+     private String descripcion;
 
     public TipoUsuario() {
     }
 
-    public TipoUsuario(int idTipoUsuario, String descirpcion) {
+    public TipoUsuario(int idTipoUsuario, String descripcion) {
         this.idTipoUsuario = idTipoUsuario;
-        this.descirpcion = descirpcion;
+        this.descripcion = descripcion;
     }
 
     public int getIdTipoUsuario() {
         return idTipoUsuario;
     }
 
-    public String getDescirpcion() {
-        return descirpcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     public void setIdTipoUsuario(int idTipoUsuario) {
         this.idTipoUsuario = idTipoUsuario;
     }
 
-    public void setDescirpcion(String descirpcion) {
-        this.descirpcion = descirpcion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-     
+
+     @Override
+    public String toString() {
+        return descripcion;
+    }
+
      
 }
