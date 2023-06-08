@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pnAnteproyecto" prefHeight="146.0" prefWidth="745.0" stylesheets="@css/FXMLLlistasAnteproyectos.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLAnteproyectoFragmentoController">
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <styleClass>
+        <String fx:value="nav-lista" />
+        <String fx:value="shadow" />
+        <String fx:value="elemento-lista" />
+    </styleClass>
+    <VBox.margin>
+        <Insets bottom="10.0" />
+    </VBox.margin>
+    <children>
+        <Button layoutX="630.0" layoutY="80.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Avances" textFill="WHITE" />
+        <Label fx:id="lbNombreAnteproyecto" layoutX="30.0" layoutY="16.0" text="Nombre Anteproyecto" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Label>
+        <Label layoutX="30.0" layoutY="64.0" text="Director: " textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="30.0" layoutY="90.0" text="Fecha de Validación: Fecha" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="485.0" layoutY="80.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Anteproyecto" textFill="WHITE" />
+        <Label fx:id="lbNombreDirector" layoutX="100.0" layoutY="64.0" text="Nombre del Director" textFill="WHITE">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

@@ -1,0 +1,30 @@
+.nav-lista{
+    -fx-background-color: linear-gradient(to bottom right, #272b3f, #b3c7c5);
+    -fx-background-color: #ebebeb;
+    -fx-background-radius: 10px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 6, 0, 0, 0);
+}
+
+.elemento-lista{
+    -fx-background-color: #666666;
+}
+
+.scroll-pane{
+    -fx-background-color: white;
+}
+
+.scroll-pane:focus{
+    -fx-focus-color: transparent;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: black;
+    -fx-background-radius: 100px;
+}
+
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: white;
+}

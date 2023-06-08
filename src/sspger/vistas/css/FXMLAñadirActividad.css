@@ -1,0 +1,13 @@
+.date-picker{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-radius: 5px;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: black;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;
+}
