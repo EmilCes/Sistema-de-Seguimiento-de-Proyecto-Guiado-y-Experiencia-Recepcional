@@ -17,38 +17,20 @@ import sspger.utils.Utilidades;
 public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
-    private AnchorPane listaAnteproyectos;
-
-    @FXML
     private AnchorPane apMenuPrincipal;
-
-
+    @FXML
+    private AnchorPane apMenuDirector;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
-    
-    public void cambiarPane(String path){
-        try {
-            FXMLLoader crearAnteproyectoLoader = new FXMLLoader(getClass().getResource(path));
-            AnchorPane crearAnteproyectoPane = crearAnteproyectoLoader.load();
-            apMenuPrincipal.getChildren().add(crearAnteproyectoPane);
-        } catch (IOException ex) {
-            System.err.println(ex.getStackTrace());
-        }
-    }
 
-    @FXML
     private void clicBtnOpcion2(ActionEvent event) {
-        apMenuPrincipal.getChildren().clear();
-        listaAnteproyectos.setVisible(true);
-        cambiarPane("/sspger/vistas/FXMLRegistrarUsuario.fxml");
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
-    @FXML
     private void clicBtnOpcion1(ActionEvent event) {
-        listaAnteproyectos.setVisible(false);
-        cambiarPane("/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
     }
     
     private void irInicioSesion(){
@@ -64,5 +46,26 @@ public class FXMLMenuPrincipalController implements Initializable {
         irInicioSesion();
         
     }
+
+    private void clicBtnOpcion3(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
+    }
+    
+    
+    //Director    
+    @FXML
+    private void clicBtnCrearAnteproyecto(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
+    }
+
+    @FXML
+    private void clicBtnVerAnteproyectos(ActionEvent event) {
+    }
+
+    @FXML
+    private void clicBtnRegistrarUsuario(ActionEvent event) {
+    }
+
+
     
 }

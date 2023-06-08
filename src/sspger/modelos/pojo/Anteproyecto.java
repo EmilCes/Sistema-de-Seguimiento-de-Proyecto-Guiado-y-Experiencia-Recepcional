@@ -22,16 +22,17 @@ public class Anteproyecto {
     private int idCuerpoAcademico;
     private int idProfesor;
     private int idEstado;
+    private String nombreProfesor;
 
     public Anteproyecto() {
         
     }
 
-    public Anteproyecto(int idAnteproyecto, String nombreProyectoInvestigacion, String nombreTrabajoRecepcional,
-                        String requisitos, String resultadosEsperados, int numeroEstudiantes, String fechaPublicacion,
+    public Anteproyecto(int idAnteproyecto, String nombreProyectoInvestigacion, String nombreTrabajoRecepcional, 
+                        String requisitos, String resultadosEsperados, int numeroEstudiantes, String fechaPublicacion, 
                         String duracionAproximada, String descripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, 
                         String bibliografiaRecomendada, String lineaInvestigacion, String notas, int idLAGC, int idTipoAnteproyecto, 
-                        int idCuerpoAcademico, int idProfesor, int idEstado) {
+                        int idCuerpoAcademico, int idProfesor, int idEstado, String nombreProfesor) {
         this.idAnteproyecto = idAnteproyecto;
         this.nombreProyectoInvestigacion = nombreProyectoInvestigacion;
         this.nombreTrabajoRecepcional = nombreTrabajoRecepcional;
@@ -50,7 +51,10 @@ public class Anteproyecto {
         this.idCuerpoAcademico = idCuerpoAcademico;
         this.idProfesor = idProfesor;
         this.idEstado = idEstado;
+        this.nombreProfesor = nombreProfesor;
     }
+
+    
 
     public int getIdAnteproyecto() {
         return idAnteproyecto;
@@ -124,6 +128,10 @@ public class Anteproyecto {
         return idEstado;
     }
 
+    public String getNombreProfesor() {
+        return nombreProfesor;
+    }
+
     public void setIdAnteproyecto(int idAnteproyecto) {
         this.idAnteproyecto = idAnteproyecto;
     }
@@ -194,5 +202,10 @@ public class Anteproyecto {
 
     public void setIdEstado(int idEstado) {
         this.idEstado = idEstado;
-    }  
+    } 
+
+    public void setNombreProfesor(String nombreProfesor) {
+        this.nombreProfesor = nombreProfesor;
+    }
+    
 }
