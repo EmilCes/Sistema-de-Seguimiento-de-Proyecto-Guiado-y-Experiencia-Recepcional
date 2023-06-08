@@ -1,11 +1,9 @@
 package sspger.controladores;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -18,8 +16,6 @@ public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
     private AnchorPane apMenuPrincipal;  
-    @FXML
-    private AnchorPane apRegistrarUsuario;
    
     @FXML
     private AnchorPane apMenuDirector;
@@ -29,12 +25,10 @@ public class FXMLMenuPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     }    
     
-    @FXML
     private void clicBtnOpcion2(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLRegistrarUsuario.fxml");
     }
 
-    @FXML
     private void clicBtnOpcion1(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
     }
@@ -54,7 +48,6 @@ public class FXMLMenuPrincipalController implements Initializable {
         
     }
 
-    @FXML
     private void clicBtnOpcion3(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
     }
@@ -69,8 +62,11 @@ public class FXMLMenuPrincipalController implements Initializable {
     private void clicBtnVerAnteproyectos(ActionEvent event) {
     }
 
+    
+    //Administrar
     @FXML
     private void clicBtnRegistrarUsuario(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLFormularioUsuario.fxml");
     }
     
 }

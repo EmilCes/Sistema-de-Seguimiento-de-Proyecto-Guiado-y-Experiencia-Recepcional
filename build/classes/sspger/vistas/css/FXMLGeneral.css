@@ -46,10 +46,6 @@
     -fx-border-color: black;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
 .pickDate{
     -fx-background-color: white;
     -fx-border-color: black;
@@ -63,21 +59,12 @@
     -fx-border-color: black;
     -fx-border-radius: 7px;
     -fx-background-radius: 7px;
-<<<<<<< HEAD
-=======
-=======
 }
 
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
 .buttonD:focused{
     -fx-text-fill: black;
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
     -fx-background-color: white;
     -fx-border-color: black;
-<<<<<<< HEAD
->>>>>>> main
-=======
-
->>>>>>> 78d66ed7c2a6b3cbc2aa5ce98cacffc372d1c8f4
 }
