@@ -42,13 +42,11 @@ public class FXMLCrearActividadController implements Initializable {
 
     @FXML
     private void clicBtnCrearActividad(ActionEvent event) {
-    }
-    
-        private void clicBtnCrearActividad(ActionEvent event) {
-        if (validarCampos()) {
-            // Lógica para guardar la actividad
+                if (validarCampos()) {
+           
         }
     }
+    
 
     private boolean validarCampos() {
         boolean camposValidos = true;
