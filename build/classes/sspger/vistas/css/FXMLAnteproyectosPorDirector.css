@@ -9,8 +9,18 @@
 }
 
 .combobox{
-    -fx-background-color: black;
-    -fx-border-color: white;
+    -fx-background-color: white;
+    -fx-border-color: black;
     -fx-border-radius: 10px;
-    -fx-font-color: white;
+    -fx-prompt-text-fill: black
 }
+
+.combo-box .list-view .list-cell:hover {
+    -fx-background-color: black; 
+    -fx-text-fill: white; 
+}
+
+.combo-box .list-view .list-cell:selected .text {
+    -fx-text-fill: white; 
+}
+
