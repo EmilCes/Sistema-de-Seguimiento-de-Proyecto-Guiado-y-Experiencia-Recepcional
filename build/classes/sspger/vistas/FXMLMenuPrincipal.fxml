@@ -33,6 +33,7 @@
                                  </font>
                               </Label>
                               <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
+<<<<<<< Updated upstream
                               <Button layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#clicBtnOpcion2" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Registrar Usuario">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
@@ -51,6 +52,8 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+=======
+>>>>>>> Stashed changes
                               <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
@@ -65,7 +68,11 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
+<<<<<<< Updated upstream
                               <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnOpcion1" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Anteproyecto">
+=======
+                              <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnRegistrarUsuario" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Registrar Usuario">
+>>>>>>> Stashed changes
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package sspger.controladores;
 
 import java.net.URL;
@@ -16,15 +13,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-/**
- * FXML Controller class
- *
- * @author kirbithalbertocubillashernandez
- */
+
 public class FXMLCrearActividadController implements Initializable {
 
-    @FXML
-    private TextField tfNombre;
+
     @FXML
     private TextArea taDescripcion;
     @FXML
@@ -37,6 +29,8 @@ public class FXMLCrearActividadController implements Initializable {
     private DatePicker dpFechaInicio;
     @FXML
     private AnchorPane apCearActividad;
+    @FXML
+    private TextField tfTitulo;
 
     /**
      * Initializes the controller class.
@@ -48,6 +42,41 @@ public class FXMLCrearActividadController implements Initializable {
 
     @FXML
     private void clicBtnCrearActividad(ActionEvent event) {
+    }
+    
+        private void clicBtnCrearActividad(ActionEvent event) {
+        if (validarCampos()) {
+            // Lógica para guardar la actividad
+        }
+    }
+
+    private boolean validarCampos() {
+        boolean camposValidos = true;
+
+        String titulo = tfTitulo.getText();
+        String descripcion = taDescripcion.getText();
+        DatePicker fechaInicio = dpFechaInicio;
+        DatePicker fechaFin = dpFechaFin;
+        ComboBox<?> anteproyecto = cbAnteproyecto;
+
+        if (titulo.isEmpty()) {
+            tfTitulo.setStyle("-fx-border-color: red");
+            camposValidos = false;
+        }
+
+        if (descripcion.isEmpty()) {
+        }
+
+        if (fechaInicio.getValue() == null) {
+        }
+
+        if (fechaFin.getValue() == null) {
+        }
+
+        if (anteproyecto.getValue() == null) {
+        }
+
+        return camposValidos;
     }
     
 }
