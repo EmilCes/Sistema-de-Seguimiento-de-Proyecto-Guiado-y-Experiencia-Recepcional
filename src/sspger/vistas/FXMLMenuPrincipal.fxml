@@ -19,7 +19,7 @@
                <left>
                   <AnchorPane prefHeight="555.0" prefWidth="211.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="-15.0" layoutY="25.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="apMenuAdministrador" layoutX="-15.0" layoutY="25.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
@@ -27,7 +27,7 @@
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Cesarele23" textFill="WHITE">
+                              <Label fx:id="lbNombreUsuarioAdministrador" alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -62,7 +62,7 @@
                                     <Font size="17.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Cesarele23" textFill="WHITE">
+                              <Label fx:id="lbNombreUsuarioDirector" alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Cesarele23" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -88,6 +88,121 @@
                                  </font>
                               </Label>
                               <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnCrearAnteproyecto" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Anteproyecto">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apMenuEstudiante" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbNombreUsuarioEstudiante" alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Cesarele23" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
+                              <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="54.0" layoutY="520.0" text="Salir" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyectosDisponibles" prefHeight="60.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Ver Anteproyectos Disponibles" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apMenuEstudianteConAnteproyecto" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbNombreUsuarioEstudianteConAnteproyecto" alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Cesarele23" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
+                              <Button layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyectos" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Ver Anteproyectos">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="54.0" layoutY="520.0" text="Salir" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnCrearAnteproyecto" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Anteproyecto">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="apMenuEncargadoCA" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbNombreUsuarioEncargadoCA" alignment="CENTER" layoutX="5.0" layoutY="160.0" prefHeight="26.0" prefWidth="199.0" text="Cesarele23" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
+                              <Button layoutX="14.0" layoutY="275.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyectosPorValidar" prefHeight="48.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Ver Anteproyectos Por Validar" wrapText="true">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="54.0" layoutY="520.0" text="Salir" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyectosPorDirector" prefHeight="51.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Anteproyectos por Director" wrapText="true">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>

@@ -20,4 +20,7 @@ public class Constantes {
     public static final int ADMINISTRADOR = 1;
     public static final int PROFESOR = 2;
     public static final int ESTUDIANTE = 3;
+    public static final int ESTUDIANTE_CON_ANTEPROYECTO = 4;
+    public static final int ENCARGADO_CA = 5;
+    public static final int DIRECTOR = 6;
 }

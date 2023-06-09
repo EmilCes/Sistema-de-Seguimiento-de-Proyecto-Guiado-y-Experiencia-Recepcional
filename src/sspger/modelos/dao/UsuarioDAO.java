@@ -1,17 +1,14 @@
 
 package sspger.modelos.dao;
 
-import java.awt.image.BufferedImage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.imageio.ImageIO;
 import sspger.modelos.ConexionBD;
-import sspger.modelos.pojo.TipoUsuario;
-import sspger.modelos.pojo.TipoUsuarioRespuesta;
 import sspger.modelos.pojo.Usuario;
+import sspger.modelos.pojo.UsuarioRespuesta;
 import sspger.utils.Constantes;
 
 public class UsuarioDAO {
@@ -56,6 +53,35 @@ public class UsuarioDAO {
         }
         
         return respuesta;
+    }
+    
+        public static UsuarioRespuesta obtenerUsuarioPorTipoUsuario(int idTipoUsuario){
+        UsuarioRespuesta usuarioRespuesta = new UsuarioRespuesta();
+        usuarioRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        if(conexionBD != null){
+            try{
+                String consulta = "SELECT idUsuario, CONCAT(nombre, ' ', apellidoPaterno, ' ', apellidoMaterno) AS " +
+                                  "nombreCompleto FROM Usuarios WHERE idTipoUsuario = ?";
+                PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
+                prepararSentencia.setInt(1, idTipoUsuario);
+                ResultSet resultado = prepararSentencia.executeQuery();
+                ArrayList<Usuario> usuarioConsulta = new ArrayList();
+                while(resultado.next()){
+                    Usuario usuario = new Usuario();
+                    usuario.setIdUsuario(resultado.getInt("idUsuario"));
+                    usuario.setNombreCompleto(resultado.getString("nombreCompleto"));
+                    usuarioConsulta.add(usuario);
+                }
+                usuarioRespuesta.setUsuarios(usuarioConsulta);
+                conexionBD.close();
+            } catch(SQLException e){
+                usuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+            }
+        } else{
+            usuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+        }
+        return usuarioRespuesta;
     }
     
 }

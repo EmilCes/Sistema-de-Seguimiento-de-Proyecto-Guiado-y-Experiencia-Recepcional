@@ -39,7 +39,7 @@
             <String fx:value="seleccionar-director" />
          </styleClass>
          <children>
-            <ComboBox layoutX="620.0" layoutY="10.0" prefWidth="150.0" styleClass="combobox" stylesheets="@css/FXMLAnteproyectosPorDirector.css" />
+            <ComboBox fx:id="cbDirectores" layoutX="620.0" layoutY="10.0" prefWidth="150.0" promptText="Hola" styleClass="combobox" stylesheets="@css/FXMLAnteproyectosPorDirector.css" />
             <Label layoutX="550.0" layoutY="10.0" text="Director" textFill="WHITE">
                <font>
                   <Font size="18.0" />

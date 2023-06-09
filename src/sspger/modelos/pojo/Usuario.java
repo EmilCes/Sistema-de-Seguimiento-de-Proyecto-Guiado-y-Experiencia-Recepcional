@@ -15,13 +15,15 @@ public class Usuario {
     private String nombreUsuario;
     private String password;
     private Image imagen;
+    private String nombreCompleto;
     private int idTipoUsuario;
     private int codigoRespuesta;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, int idTipoUsuario, int codigoRespuesta) {
+    public Usuario(int idUsuario, String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, Image imagen, String nombreCompleto, int idTipoUsuario, int codigoRespuesta) {
+        this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
@@ -29,10 +31,11 @@ public class Usuario {
         this.numeroTelefonico = numeroTelefonico;
         this.nombreUsuario = nombreUsuario;
         this.password = password;
+        this.imagen = imagen;
+        this.nombreCompleto = nombreCompleto;
         this.idTipoUsuario = idTipoUsuario;
         this.codigoRespuesta = codigoRespuesta;
     }
-
     
     
     public int getIdUsuario() {
@@ -75,6 +78,10 @@ public class Usuario {
         return idTipoUsuario;
     }
 
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
     public int getCodigoRespuesta() {
         return codigoRespuesta;
     }
@@ -91,7 +98,6 @@ public class Usuario {
         this.imagen = imagen;
     }
 
-    
     public void setApellidoPaterno(String apellidoPaterno) {
         this.apellidoPaterno = apellidoPaterno;
     }
@@ -123,5 +129,16 @@ public class Usuario {
     public void setCodigoRespuesta(int codigoRespuesta) {
         this.codigoRespuesta = codigoRespuesta;
     }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    @Override
+    public String toString() {
+        return nombreCompleto;
+    }
+    
+    
     
 }
