@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apAñadirActividad" layoutX="191.0" layoutY="124.0" prefHeight="600.0" prefWidth="889.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLAñadirActividadController">
+<AnchorPane fx:id="apAñadirActividad" layoutX="191.0" layoutY="124.0" prefHeight="600.0" prefWidth="889.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAñadirActividadController">
     <children>
         <Label layoutX="44.0" layoutY="11.0" text="Añadir Actividad a Cronograma" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="11.0">
             <font>
@@ -20,10 +20,10 @@
                 <String fx:value="shadow" />
             </styleClass>
             <children>
-                <TextField fx:id="tfNombreProyectoInvestigacion" layoutX="340.0" layoutY="50.0" prefWidth="400.0" promptText="Titulo de la actividad" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-                <TextArea fx:id="taLineaInvestigacion" focusTraversable="false" layoutX="340.0" layoutY="90.0" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" prefWidth="400.0" promptText="Descripción de la actividad" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
-            <Button layoutX="430.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnEnviarParaAprobacion" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Enviar para su Aprobación" textFill="WHITE" />
-            <Button layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnGuardarBorrador" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Guardar Borrador" textFill="WHITE" />
+                <TextField fx:id="tfNombreActividad" layoutX="340.0" layoutY="50.0" prefWidth="400.0" promptText="Titulo de la actividad" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+                <TextArea fx:id="taDescripcionActividad" focusTraversable="false" layoutX="340.0" layoutY="90.0" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" prefWidth="400.0" promptText="Descripción de la actividad" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+            <Button layoutX="430.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnCancelar" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Cancelar" textFill="WHITE" />
+            <Button layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnGuardarActividad" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Guardar" textFill="WHITE" />
             <Pane layoutX="90.0" layoutY="50.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
                <children>
                   <Label layoutX="100.0" layoutY="6.0" text="Titulo" textFill="WHITE" />
@@ -34,18 +34,18 @@
                   <Label layoutX="85.0" layoutY="6.0" text="Descripción" textFill="WHITE" />
                </children>
             </Pane>
-            <DatePicker layoutX="340.0" layoutY="205.0" prefWidth="400.0" promptText="Fecha de Entrega" styleClass="combobox" stylesheets="@css/FXMLAñadirActividad.css" />
+            <DatePicker fx:id="dpFechaInicio" layoutX="340.0" layoutY="205.0" prefWidth="400.0" promptText="Fecha de Entrega" styleClass="combobox" stylesheets="@css/FXMLAñadirActividad.css" />
             <Pane layoutX="90.0" layoutY="205.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
                <children>
-                  <Label layoutX="100.0" layoutY="6.0" text="Fecha" textFill="WHITE" />
+                  <Label layoutX="90.0" layoutY="6.0" text="Fecha Inicio" textFill="WHITE" />
                </children>
             </Pane>
-            <ComboBox layoutX="340.0" layoutY="250.0" prefWidth="400.0" promptText="Hora de Entrega" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
             <Pane layoutX="90.0" layoutY="250.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
                <children>
-                  <Label layoutX="105.0" layoutY="6.0" text="Hora" textFill="WHITE" />
+                  <Label layoutX="95.0" layoutY="6.0" text="Fecha Fin" textFill="WHITE" />
                </children>
             </Pane>
+            <DatePicker fx:id="dpFechaEntrega" layoutX="340.0" layoutY="250.0" prefWidth="400.0" promptText="Fecha de Entrega" styleClass="combobox" stylesheets="@css/FXMLAñadirActividad.css" />
             </children>
         </Pane>
     </children>

@@ -54,5 +54,24 @@ public class CuerpoAcademico {
     public String toString() {
         return nombre;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+         if (obj == this) {
+            return true;
+        }
+
+        if (!(obj instanceof CuerpoAcademico)) {
+            return false;
+        }
+        
+        CuerpoAcademico cuerpoAcademico = (CuerpoAcademico) obj;
+        
+        if(cuerpoAcademico.idCuerpoAcademico == this.idCuerpoAcademico){
+            return true;
+        }
+        return false;
+    }
+    
     
 }
