@@ -24,7 +24,7 @@ Kirbith
 César
 1. Crear anteproyecto ✅
 2. Modificar anteproyecto
-3. Postular Anteproyecto
+3. Postular Anteproyecto ✅
 4. Consultar Anteproyectos Disponibles ✅
 5. Consultar Detalles Anteproyecto ✅
 6. Asignar estudiante a anteproyecto ✅
