@@ -10,4 +10,9 @@
 .btn-buscar{
     -fx-background-color: black;
     -fx-background-radius: 20px;
+    -fx-cursor: hand
+}
+
+.btn-buscar:hover{
+    -fx-background-color: #666666;
 }

@@ -110,6 +110,8 @@ public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
     private void clicBtnVerAnteproyectos(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml");
+
     }
 
     
@@ -122,11 +124,13 @@ public class FXMLMenuPrincipalController implements Initializable {
     //Estudiante Sin Anteproyecto
     @FXML
     private void clicBtnVerAnteproyectosDisponibles(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLListaAnteproyectosDisponibles.fxml");
     }
 
     //Encargado CA
     @FXML
     private void clicBtnVerAnteproyectosPorValidar(ActionEvent event) {
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLListaAnteproyectosPorValidar.fxml");
     }
 
     @FXML

@@ -38,7 +38,6 @@ public class SesionDAO {
                 }
                 conexion.close();
             } catch(SQLException ex){
-                System.err.println(ex.getMessage());
                 usuarioVerificado.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
             }
         } else{

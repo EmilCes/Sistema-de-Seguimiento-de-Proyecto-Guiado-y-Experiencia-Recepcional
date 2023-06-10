@@ -13,13 +13,18 @@
 
 <AnchorPane fx:id="apListaAnteproyectosPorProfesor" layoutX="46.0" layoutY="68.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAnteproyectosPorDirectorController">
     <children>
-        <ScrollPane hbarPolicy="NEVER" layoutX="184.0" layoutY="240.0" prefHeight="600.0" prefWidth="889.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+      <Label text="Sin Anteproyectos" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+        <ScrollPane fx:id="spListaAnteproyectos" hbarPolicy="NEVER" layoutX="184.0" layoutY="240.0" prefHeight="600.0" prefWidth="889.0" vmax="100.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
             <styleClass>
                 <String fx:value="white-bg" />
                 <String fx:value="shadow" />
             </styleClass>
             <content>
-                <VBox fx:id="vbAnteproyectos" prefHeight="549.0" prefWidth="818.0" styleClass="white-bg" stylesheets="@css/FXMLMenuPrincipal.css">
+                <VBox fx:id="vbAnteproyectos" prefHeight="405.0" prefWidth="818.0" style="-fx-background-color: white;" styleClass="white-bg" stylesheets="@css/FXMLMenuPrincipal.css">
                     <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </padding>
@@ -39,8 +44,12 @@
             <String fx:value="seleccionar-director" />
          </styleClass>
          <children>
-            <ComboBox fx:id="cbDirectores" layoutX="620.0" layoutY="10.0" prefWidth="150.0" promptText="Hola" styleClass="combobox" stylesheets="@css/FXMLAnteproyectosPorDirector.css" />
-            <Label layoutX="550.0" layoutY="10.0" text="Director" textFill="WHITE">
+            <ComboBox fx:id="cbDirectores" layoutX="570.0" layoutY="10.0" prefWidth="220.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css">
+               <styleClass>
+                  <String fx:value="combobox" />
+                  <String fx:value="jfx-combo-box" />
+               </styleClass></ComboBox>
+            <Label layoutX="500.0" layoutY="10.0" text="Director" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

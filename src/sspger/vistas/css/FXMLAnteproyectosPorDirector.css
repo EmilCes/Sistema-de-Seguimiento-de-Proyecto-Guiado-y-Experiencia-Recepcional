@@ -9,7 +9,7 @@
 }
 
 .combobox{
-    -fx-background-color: white;
+    -fx-background-color: transparent;
     -fx-border-color: black;
     -fx-border-radius: 10px;
     -fx-prompt-text-fill: black
@@ -22,5 +22,16 @@
 
 .combo-box .list-view .list-cell:selected .text {
     -fx-text-fill: white; 
+}
+
+
+.jfx-combo-box {
+	-fx-background-color:  transparent;
+        -fx-border-color: white;
+}
+
+.jfx-combo-box .label {
+	-fx-background-color:  WHITE;
+	-fx-text-fill: RED;
 }
 

@@ -12,17 +12,17 @@ import sspger.modelos.pojo.TipoUsuarioRespuesta;
 import sspger.utils.Constantes;
 
 public class TipoUsuarioDAO {
-      public static TipoUsuarioRespuesta obtenerTipoUsuarioRespuesta(){
+     public static TipoUsuarioRespuesta obtenerTipoUsuarioRespuesta() {
         TipoUsuarioRespuesta tipoUsuarioRespuesta = new TipoUsuarioRespuesta();
         tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
         Connection conexionBD = ConexionBD.abrirConexionBD();
-        if(conexionBD != null){
-            try{
+        if (conexionBD != null) {
+            try {
                 String consulta = "SELECT idTipoUsuario, descripcion FROM TipoUsuario;";
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
                 ResultSet respuestaBaseDatos = prepararSentencia.executeQuery();
                 ArrayList<TipoUsuario> tipoUsuariosConsulta = new ArrayList();
-                while(respuestaBaseDatos.next()){
+                while (respuestaBaseDatos.next()) {
                     TipoUsuario tipoUsuario = new TipoUsuario();
                     tipoUsuario.setIdTipoUsuario(respuestaBaseDatos.getInt("idTipoUsuario"));
                     tipoUsuario.setDescripcion(respuestaBaseDatos.getString("descripcion"));
@@ -30,10 +30,10 @@ public class TipoUsuarioDAO {
                 }
                 tipoUsuarioRespuesta.setTiposUsuarios(tipoUsuariosConsulta);
                 conexionBD.close();
-            } catch(SQLException e){
+            } catch (SQLException e) {
                 tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
             }
-        } else{
+        } else {
             tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
         }
         return tipoUsuarioRespuesta;
