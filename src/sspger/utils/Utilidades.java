@@ -50,5 +50,19 @@ public class Utilidades {
             System.err.println(ex.getStackTrace());
         }
     }
+    
+    public static <T> T cambiarPaneObtenerControlador(AnchorPane escenario, String path) {
+    escenario.getChildren().clear();
+    try {
+        FXMLLoader loader = new FXMLLoader(Utilidades.class.getResource(path));
+        AnchorPane nuevoPane = loader.load();
+        escenario.getChildren().add(nuevoPane);
+        return loader.getController();
+    } catch (IOException ex) {
+        System.err.println(ex.getMessage());
+        return null;
+    }
+}
+
 
 }

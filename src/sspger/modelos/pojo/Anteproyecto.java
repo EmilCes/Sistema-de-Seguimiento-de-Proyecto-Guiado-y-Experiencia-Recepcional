@@ -23,16 +23,12 @@ public class Anteproyecto {
     private int idProfesor;
     private int idEstado;
     private String nombreProfesor;
-
-    public Anteproyecto() {
-        
+    private int codigoRespuesta;
+    
+    public Anteproyecto() {  
     }
 
-    public Anteproyecto(int idAnteproyecto, String nombreProyectoInvestigacion, String nombreTrabajoRecepcional, 
-                        String requisitos, String resultadosEsperados, int numeroEstudiantes, String fechaPublicacion, 
-                        String duracionAproximada, String descripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, 
-                        String bibliografiaRecomendada, String lineaInvestigacion, String notas, int idLAGC, int idTipoAnteproyecto, 
-                        int idCuerpoAcademico, int idProfesor, int idEstado, String nombreProfesor) {
+    public Anteproyecto(int idAnteproyecto, String nombreProyectoInvestigacion, String nombreTrabajoRecepcional, String requisitos, String resultadosEsperados, int numeroEstudiantes, String fechaPublicacion, String duracionAproximada, String descripcionTrabajoRecepcional, String descripcionProyectoInvestigacion, String bibliografiaRecomendada, String lineaInvestigacion, String notas, int idLAGC, int idTipoAnteproyecto, int idCuerpoAcademico, int idProfesor, int idEstado, String nombreProfesor, int codigoRespuesta) {
         this.idAnteproyecto = idAnteproyecto;
         this.nombreProyectoInvestigacion = nombreProyectoInvestigacion;
         this.nombreTrabajoRecepcional = nombreTrabajoRecepcional;
@@ -52,7 +48,9 @@ public class Anteproyecto {
         this.idProfesor = idProfesor;
         this.idEstado = idEstado;
         this.nombreProfesor = nombreProfesor;
+        this.codigoRespuesta = codigoRespuesta;
     }
+
 
     
 
@@ -126,6 +124,10 @@ public class Anteproyecto {
 
     public int getIdEstado() {
         return idEstado;
+    }
+
+    public int getCodigoRespuesta() {
+        return codigoRespuesta;
     }
 
     public String getNombreProfesor() {
@@ -207,5 +209,8 @@ public class Anteproyecto {
     public void setNombreProfesor(String nombreProfesor) {
         this.nombreProfesor = nombreProfesor;
     }
-    
+
+    public void setCodigoRespuesta(int codigoRespuesta) {
+        this.codigoRespuesta = codigoRespuesta;
+    }    
 }

@@ -1,5 +1,6 @@
 
 package sspger.modelos.pojo;
+<<<<<<< HEAD
 import java.io.File;
 import java.time.LocalDate;
 
@@ -25,6 +26,41 @@ public class Actividad {
         this.idAnteproyecto = idAnteproyecto;
     }
 
+=======
+
+
+public class Actividad {
+    
+    private int codigoRespuesta;
+    private int idActividad;
+    private String titulo;
+    private String descripcion;
+    private String fechaInicio;
+    private String fechaFin;
+    private int idAnteproyecto;
+
+    public Actividad() {
+    }
+
+    public Actividad(int codigoRespuesta, int idActividad, String titulo, String descripcion, String fechaInicio, String fechaFin, int idAnteproyecto) {
+        this.codigoRespuesta = codigoRespuesta;
+        this.idActividad = idActividad;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.idAnteproyecto = idAnteproyecto;
+    }
+
+    public int getCodigoRespuesta() {
+        return codigoRespuesta;
+    }
+
+    public int getIdActividad() {
+        return idActividad;
+    }
+
+>>>>>>> main
     public String getTitulo() {
         return titulo;
     }
@@ -33,6 +69,7 @@ public class Actividad {
         return descripcion;
     }
 
+<<<<<<< HEAD
     public LocalDate getFechaInicio() {
         return fechaInicio;
     }
@@ -43,12 +80,31 @@ public class Actividad {
 
     public File getArchivo() {
         return archivo;
+=======
+    public String getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public String getFechaFin() {
+        return fechaFin;
+>>>>>>> main
     }
 
     public int getIdAnteproyecto() {
         return idAnteproyecto;
     }
 
+<<<<<<< HEAD
+=======
+    public void setCodigoRespuesta(int codigoRespuesta) {
+        this.codigoRespuesta = codigoRespuesta;
+    }
+
+    public void setIdActividad(int idActividad) {
+        this.idActividad = idActividad;
+    }
+
+>>>>>>> main
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -57,6 +113,7 @@ public class Actividad {
         this.descripcion = descripcion;
     }
 
+<<<<<<< HEAD
     public void setFechaInicio(LocalDate fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
@@ -67,11 +124,20 @@ public class Actividad {
 
     public void setArchivo(File archivo) {
         this.archivo = archivo;
+=======
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public void setFechaFin(String fechaFin) {
+        this.fechaFin = fechaFin;
+>>>>>>> main
     }
 
     public void setIdAnteproyecto(int idAnteproyecto) {
         this.idAnteproyecto = idAnteproyecto;
     }
+<<<<<<< HEAD
 
     public int getCodigoRespuesta() {
         return codigoRespuesta;
@@ -84,4 +150,7 @@ public class Actividad {
     
     
     
+=======
+       
+>>>>>>> main
 }

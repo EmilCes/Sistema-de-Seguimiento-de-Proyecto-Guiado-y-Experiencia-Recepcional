@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="apListaAnteproyectos" layoutX="46.0" layoutY="68.0" prefHeight="555.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLListaAnteproyectosDelDirectorController">
+    <children>
+        <ScrollPane fx:id="spListaAnteproyectos" hbarPolicy="NEVER" layoutX="184.0" layoutY="240.0" prefHeight="600.0" prefWidth="889.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+            <styleClass>
+                <String fx:value="white-bg" />
+                <String fx:value="shadow" />
+            </styleClass>
+            <content>
+                <VBox fx:id="vbAnteproyectos" prefHeight="405.0" prefWidth="818.0" styleClass="white-bg" stylesheets="@css/FXMLMenuPrincipal.css">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </VBox>
+            </content>
+         <stylesheets>
+            <URL value="@css/FXMLMenuPrincipal.css" />
+            <URL value="@css/FXMLLlistasAnteproyectos.css" />
+         </stylesheets>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+        </ScrollPane>
+        <Label layoutX="44.0" layoutY="11.0" text="Mis Anteproyectos" AnchorPane.leftAnchor="25.0">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+      <Pane fx:id="pnAnteproyectosNoDisponibles" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="240.0" layoutY="195.0" text="No tienes anteproyectos en este estado">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css" AnchorPane.bottomAnchor="470.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="80.0">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="seleccionar-director" />
+         </styleClass>
+         <children>
+            <ComboBox fx:id="cbEstadoAnteproyecto" layoutX="570.0" layoutY="10.0" prefWidth="220.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css">
+               <styleClass>
+                  <String fx:value="jfx-combo-box" />
+                  <String fx:value="combobox" />
+               </styleClass>
+            </ComboBox>
+            <Label layoutX="400.0" layoutY="10.0" text="Estado Anteproyecto" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
