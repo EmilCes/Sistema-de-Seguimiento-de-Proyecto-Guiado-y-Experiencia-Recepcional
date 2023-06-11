@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -31,6 +32,8 @@ public class FXMLAnteproyectoFragmentoController implements Initializable {
     private AnchorPane apPadre;
     private int idEstadoAnteproyecto;
     private int idAnteproyecto;
+    @FXML
+    private Button btnVerAvances;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,6 +72,7 @@ public class FXMLAnteproyectoFragmentoController implements Initializable {
 
     @FXML
     private void clicBtnVerAvances(ActionEvent event) {
+        FXMLAnteproyectoFormularioController anteproyectoFormularioController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
     }
     
 }

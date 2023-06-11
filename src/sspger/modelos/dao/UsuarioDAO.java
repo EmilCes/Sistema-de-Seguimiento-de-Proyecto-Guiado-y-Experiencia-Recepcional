@@ -100,5 +100,42 @@ public class UsuarioDAO {
         }
         return respuesta;
     }
+    
+    
+public static int modificarUsuario(Usuario usuario) {
+    int respuesta;
+    Connection conexionBD = ConexionBD.abrirConexionBD();
+    if (conexionBD != null) {
+        try {
+            String sentencia = "UPDATE Usuarios SET nombre = ?, apellidoPaterno = ?, apellidoMaterno = ?, " +
+                    "correoInstitucional = ?, numeroTelefonico = ?, nombreUsuario = ?, password = ?, " +
+                    "imagenUsuario = ?, idTipoUsuario = ? WHERE idUsuario = ?";
+
+            PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
+            prepararSentencia.setString(1, usuario.getNombre());
+            prepararSentencia.setString(2, usuario.getApellidoPaterno());
+            prepararSentencia.setString(3, usuario.getApellidoMaterno());
+            prepararSentencia.setString(4, usuario.getCorreoInstitucional());
+            prepararSentencia.setString(5, usuario.getNumeroTelefonico());
+            prepararSentencia.setString(6, usuario.getNombreUsuario());
+            prepararSentencia.setString(7, usuario.getPassword());
+            prepararSentencia.setBytes(8, null);
+            prepararSentencia.setInt(9, usuario.getIdTipoUsuario());
+            prepararSentencia.setInt(10, usuario.getIdUsuario());
+            
+            int filasAfectadas = prepararSentencia.executeUpdate();
+            respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
+            conexionBD.close();
+        } catch (SQLException e) {
+            System.out.print(e.getMessage());
+            respuesta = Constantes.ERROR_CONSULTA;
+        }
+    } else {
+        respuesta = Constantes.ERROR_CONEXION;
+    }
+
+    return respuesta;
+}
+
 
 }

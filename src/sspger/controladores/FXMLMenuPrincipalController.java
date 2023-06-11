@@ -1,10 +1,11 @@
 package sspger.controladores;
-
+import sspger.controladores.FXMLFormularioUsuarioController;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -40,6 +41,8 @@ public class FXMLMenuPrincipalController implements Initializable {
     private Label lbNombreUsuarioEstudianteConAnteproyecto;
     @FXML
     private Label lbNombreUsuarioEncargadoCA;
+    @FXML
+    private Button btnModificarUsuario;
    
     
     @Override
@@ -136,6 +139,11 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private void clicBtnVerAnteproyectosPorDirector(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLAnteproyectosPorDirector.fxml");
+    }
+
+    @FXML
+    private void clicBtnModificarUsuario(ActionEvent event) {
+       Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLModificarUsuario.fxml");
     }
     
 }

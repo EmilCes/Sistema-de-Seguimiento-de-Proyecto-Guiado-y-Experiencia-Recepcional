@@ -38,6 +38,23 @@ public class Usuario {
     }
     
     
+
+    public Usuario(String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, Image imagen, String nombreCompleto, int idTipoUsuario) {
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.correoInstitucional = correoInstitucional;
+        this.numeroTelefonico = numeroTelefonico;
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
+        this.imagen = imagen;
+        this.nombreCompleto = nombreCompleto;
+        this.idTipoUsuario = idTipoUsuario;
+    }
+    
+    
+    
+    
     public int getIdUsuario() {
         return idUsuario;
     }
