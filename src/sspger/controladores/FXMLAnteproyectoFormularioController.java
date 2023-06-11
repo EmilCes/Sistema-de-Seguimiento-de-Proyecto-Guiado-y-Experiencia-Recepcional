@@ -99,6 +99,8 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     private Button btnModificarAnteproyectoCorreccion;
     @FXML
     private Button btnAñadirActividad;
+    @FXML
+    private Button btnRgresar;
 
     private ObservableList<CuerpoAcademico> cuerposAcademicos;
     private ObservableList<LGAC> lgac;
@@ -123,6 +125,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
 
     private boolean siendoModificado;
     private boolean comboBoxModificado;
+
 
 
     @Override
@@ -579,6 +582,8 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     public void cargarInformacionVerAnteproyecto(int idAnteproyecto) {
         this.idAnteproyecto = idAnteproyecto;
         lbTituloMenu.setText("Anteproyecto");
+        lbTituloMenu.setLayoutX(265);
+        btnRgresar.setVisible(true);
         Anteproyecto anteproyecto = AnteproyectoDAO.obtenerAnteproyectoPorId(idAnteproyecto);
         switch (anteproyecto.getCodigoRespuesta()) {
             case Constantes.ERROR_CONEXION:
@@ -767,6 +772,17 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
             btnGuardarBorrador.setVisible(true);
         }
     }
+    
+    private void regresar(){
+        switch(UsuarioSingleton.getInstancia().getUsuario().getIdTipoUsuario()){
+            case Constantes.PROFESOR:
+                Utilidades.cambiarPane(apCrearAnteproyecto, "/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml");
+                break;
+            case Constantes.ENCARGADO_CA:
+                Utilidades.cambiarPane(apCrearAnteproyecto, "/sspger/vistas/FXMLListaAnteproyectosPorValidar.fxml");
+                break;
+        }
+    }
 
     @FXML
     private void clicBtnEnviarParaAprobacion(ActionEvent event) {
@@ -783,6 +799,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     @FXML
     private void clicBtnModificarAnteproyecto(ActionEvent event) {
         modificarAnteproyectoCargarInformacion();
+        regresar();
     }
 
     @FXML
@@ -795,11 +812,13 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     @FXML
     private void clicBtnAprobarAnteproyecto(ActionEvent event) {
         aprobarAnteproyecto();
+        regresar();
     }
 
     @FXML
     private void clicBtnEnviarCorrecciones(ActionEvent event) {
         validarCampoNotas();
+        regresar();
     }
 
     @FXML
@@ -807,6 +826,11 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
         FXMLAñadirActividadController añadirActividadController = Utilidades.cambiarPaneObtenerControlador(
                 apCrearAnteproyecto, "/sspger/vistas/FXMLAñadirActividad.fxml");
         añadirActividadController.cargarAnteproyecto(idAnteproyecto);
+    }
+
+    @FXML
+    private void clicBtnRegresar(ActionEvent event) {
+        regresar();
     }
 
 }

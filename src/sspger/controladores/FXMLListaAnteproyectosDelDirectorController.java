@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -41,10 +43,10 @@ public class FXMLListaAnteproyectosDelDirectorController implements Initializabl
     private Pane pnAnteproyectosNoDisponibles;
     @FXML
     private ComboBox<EstadoAnteproyecto> cbEstadoAnteproyecto;
-    
+
     private ObservableList<EstadoAnteproyecto> estadosAnteproyecto;
     private int idProfesor;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cargarInformacionEstadosAnteproyecto();
@@ -60,7 +62,7 @@ public class FXMLListaAnteproyectosDelDirectorController implements Initializabl
             }
 
         });
-        
+
     }
 
     private void buscarAnteproyectosPorDirectorYEstado(int idDirector, int idEstado) throws IOException {
@@ -85,30 +87,53 @@ public class FXMLListaAnteproyectosDelDirectorController implements Initializabl
                         vbAnteproyectos.heightProperty()
                 ));
                 if (anteproyectos.size() > 0) {
-                    for (Anteproyecto anteproyecto : anteproyectos) {
-                        FXMLLoader cargadorAnteproyectoFragmento = new FXMLLoader(getClass().getResource("/sspger/vistas/FXMLAnteproyectoFragmento.fxml"));
-                        Pane anteproyectoFragmento = cargadorAnteproyectoFragmento.load();
-                        FXMLAnteproyectoFragmentoController anteproyectoFragmentoController = cargadorAnteproyectoFragmento.getController();
-                        anteproyectoFragmentoController.cargarInformacionAnteproyecto(anteproyecto, apListaAnteproyectos);
-                        vbAnteproyectos.getChildren().add(anteproyectoFragmento);                            
-                    }
+                    mostrarAnteproyectos(anteproyectos, idEstado);
                 } else {
                     spListaAnteproyectos.setVisible(false);
                     pnAnteproyectosNoDisponibles.setVisible(true);
                 }
-                
         }
     }
-    
-    private void buscarAnteproyectosPorEstado(int idEstado){
+
+    private void mostrarAnteproyectos(ArrayList<Anteproyecto> anteproyectos, int idEstado) {
+        try {
+            if (idEstado == Constantes.ASIGNADO) {
+                for (Anteproyecto anteproyecto : anteproyectos) {
+                    FXMLLoader cargadorAnteproyectoFragmento = new FXMLLoader(getClass().getResource("/sspger/vistas/FXMLAnteproyectoFragmento.fxml"));
+                    Pane anteproyectoFragmento;
+                    anteproyectoFragmento = cargadorAnteproyectoFragmento.load();
+                    FXMLAnteproyectoFragmentoController anteproyectoFragmentoController = cargadorAnteproyectoFragmento.getController();
+                    anteproyectoFragmentoController.cargarInformacionAnteproyecto(anteproyecto, apListaAnteproyectos);
+                    vbAnteproyectos.getChildren().add(anteproyectoFragmento);
+
+                }
+            } else{
+                for (Anteproyecto anteproyecto : anteproyectos) {
+                    FXMLLoader cargadorAnteproyectoFragmento = new FXMLLoader(getClass().getResource("/sspger/vistas/FXMLAnteproyectoDisponibleFragmento.fxml"));
+                    Pane anteproyectoFragmento;
+                    anteproyectoFragmento = cargadorAnteproyectoFragmento.load();
+                    FXMLAnteproyectoDisponibleFragmentoController anteproyectoDisponibleFragmentoController = cargadorAnteproyectoFragmento.getController();
+                    anteproyectoDisponibleFragmentoController.cargarInformacionAnteproyecto(anteproyecto, apListaAnteproyectos);
+                    vbAnteproyectos.getChildren().add(anteproyectoFragmento);
+
+                }
+            }
+
+        } catch (IOException ex) {
+            Utilidades.mostrarDialogoSimple("Error en la información",
+                    "Hubo un error al intentar recuperar la información", Alert.AlertType.ERROR);
+        }
+    }
+
+    private void buscarAnteproyectosPorEstado(int idEstado) {
         try {
             buscarAnteproyectosPorDirectorYEstado(idProfesor, idEstado);
         } catch (IOException ex) {
             Utilidades.mostrarDialogoSimple("Error en la información",
-                                            "Hubo un error al intentar recuperar la información", Alert.AlertType.ERROR);
+                    "Hubo un error al intentar recuperar la información", Alert.AlertType.ERROR);
         }
     }
-    
+
     private void cargarInformacionEstadosAnteproyecto() {
         estadosAnteproyecto = FXCollections.observableArrayList();
         EstadoAnteproyectoRespuesta estadoAnteproyectoBD = EstadoAnteproyectoDAO.obtenerEstadosAnteproyecto();
@@ -124,5 +149,5 @@ public class FXMLListaAnteproyectosDelDirectorController implements Initializabl
                 cbEstadoAnteproyecto.setItems(estadosAnteproyecto);
         }
     }
-    
+
 }

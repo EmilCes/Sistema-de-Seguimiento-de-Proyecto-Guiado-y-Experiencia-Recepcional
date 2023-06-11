@@ -1,10 +1,13 @@
 package sspger.controladores;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import javafx.scene.image.Image;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +18,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 import sspger.modelos.dao.TipoUsuarioDAO;
 import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.dao.UsuarioDAO;
@@ -59,6 +65,8 @@ public class FXMLFormularioUsuarioController implements Initializable {
     @FXML
     private Button btnGuardarUsuario;
 
+    private File archivoFoto;
+
  
     public void initialize(URL url, ResourceBundle rb) {
         configurarCbTipoUsuario();
@@ -66,7 +74,22 @@ public class FXMLFormularioUsuarioController implements Initializable {
 
     @FXML
     private void clicBtnSeleccionarFoto(ActionEvent event) {
-        // Lógica para seleccionar una foto
+        FileChooser dialogoImagen = new FileChooser();
+        dialogoImagen.setTitle("Selecciona una foto");
+        FileChooser.ExtensionFilter filtroImg = new FileChooser.ExtensionFilter("Archivos JPG (*.jpg)", "*.JPG", "*.JPEG");
+        dialogoImagen.getExtensionFilters().add(filtroImg);
+        Stage escenarioActual = (Stage) tfNombre.getScene().getWindow();
+        archivoFoto = dialogoImagen.showOpenDialog(escenarioActual);
+        
+        if(archivoFoto != null){
+            try {
+                BufferedImage bufferImg = ImageIO.read(archivoFoto);
+                Image imagenFoto = SwingFXUtils.toFXImage(bufferImg, null);
+                imgImagenPerfil.setImage(imagenFoto);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML

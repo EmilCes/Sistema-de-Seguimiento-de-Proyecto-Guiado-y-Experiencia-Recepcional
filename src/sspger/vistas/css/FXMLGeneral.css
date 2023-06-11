@@ -68,3 +68,26 @@
     -fx-background-color: white;
     -fx-border-color: black;
 }
+
+.button-regresar{
+    -fx-background-color: black;
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.button-regresar:hover{
+    -fx-cursor: hand;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-color: #b5b5b5;
+    -fx-border-color: black;
+}
+
+.button-regresar:focused{
+    -fx-cursor: hand;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-color: #b1b5b6;
+    -fx-border-color: black;
+}
