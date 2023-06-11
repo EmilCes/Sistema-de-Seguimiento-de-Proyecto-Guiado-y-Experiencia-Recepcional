@@ -21,7 +21,7 @@
                      <children>
                         <AnchorPane fx:id="apMenuAdministrador" layoutX="-15.0" layoutY="25.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <FontAwesomeIcon fx:id="faIconAdmin" fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
@@ -61,11 +61,12 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
+                              <ImageView fx:id="ivImagenPerfilAdmin" fitHeight="85.0" fitWidth="101.0" layoutX="60.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuDirector" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="70.0" layoutY="125.0" size="7em" />
+                              <FontAwesomeIcon fx:id="faIconDirector" fill="WHITE" glyphName="USER" layoutX="70.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
@@ -110,11 +111,12 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
+                              <ImageView fx:id="ivImagenPerfilDirector" fitHeight="85.0" fitWidth="101.0" layoutX="60.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuEstudiante" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <FontAwesomeIcon fx:id="faIconEstudiante" fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
@@ -154,11 +156,12 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
+                              <ImageView fx:id="ivImagenPerfilEstudiante" fitHeight="85.0" fitWidth="101.0" layoutX="60.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuEstudianteConAnteproyecto" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <FontAwesomeIcon fx:id="faIconEstudianteConAnteproyecto" fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
@@ -203,11 +206,12 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
+                              <ImageView fx:id="ivImagenPerfilEstudianteConAnteproyecto" fitHeight="85.0" fitWidth="101.0" layoutX="60.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuEncargadoCA" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <FontAwesomeIcon fx:id="faIconEncargadoCA" fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
@@ -252,6 +256,7 @@
                                     <String fx:value="shadow" />
                                  </styleClass>
                               </Button>
+                              <ImageView fx:id="ivImagenPerfilEncargadoCA" fitHeight="85.0" fitWidth="101.0" layoutX="60.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
                            </children>
                         </AnchorPane>
                      </children>
