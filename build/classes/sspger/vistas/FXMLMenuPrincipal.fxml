@@ -52,11 +52,20 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+                              <Button mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="549.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="14.0">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuDirector" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="69.0" layoutY="125.0" size="7em" />
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="70.0" layoutY="125.0" size="7em" />
                               <Label layoutX="66.0" layoutY="138.0" text="Bienvenido" textFill="WHITE">
                                  <font>
                                     <Font size="17.0" />
@@ -92,6 +101,15 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="549.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="14.0">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuEstudiante" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -126,6 +144,15 @@
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
                               </Button>
                            </children>
                         </AnchorPane>
@@ -167,6 +194,15 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+                              <Button mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </AnchorPane>
                         <AnchorPane fx:id="apMenuEncargadoCA" layoutX="10.0" layoutY="10.0" prefHeight="555.0" prefWidth="211.0" styleClass="nav-form" stylesheets="@css/FXMLMenuPrincipal.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -207,16 +243,22 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
+                              <Button mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
                            </children>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                     <children>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </children>

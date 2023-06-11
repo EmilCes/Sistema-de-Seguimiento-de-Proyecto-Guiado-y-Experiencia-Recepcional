@@ -38,4 +38,31 @@ public class TipoUsuarioDAO {
         }
         return tipoUsuarioRespuesta;
     }
+    
+   public static TipoUsuario obtenerTipoUsuarioPorId(int id) {
+    TipoUsuario tipoUsuario = new TipoUsuario();
+    tipoUsuario.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+    Connection conexionBD = ConexionBD.abrirConexionBD();
+    if (conexionBD != null) {
+        try {
+            String consulta = "SELECT idTipoUsuario, descripcion FROM TipoUsuario WHERE idTipoUsuario = ?";
+            PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
+            prepararSentencia.setInt(1, id);
+            ResultSet respuestaBaseDatos = prepararSentencia.executeQuery();
+            if (respuestaBaseDatos.next()) {
+                tipoUsuario.setIdTipoUsuario(respuestaBaseDatos.getInt("idTipoUsuario"));
+                tipoUsuario.setDescripcion(respuestaBaseDatos.getString("descripcion"));
+            }
+            conexionBD.close();
+        } catch (SQLException e) {
+            tipoUsuario.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+        }
+    } else {
+        tipoUsuario.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+    }
+    return tipoUsuario;
 }
+
+}
+
+  
