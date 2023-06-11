@@ -1,10 +1,8 @@
+
 package sspger.controladores;
 
-import javafx.scene.image.Image;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -17,15 +15,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import sspger.modelos.dao.TipoUsuarioDAO;
 import sspger.modelos.dao.UsuarioDAO;
-import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.pojo.TipoUsuario;
-import sspger.modelos.pojo.TipoUsuarioRespuesta;
 import sspger.modelos.pojo.Usuario;
 import sspger.utils.Constantes;
+import sspger.utils.UsuarioSingleton;
 import sspger.utils.Utilidades;
 
-public class FXMLFormularioUsuarioController implements Initializable {
 
+public class FXMLModificarUsuarioController implements Initializable {
+
+    @FXML
+    private AnchorPane apModificarUsuario;
     @FXML
     private ComboBox<TipoUsuario> cbTipoUsuario;
     @FXML
@@ -39,73 +39,45 @@ public class FXMLFormularioUsuarioController implements Initializable {
     @FXML
     private TextField tfNumeroTelefonico;
     @FXML
-    private Button btnSeleccionarFoto;
-    @FXML
-    private TextField tfContraseña;
-    @FXML
     private ImageView imgImagenPerfil;
-    
-    private ObservableList<TipoUsuario> tipoUsuarios;
     @FXML
-    private Label lbInformacion;
-    @FXML
-    private Label lbNombreUsuario;
-    @FXML
-    private Label lbEncabezado;
-    @FXML
-    private AnchorPane apRegistrarUsuario;
+    private Button btnSeleccionarFoto;
     @FXML
     private Button btnModificarUsuario;
     @FXML
-    private Button btnGuardarUsuario;
+    private TextField tfContraseña;
+    @FXML
+    private Label lbInformacion;
+    @FXML
+    private Label lbEncabezado;
+    @FXML
+    private TextField tfNombreUsuario;
 
- 
+    
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        configurarCbTipoUsuario();
+        Usuario usuario = UsuarioSingleton.getInstancia().getUsuario();
+        cargarInformacionUsuario(usuario);
+    }    
+
+    public void cargarInformacionUsuario(Usuario usuario){
+        tfNombreUsuario.setText(usuario.getNombreUsuario());
+        TipoUsuario tipoUsuario = TipoUsuarioDAO.obtenerTipoUsuarioPorId(usuario.getIdTipoUsuario());
+        cbTipoUsuario.setValue(tipoUsuario);
+        
+        cbTipoUsuario.setDisable(true);
+        tfNombre.setText(usuario.getNombre());
+        tfApellidoPaterno.setText(usuario.getApellidoPaterno());
+        tfApellidoMaterno.setText(usuario.getApellidoMaterno());
+        tfCorreo.setText(usuario.getCorreoInstitucional());
+        tfNumeroTelefonico.setText(usuario.getNumeroTelefonico());
+        tfContraseña.setText(usuario.getPassword());
+        
     }
-
-    @FXML
-    private void clicBtnSeleccionarFoto(ActionEvent event) {
-        // Lógica para seleccionar una foto
-    }
-
-    @FXML
-    private void clicBtnGuardarUsuario(ActionEvent event) {
-        resetearEstilos();
-        validarCampos();
-    }
-
-    private void guardarUsuario() {
-        String nombreUsuario = tfNombre.getText() + "_" + tfApellidoPaterno.getText();
-        nombreUsuario = nombreUsuario.replaceAll("\\s", "");
-        int tipoUsuario = 0;
-        TipoUsuario opcionSeleccionada = cbTipoUsuario.getValue();
-        Image imagenPerfil = imgImagenPerfil.getImage();
-
-        if (opcionSeleccionada != null) {
-            tipoUsuario = opcionSeleccionada.getIdTipoUsuario();
-        }
-
-        Usuario usuario = new Usuario();
-        usuario.setNombre(tfNombre.getText());
-        usuario.setApellidoPaterno(tfApellidoPaterno.getText());
-        usuario.setApellidoMaterno(tfApellidoMaterno.getText());
-        usuario.setCorreoInstitucional(tfCorreo.getText());
-        usuario.setNumeroTelefonico(tfNumeroTelefonico.getText());
-        usuario.setNombreUsuario(nombreUsuario);
-        usuario.setPassword(tfContraseña.getText());
-        usuario.setIdTipoUsuario(tipoUsuario);
-        usuario.setImagen(null);
-
-        UsuarioDAO.guardarUsuario(usuario);
-
-        limpiarCampos();
-        Utilidades.mostrarDialogoSimple("Usuario Guardado", "El usuario se guardó exitosamente", Alert.AlertType.INFORMATION);
-    }
-
+    
     private void validarCampos() {
         boolean camposValidos = true;
-
+        String nombreUsuario = tfNombreUsuario.getText();
         String nombre = tfNombre.getText();
         String apellidoPaterno = tfApellidoPaterno.getText();
         String apellidoMaterno = tfApellidoMaterno.getText();
@@ -113,7 +85,9 @@ public class FXMLFormularioUsuarioController implements Initializable {
         String numeroTelefonico = tfNumeroTelefonico.getText();
         String password = tfContraseña.getText();
         TipoUsuario opcionSeleccionada = cbTipoUsuario.getValue();
-
+        
+        Usuario usuario = UsuarioSingleton.getInstancia().getUsuario();
+        Usuario usuarioNuevo = new Usuario(usuario.getIdUsuario(), nombre, apellidoPaterno, apellidoMaterno, correoInstitucional, numeroTelefonico, nombreUsuario, password, null, nombreUsuario, usuario.getIdTipoUsuario(), usuario.getCodigoRespuesta());
         if (nombre.isEmpty()) {
             tfNombre.setStyle("-fx-border-color: red");
             camposValidos = false;
@@ -162,14 +136,14 @@ public class FXMLFormularioUsuarioController implements Initializable {
         }
 
         if (camposValidos) {
-            guardarUsuario();
+            modificarUsuario(usuarioNuevo);
+           
         }
     }
-
-    private void configurarCbTipoUsuario() {
-         tipoUsuarios = FXCollections.observableArrayList();
-         TipoUsuarioRespuesta tipoUsuarioBD = TipoUsuarioDAO.obtenerTipoUsuarioRespuesta();
-         switch (tipoUsuarioBD.getCodigoRespuesta()) {
+    
+    private void modificarUsuario(Usuario usuario){
+        int codigoRespuesta = UsuarioDAO.modificarUsuario(usuario);
+                 switch (codigoRespuesta) {
             case Constantes.ERROR_CONEXION:
                 Utilidades.mostrarDialogoSimple("Error de Conexión", "Error en la conexción", Alert.AlertType.ERROR);
                 break;
@@ -177,12 +151,25 @@ public class FXMLFormularioUsuarioController implements Initializable {
                 Utilidades.mostrarDialogoSimple("Error de Consulta", "Error en la consulta", Alert.AlertType.WARNING);
                 break;
             case(Constantes.OPERACION_EXITOSA):
-                tipoUsuarios.addAll(tipoUsuarioBD.getTiposUsuarios());
-                cbTipoUsuario.setItems(tipoUsuarios);
-        
+                Utilidades.mostrarDialogoSimple("Usuario Modificado", "El usuario ha sido modificado exitosamente", Alert.AlertType.INFORMATION);
+                UsuarioSingleton.getInstancia().setUsuario(usuario);
          }
+                 
+                 
+    }
+    
+    @FXML
+    private void clicBtnSeleccionarFoto(ActionEvent event) {
     }
 
+    @FXML
+    private void clicBtnModificarUsuario(ActionEvent event) {
+       
+        resetearEstilos();
+        validarCampos();
+    }
+    
+    
     private void resetearEstilos() {
         tfNombre.setStyle("");
         tfApellidoPaterno.setStyle("");
@@ -191,23 +178,6 @@ public class FXMLFormularioUsuarioController implements Initializable {
         tfNumeroTelefonico.setStyle("");
         tfContraseña.setStyle("");
         cbTipoUsuario.setStyle("");
+        tfNombreUsuario.setStyle("");
     }
-
-    private void limpiarCampos() {
-        tfNombre.setText("");
-        tfApellidoPaterno.setText("");
-        tfApellidoMaterno.setText("");
-        tfCorreo.setText("");
-        tfContraseña.setText("");
-        tfNumeroTelefonico.setText("");
-        cbTipoUsuario.setValue(null);
-    }
-    
-    
-
-    @FXML
-    private void clicBtnModificarUsuario(ActionEvent event) {
-    }
-
-
 }

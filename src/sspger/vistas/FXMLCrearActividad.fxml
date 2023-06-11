@@ -18,7 +18,7 @@
       </Label>
         <Pane prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <children>
-            <TextField fx:id="tfNombre" alignment="CENTER" layoutX="293.0" layoutY="85.0" prefWidth="295.0" promptText="Titulo" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+            <TextField fx:id="tfTitulo" alignment="CENTER" layoutX="293.0" layoutY="85.0" prefWidth="295.0" promptText="Titulo" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
             <TextArea fx:id="taDescripcion" layoutX="293.0" layoutY="159.0" prefHeight="82.0" prefWidth="295.0" promptText="Descripción de la actividad." styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
             <ComboBox fx:id="cbAnteproyecto" layoutX="293.0" layoutY="271.0" prefHeight="29.0" prefWidth="295.0" promptText="Seleccionar Anteproyecto" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 10px;" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
             <Pane layoutX="86.0" layoutY="158.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
@@ -39,8 +39,8 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <DatePicker fx:id="dpFechaFin" layoutX="293.0" layoutY="400.0" prefHeight="27.0" prefWidth="295.0" promptText="Fecha de cierre de la Actividad" styleClass="pickDate" stylesheets="@css/FXMLGeneral.css" />
-            <DatePicker fx:id="dpFechaInicio" layoutX="293.0" layoutY="341.0" prefHeight="27.0" prefWidth="295.0" promptText="Fecha Inicial de la Actividad" styleClass="pickDate" stylesheets="@css/FXMLGeneral.css" />
+            <DatePicker fx:id="dpFechaFin" layoutX="293.0" layoutY="400.0" prefHeight="27.0" prefWidth="295.0" promptText="Fecha de cierre de la Actividad" stylesheets="@css/FXMLAñadirActividad.css" />
+            <DatePicker fx:id="dpFechaInicio" layoutX="293.0" layoutY="341.0" prefHeight="27.0" prefWidth="295.0" promptText="Fecha Inicial de la Actividad" stylesheets="@css/FXMLAñadirActividad.css" />
             <Pane layoutX="86.0" layoutY="85.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
                <children>
                   <Label layoutX="63.0" layoutY="3.0" text="Titulo" textFill="WHITE">

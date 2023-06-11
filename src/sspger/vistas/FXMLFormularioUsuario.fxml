@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apRegistrarUsuario" layoutX="191.0" layoutY="124.0" prefHeight="600.0" prefWidth="889.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLFormularioUsuarioController">
+<AnchorPane fx:id="apRegistrarUsuario" layoutX="191.0" layoutY="124.0" prefHeight="600.0" prefWidth="889.0" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLFormularioUsuarioController">
     <children>
         <Pane prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
             <styleClass>
@@ -130,14 +130,24 @@
                </font>
             </Button>
             <TextField fx:id="tfContraseña" alignment="CENTER" layoutX="345.0" layoutY="417.0" promptText="Contraseña" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <Label layoutX="202.0" layoutY="27.0" text="Ingresa los datos correspondientes al usuario">
+            <Label fx:id="lbInformacion" layoutX="202.0" layoutY="27.0" text="Ingresa los datos correspondientes al usuario">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <Label fx:id="lbNombreUsuario" layoutX="643.0" layoutY="335.0" prefHeight="17.0" prefWidth="83.0" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnModificarUsuario" layoutX="601.0" layoutY="395.0" mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Modificar Usuario" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
          </children>
         </Pane>
-      <Label layoutX="25.0" layoutY="8.0" text="Registrar Usuario">
+      <Label fx:id="lbEncabezado" layoutX="25.0" layoutY="8.0" text="Registrar Usuario">
          <font>
             <Font size="48.0" />
          </font>
