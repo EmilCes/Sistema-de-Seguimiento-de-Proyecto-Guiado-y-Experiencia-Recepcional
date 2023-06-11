@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -125,10 +126,15 @@
             <String fx:value="white-bg" />
          </styleClass>
       </ScrollPane>
-        <Label fx:id="lbTituloMenu" layoutX="44.0" layoutY="11.0" text="Registrar Anteproyecto" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="11.0">
+        <Label fx:id="lbTituloMenu" layoutX="35.0" layoutY="11.0" text="Registrar Anteproyecto" AnchorPane.topAnchor="11.0">
             <font>
                 <Font size="48.0" />
             </font>
         </Label>
+      <Button fx:id="btnRgresar" mnemonicParsing="false" onAction="#clicBtnRegresar" prefHeight="35.0" prefWidth="35.0" styleClass="button-regresar" stylesheets="@css/FXMLGeneral.css" visible="false" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="25.0">
+         <graphic>
+            <FontAwesomeIcon id="customIcon" fill="WHITE" glyphName="ARROW_LEFT" />
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>
