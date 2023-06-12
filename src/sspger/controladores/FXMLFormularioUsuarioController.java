@@ -34,13 +34,21 @@ import sspger.utils.Utilidades;
 
 public class FXMLFormularioUsuarioController implements Initializable {
 
+    @FXML
     private ComboBox<TipoUsuario> cbTipoUsuario;
+    @FXML
     private TextField tfNombre;
+    @FXML
     private TextField tfApellidoPaterno;
+    @FXML
     private TextField tfApellidoMaterno;
+    @FXML
     private TextField tfCorreo;
+    @FXML
     private TextField tfNumeroTelefonico;
+    @FXML
     private TextField tfContraseña;
+    @FXML
     private ImageView imgImagenPerfil;
 
     private ObservableList<TipoUsuario> tipoUsuarios;
@@ -54,12 +62,12 @@ public class FXMLFormularioUsuarioController implements Initializable {
     @FXML
     private AnchorPane apRegistrarUsuario;
     @FXML
-    private Button btnModificarUsuario;
-    @FXML
     private Button btnGuardarUsuario;
 
     private File archivoFoto;
     private Image imagen;
+    @FXML
+    private Button btnSeleccionarFoto;
 
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -87,6 +95,7 @@ public class FXMLFormularioUsuarioController implements Initializable {
         }
     }
 
+    @FXML
     private void clicBtnGuardarUsuario(ActionEvent event) {
         resetearEstilos();
         validarCampos();
@@ -235,9 +244,6 @@ public class FXMLFormularioUsuarioController implements Initializable {
     }
 
 
-    @FXML
-    private void clicBtnModificarUsuario(ActionEvent event) {
-    }
 
 
 }
