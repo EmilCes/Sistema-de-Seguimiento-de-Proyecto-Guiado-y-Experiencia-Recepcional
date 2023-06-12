@@ -171,10 +171,14 @@ public class FXMLMenuPrincipalController implements Initializable {
 
     
     //Administrador
-    @FXML
-    private void clicBtnRegistrarUsuario(ActionEvent event) {
+   @FXML
+private void clicBtnRegistrarUsuario(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLFormularioUsuario.fxml");
-    }
+}
+
+
+
+
 
     //Estudiante Sin Anteproyecto
     @FXML

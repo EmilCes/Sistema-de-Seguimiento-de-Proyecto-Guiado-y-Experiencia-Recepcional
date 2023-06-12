@@ -24,7 +24,7 @@
         <Insets bottom="10.0" />
     </VBox.margin>
     <children>
-        <Button fx:id="btnVerAvances" layoutX="630.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnVerAvances" prefHeight="40.0" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Avances" textFill="WHITE" />
+        <Button fx:id="btnVerAvances" layoutX="592.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnVerAvances" prefHeight="40.0" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Avances" textFill="WHITE" />
         <Label fx:id="lbNombreAnteproyecto" layoutX="30.0" layoutY="16.0" text="Nombre Anteproyecto" textFill="WHITE">
             <font>
                 <Font size="36.0" />
@@ -43,7 +43,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button layoutX="485.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyecto" prefHeight="40.0" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Anteproyecto" textFill="WHITE" />
+        <Button layoutX="439.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyecto" prefHeight="40.0" prefWidth="130.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Anteproyecto" textFill="WHITE" />
         <Label fx:id="lbNombreDirector" layoutX="100.0" layoutY="64.0" text="Nombre del Director" textFill="WHITE">
             <font>
                 <Font size="18.0" />

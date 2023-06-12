@@ -140,11 +140,6 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button fx:id="btnModificarUsuario" layoutX="601.0" layoutY="395.0" mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Modificar Usuario" textFill="WHITE" visible="false">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
          </children>
         </Pane>
       <Label fx:id="lbEncabezado" layoutX="25.0" layoutY="8.0" text="Registrar Usuario">

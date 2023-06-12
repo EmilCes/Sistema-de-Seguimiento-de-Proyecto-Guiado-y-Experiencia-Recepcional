@@ -47,7 +47,7 @@ public class Utilidades {
             AnchorPane crearAnteproyectoPane = crearAnteproyectoLoader.load();
             escenario.getChildren().add(crearAnteproyectoPane);
         } catch (IOException ex) {
-            System.err.println(ex.getStackTrace());
+            System.err.println(ex.getMessage());
         }
     }
     

@@ -47,13 +47,12 @@ public class FXMLFormularioUsuarioController implements Initializable {
     @FXML
     private TextField tfNumeroTelefonico;
     @FXML
-    private Button btnSeleccionarFoto;
-    @FXML
     private TextField tfContraseña;
     @FXML
     private ImageView imgImagenPerfil;
 
     private ObservableList<TipoUsuario> tipoUsuarios;
+
     @FXML
     private Label lbInformacion;
     @FXML
@@ -63,16 +62,18 @@ public class FXMLFormularioUsuarioController implements Initializable {
     @FXML
     private AnchorPane apRegistrarUsuario;
     @FXML
-    private Button btnModificarUsuario;
-    @FXML
     private Button btnGuardarUsuario;
 
     private File archivoFoto;
     private Image imagen;
+    @FXML
+    private Button btnSeleccionarFoto;
+
 
     public void initialize(URL url, ResourceBundle rb) {
         configurarCbTipoUsuario();
     }
+
 
     @FXML
     private void clicBtnSeleccionarFoto(ActionEvent event) {
@@ -242,8 +243,7 @@ public class FXMLFormularioUsuarioController implements Initializable {
         imgImagenPerfil.setImage(imagen);
     }
 
-    @FXML
-    private void clicBtnModificarUsuario(ActionEvent event) {
-    }
+
+
 
 }
