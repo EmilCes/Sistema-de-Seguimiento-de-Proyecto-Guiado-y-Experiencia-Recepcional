@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="apModificarActividad" prefHeight="600.0" prefWidth="889.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLModificarActividadController">
+    <stylesheets>
+        <URL value="@/sspger/vistas/css/fxmlmodificaractividad.css" />
+    </stylesheets>
+   <children>
+      <Pane focusTraversable="true" layoutX="10.0" layoutY="10.0" prefHeight="870.0" prefWidth="816.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <children>
+            <TextField fx:id="tfNombreActividad" layoutX="340.0" layoutY="50.0" prefWidth="400.0" promptText="Titulo de la actividad" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
+            <TextArea fx:id="taDescripcionActividad" focusTraversable="false" layoutX="340.0" layoutY="90.0" maxHeight="100.0" minHeight="100.0" prefHeight="100.0" prefWidth="400.0" promptText="Descripción de la actividad" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+            <Button layoutX="430.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnGuardar" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Guardar" textFill="WHITE" />
+            <Button layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#clicBtnCancelar" prefWidth="165.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Cancelar" textFill="WHITE" />
+            <Pane layoutX="90.0" layoutY="50.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+               <children>
+                  <Label layoutX="100.0" layoutY="6.0" text="Titulo" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutX="90.0" layoutY="90.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+               <children>
+                  <Label layoutX="85.0" layoutY="6.0" text="Descripción" textFill="WHITE" />
+               </children>
+            </Pane>
+            <DatePicker fx:id="dpFechaInicio" layoutX="340.0" layoutY="205.0" prefWidth="400.0" promptText="Fecha de Entrega" styleClass="combobox" stylesheets="@css/FXMLAñadirActividad.css" />
+            <Pane layoutX="90.0" layoutY="205.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+               <children>
+                  <Label layoutX="90.0" layoutY="6.0" text="Fecha Inicio" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutX="90.0" layoutY="250.0" prefHeight="30.0" prefWidth="235.0" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+               <children>
+                  <Label layoutX="95.0" layoutY="6.0" text="Fecha Fin" textFill="WHITE" />
+               </children>
+            </Pane>
+            <DatePicker fx:id="dpFechaEntrega" layoutX="340.0" layoutY="250.0" prefWidth="400.0" promptText="Fecha de Entrega" styleClass="combobox" stylesheets="@css/FXMLAñadirActividad.css" />
+         </children>
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="26.0" layoutY="19.0" text="ModificarActividad">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

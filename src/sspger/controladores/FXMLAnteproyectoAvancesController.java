@@ -51,6 +51,8 @@ public class FXMLAnteproyectoAvancesController implements Initializable {
 
     @FXML
     private void clicBtnVerActividades(ActionEvent event) {
+        FXMLModificarActividadController modificarActividadController = Utilidades.cambiarPaneObtenerControlador(apAvancesAnteproyecto, "/sspger/vistas/FXMLModificarActividad.fxml");
+        modificarActividadController.cargarInformacionActividad(4);
     }
     
     public void cargarAvanceAnteproyecto(int idAnteproyecto){

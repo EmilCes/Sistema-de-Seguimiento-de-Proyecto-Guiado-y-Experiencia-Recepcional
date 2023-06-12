@@ -25,14 +25,15 @@ public class ActividadDAO {
         Connection conexionBD = ConexionBD.abrirConexionBD();
         if (conexionBD != null) {
             try {
-                String sentencia = "INSERT INTO Actividades (titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto) " +
-                                   " VALUES (?, ?, ?, ?, ?)";
+                String sentencia = "INSERT INTO Actividades (titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado) " +
+                                   " VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
                 prepararSentencia.setString(1, actividad.getTitulo());
                 prepararSentencia.setString(2, actividad.getDescripcion());
                 prepararSentencia.setString(3, actividad.getFechaInicio());
                 prepararSentencia.setString(4, actividad.getFechaFin());
                 prepararSentencia.setInt(5, actividad.getIdAnteproyecto());
+                prepararSentencia.setInt(6, actividad.getIdEstadoActividad());
                 int filasAfectadas = prepararSentencia.executeUpdate();
                 respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
                 conexionBD.close();
@@ -46,13 +47,53 @@ public class ActividadDAO {
         return respuesta;
     }
     
+  public static int modificarActividad(Actividad actividad) {
+    int respuesta;
+    Connection conexionBD = ConexionBD.abrirConexionBD();
+    if (conexionBD != null) {
+        try {
+            String sentencia = "UPDATE Actividades SET titulo = ?, descripcion = ?, fechaInicio = ?, fechaFin = ? WHERE idActividad = ?";
+
+            PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
+            prepararSentencia.setString(1, actividad.getTitulo());
+            prepararSentencia.setString(2, actividad.getDescripcion());
+            prepararSentencia.setString(3, actividad.getFechaInicio());
+            prepararSentencia.setString(4, actividad.getFechaFin());
+            prepararSentencia.setInt(5, actividad.getIdActividad());
+
+            int filasAfectadas = prepararSentencia.executeUpdate();
+            respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            respuesta = Constantes.ERROR_CONSULTA;
+        } finally {
+            try {
+                if (conexionBD != null) {
+                    conexionBD.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexión: " + e.getMessage());
+            }
+        }
+    } else {
+        respuesta = Constantes.ERROR_CONEXION;
+    }
+    return respuesta;
+}
+
+
+    
+    
+    
+    
 public static Actividad obtenerInformacionActividaPorIdActividad(int idActividad) {
     Actividad actividad = new Actividad();
     Connection conexion = ConexionBD.abrirConexionBD();
     
     if (conexion != null) {
         try {
-            String consulta = "SELECT titulo, descripcion, fechaInicio, fechaFin FROM Actividad WHERE idActividad = ?";
+            String consulta = "SELECT titulo, descripcion, fechaInicio, fechaFin FROM Actividades WHERE idActividad = ?";
             PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
             prepararSentencia.setInt(1, idActividad);
             ResultSet resultado = prepararSentencia.executeQuery();
