@@ -776,6 +776,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     private void regresar(){
         switch(UsuarioSingleton.getInstancia().getUsuario().getIdTipoUsuario()){
             case Constantes.PROFESOR:
+            case Constantes.DIRECTOR:
                 Utilidades.cambiarPane(apCrearAnteproyecto, "/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml");
                 break;
             case Constantes.ENCARGADO_CA:
@@ -799,7 +800,6 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     @FXML
     private void clicBtnModificarAnteproyecto(ActionEvent event) {
         modificarAnteproyectoCargarInformacion();
-        regresar();
     }
 
     @FXML
