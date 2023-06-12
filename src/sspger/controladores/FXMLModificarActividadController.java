@@ -1,3 +1,4 @@
+
 package sspger.controladores;
 
 import java.net.URL;
@@ -8,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -18,31 +18,39 @@ import sspger.modelos.pojo.Actividad;
 import sspger.utils.Constantes;
 import sspger.utils.Utilidades;
 
-public class FXMLAñadirActividadController implements Initializable {
+public class FXMLModificarActividadController implements Initializable {
 
     @FXML
-    private AnchorPane apAñadirActividad;
+    private AnchorPane apModificarActividad;
     @FXML
     private TextField tfNombreActividad;
     @FXML
     private TextArea taDescripcionActividad;
     @FXML
-    private DatePicker dpFechaEntrega;
-    @FXML
     private DatePicker dpFechaInicio;
+    @FXML
+    private DatePicker dpFechaEntrega;
 
     private String fechaInicio;
-    private String fechaEntrega;
-    private int idAnteproyecto;
-
+    private String fechaFin;
+    private int idActividad;
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }
-    
-    public void cargarAnteproyecto(int idAnteproyecto){
-        this.idAnteproyecto = idAnteproyecto;
+        // TODO
+    }    
+
+    @FXML
+    private void clicBtnGuardar(ActionEvent event) {
+        validarCampos();
     }
 
+    @FXML
+    private void clicBtnCancelar(ActionEvent event) {
+    }
+    
+    
     private void limpiarCampos() {
         tfNombreActividad.setText("");
         taDescripcionActividad.setText("");
@@ -87,10 +95,9 @@ public class FXMLAñadirActividadController implements Initializable {
             actividad.setTitulo(tfNombreActividad.getText());
             actividad.setDescripcion(taDescripcionActividad.getText());
             actividad.setFechaInicio(fechaInicio);
-            actividad.setFechaFin(fechaEntrega);
-            actividad.setIdAnteproyecto(idAnteproyecto);
-            actividad.setIdEstadoActividad(1);
-            guardarActividad(actividad);
+            actividad.setFechaFin(fechaFin);
+            actividad.setIdActividad(idActividad);
+            modificarActividad(actividad);
         }
 
     }
@@ -128,16 +135,17 @@ public class FXMLAñadirActividadController implements Initializable {
         
         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         fechaInicio = fechaInicioLD.format(formateador);
-        fechaEntrega = fechaEntregaLD.format(formateador);
+        fechaFin = fechaEntregaLD.format(formateador);
         
         return fechasValidas;
 
         
     }
-
-    private void guardarActividad(Actividad actividad) {
-        int codigoRespuesta = ActividadDAO.guardarActividad(actividad);
-        switch (codigoRespuesta) {
+    
+    public void cargarInformacionActividad(int idActividad){
+        this.idActividad = idActividad;
+        Actividad actividad = ActividadDAO.obtenerInformacionActividaPorIdActividad(idActividad);
+        switch (actividad.getCodigoRespuesta()) {
             case Constantes.ERROR_CONEXION:
                 Utilidades.mostrarDialogoSimple("Error de Conexión",
                         "No se pudo conectar con la base de datos. Intente de nuevo o hágalo más tarde.",
@@ -149,22 +157,35 @@ public class FXMLAñadirActividadController implements Initializable {
                         Alert.AlertType.WARNING);
                 break;
             case Constantes.OPERACION_EXITOSA:
-                Utilidades.mostrarDialogoSimple("Actividad añadida al cronograma",
-                        "Actividad guardada correctamente",
+                tfNombreActividad.setText(actividad.getTitulo());
+                taDescripcionActividad.setText(actividad.getDescripcion());
+                LocalDate fechaInicio = LocalDate.parse(actividad.getFechaInicio(), DateTimeFormatter.ISO_LOCAL_DATE);
+                dpFechaInicio.setValue(fechaInicio);
+                LocalDate fechaFin = LocalDate.parse(actividad.getFechaFin(), DateTimeFormatter.ISO_LOCAL_DATE);
+                dpFechaEntrega.setValue(fechaFin);
+                break;
+        }
+        
+    }
+    
+        private void modificarActividad(Actividad actividad) {
+        int codigoRespuesta = ActividadDAO.modificarActividad(actividad);
+        switch (codigoRespuesta) {
+            case Constantes.ERROR_CONEXION:
+                Utilidades.mostrarDialogoSimple("Error de Conexión",
+                        "No se pudo conectar con la base de datos. Intente de nuevo o hágalo más tarde.",
+                        Alert.AlertType.ERROR);
+                break;
+            case Constantes.ERROR_CONSULTA:
+                Utilidades.mostrarDialogoSimple("Error en la información",
+                        "La información de la actividad no puede ser modificada, verifique su información",
+                        Alert.AlertType.WARNING);
+                break;
+            case Constantes.OPERACION_EXITOSA:
+                Utilidades.mostrarDialogoSimple("Actividad Modificada",
+                        "La actividad fue modificada correctamente",
                         Alert.AlertType.INFORMATION);
-                limpiarCampos();
                 break;
         }
     }
-
-    @FXML
-    private void clicBtnCancelar(ActionEvent event) {
-        limpiarCampos();
-    }
-
-    @FXML
-    private void clicBtnGuardarActividad(ActionEvent event) {
-        validarCampos();
-    }
-
 }

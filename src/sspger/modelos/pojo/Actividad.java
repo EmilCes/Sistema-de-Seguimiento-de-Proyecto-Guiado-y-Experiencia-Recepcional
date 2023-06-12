@@ -1,11 +1,5 @@
 
 package sspger.modelos.pojo;
-import java.io.File;
-import java.time.LocalDate;
-
-
-
-
 
 
 public class Actividad {
@@ -16,6 +10,7 @@ public class Actividad {
     private String descripcion;
     private String fechaInicio;
     private String fechaFin;
+    private int idEstadoActividad;
     private int idAnteproyecto;
 
     public Actividad() {
@@ -33,6 +28,10 @@ public class Actividad {
 
     public int getCodigoRespuesta() {
         return codigoRespuesta;
+    }
+
+    public int getIdEstadoActividad() {
+        return idEstadoActividad;
     }
 
     public int getIdActividad() {
@@ -86,6 +85,11 @@ public class Actividad {
     public void setIdAnteproyecto(int idAnteproyecto) {
         this.idAnteproyecto = idAnteproyecto;
     }
+
+    public void setIdEstadoActividad(int idEstadoActividad) {
+        this.idEstadoActividad = idEstadoActividad;
+    }
+    
     
     
 
