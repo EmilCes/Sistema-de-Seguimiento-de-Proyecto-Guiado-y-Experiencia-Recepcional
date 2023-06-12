@@ -29,14 +29,7 @@ public class UsuarioDAO {
                 prepararSentencia.setString(5, usuario.getNumeroTelefonico());
                 prepararSentencia.setString(6, usuario.getNombreUsuario());
                 prepararSentencia.setString(7, usuario.getPassword());
-
-                /*
-                BufferedImage bufferedImage = ImageIO.read(usuario.getImagen());
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                ImageIO.write(bufferedImage, "png", outputStream);
-                byte[] imagenBytes = outputStream.toByteArray();
-                 */
-                prepararSentencia.setBytes(8, null);
+                prepararSentencia.setBytes(8, usuario.getImagen());
                 prepararSentencia.setInt(9, usuario.getIdTipoUsuario());
                 int filasAfectadas = prepararSentencia.executeUpdate();
                 respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA; //Operador ternario
@@ -119,7 +112,7 @@ public static int modificarUsuario(Usuario usuario) {
             prepararSentencia.setString(5, usuario.getNumeroTelefonico());
             prepararSentencia.setString(6, usuario.getNombreUsuario());
             prepararSentencia.setString(7, usuario.getPassword());
-            prepararSentencia.setBytes(8, null);
+            prepararSentencia.setBytes(8, usuario.getImagen());
             prepararSentencia.setInt(9, usuario.getIdTipoUsuario());
             prepararSentencia.setInt(10, usuario.getIdUsuario());
             

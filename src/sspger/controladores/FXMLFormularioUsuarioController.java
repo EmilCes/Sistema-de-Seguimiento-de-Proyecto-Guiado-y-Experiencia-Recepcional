@@ -1,10 +1,16 @@
 package sspger.controladores;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import javafx.scene.image.Image;
 import java.net.URL;
+import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,8 +21,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 import sspger.modelos.dao.TipoUsuarioDAO;
-import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.pojo.TipoUsuario;
 import sspger.modelos.pojo.TipoUsuarioRespuesta;
@@ -34,26 +42,61 @@ public class FXMLFormularioUsuarioController implements Initializable {
     private TextField tfNumeroTelefonico;
     private TextField tfContraseña;
     private ImageView imgImagenPerfil;
-    
+
     private ObservableList<TipoUsuario> tipoUsuarios;
-    
-    
+
+    @FXML
+    private Label lbInformacion;
+    @FXML
+    private Label lbNombreUsuario;
+    @FXML
+    private Label lbEncabezado;
+    @FXML
+    private AnchorPane apRegistrarUsuario;
+    @FXML
+    private Button btnModificarUsuario;
+    @FXML
+    private Button btnGuardarUsuario;
+
+    private File archivoFoto;
+    private Image imagen;
+
+
     public void initialize(URL url, ResourceBundle rb) {
         configurarCbTipoUsuario();
     }
 
+
+    @FXML
+    private void clicBtnSeleccionarFoto(ActionEvent event) {
+        FileChooser dialogoImagen = new FileChooser();
+        dialogoImagen.setTitle("Selecciona una foto");
+        FileChooser.ExtensionFilter filtroImg = new FileChooser.ExtensionFilter("Archivos JPG (*.jpg)", "*.JPG", "*.JPEG");
+        dialogoImagen.getExtensionFilters().add(filtroImg);
+        Stage escenarioActual = (Stage) tfNombre.getScene().getWindow();
+        archivoFoto = dialogoImagen.showOpenDialog(escenarioActual);
+
+        if (archivoFoto != null) {
+            try {
+                BufferedImage bufferImg = ImageIO.read(archivoFoto);
+                Image imagenFoto = SwingFXUtils.toFXImage(bufferImg, null);
+                imgImagenPerfil.setImage(imagenFoto);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     private void clicBtnGuardarUsuario(ActionEvent event) {
         resetearEstilos();
         validarCampos();
     }
 
-    private void guardarUsuario() {
+    private void guardarUsuario() throws IOException {
         String nombreUsuario = tfNombre.getText() + "_" + tfApellidoPaterno.getText();
         nombreUsuario = nombreUsuario.replaceAll("\\s", "");
         int tipoUsuario = 0;
         TipoUsuario opcionSeleccionada = cbTipoUsuario.getValue();
-        Image imagenPerfil = imgImagenPerfil.getImage();
 
         if (opcionSeleccionada != null) {
             tipoUsuario = opcionSeleccionada.getIdTipoUsuario();
@@ -68,10 +111,10 @@ public class FXMLFormularioUsuarioController implements Initializable {
         usuario.setNombreUsuario(nombreUsuario);
         usuario.setPassword(tfContraseña.getText());
         usuario.setIdTipoUsuario(tipoUsuario);
-        usuario.setImagen(null);
+        usuario.setImagen(Files.readAllBytes(archivoFoto.toPath()));
 
         UsuarioDAO.guardarUsuario(usuario);
-
+        
         limpiarCampos();
         Utilidades.mostrarDialogoSimple("Usuario Guardado", "El usuario se guardó exitosamente", Alert.AlertType.INFORMATION);
     }
@@ -134,26 +177,39 @@ public class FXMLFormularioUsuarioController implements Initializable {
             camposValidos = false;
         }
 
+        if (archivoFoto == null) {
+            camposValidos = false;
+            Utilidades.mostrarDialogoSimple("Selecciona una imagen",
+                    "Para guardar el registro del alumno debes seleccionar su foto desde la opción Seleccionar Foto.",
+                    Alert.AlertType.WARNING);
+        }
+
         if (camposValidos) {
-            guardarUsuario();
+            try {
+                guardarUsuario();
+            } catch (IOException ex) {
+                Utilidades.mostrarDialogoSimple("Selecciona una imagen",
+                    "Para guardar el registro del alumno debes seleccionar su foto desde la opción Seleccionar Foto.",
+                    Alert.AlertType.WARNING);
+            }
         }
     }
 
     private void configurarCbTipoUsuario() {
-         tipoUsuarios = FXCollections.observableArrayList();
-         TipoUsuarioRespuesta tipoUsuarioBD = TipoUsuarioDAO.obtenerTipoUsuarioRespuesta();
-         switch (tipoUsuarioBD.getCodigoRespuesta()) {
+        tipoUsuarios = FXCollections.observableArrayList();
+        TipoUsuarioRespuesta tipoUsuarioBD = TipoUsuarioDAO.obtenerTipoUsuarioRespuesta();
+        switch (tipoUsuarioBD.getCodigoRespuesta()) {
             case Constantes.ERROR_CONEXION:
                 Utilidades.mostrarDialogoSimple("Error de Conexión", "Error en la conexción", Alert.AlertType.ERROR);
                 break;
-            case(Constantes.ERROR_CONSULTA):
+            case (Constantes.ERROR_CONSULTA):
                 Utilidades.mostrarDialogoSimple("Error de Consulta", "Error en la consulta", Alert.AlertType.WARNING);
                 break;
-            case(Constantes.OPERACION_EXITOSA):
+            case (Constantes.OPERACION_EXITOSA):
                 tipoUsuarios.addAll(tipoUsuarioBD.getTiposUsuarios());
                 cbTipoUsuario.setItems(tipoUsuarios);
-        
-         }
+
+        }
     }
 
     private void resetearEstilos() {
@@ -167,6 +223,7 @@ public class FXMLFormularioUsuarioController implements Initializable {
     }
 
     private void limpiarCampos() {
+        imagen = new Image("../../Recursos/456212.png");
         tfNombre.setText("");
         tfApellidoPaterno.setText("");
         tfApellidoMaterno.setText("");
@@ -174,6 +231,13 @@ public class FXMLFormularioUsuarioController implements Initializable {
         tfContraseña.setText("");
         tfNumeroTelefonico.setText("");
         cbTipoUsuario.setValue(null);
+        imgImagenPerfil.setImage(imagen);
     }
+
+
+    @FXML
+    private void clicBtnModificarUsuario(ActionEvent event) {
+    }
+
 
 }

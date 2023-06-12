@@ -1,9 +1,5 @@
 package sspger.modelos.pojo;
 
-import java.awt.Image;
-
-
-
 public class Usuario {
 
     private int idUsuario;
@@ -14,7 +10,7 @@ public class Usuario {
     private String numeroTelefonico;
     private String nombreUsuario;
     private String password;
-    private Image imagen;
+    private byte[] imagen;
     private String nombreCompleto;
     private int idTipoUsuario;
     private int codigoRespuesta;
@@ -22,7 +18,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, Image imagen, String nombreCompleto, int idTipoUsuario, int codigoRespuesta) {
+    public Usuario(int idUsuario, String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, byte[] imagen, String nombreCompleto, int idTipoUsuario, int codigoRespuesta) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -39,7 +35,7 @@ public class Usuario {
     
     
 
-    public Usuario(String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, Image imagen, String nombreCompleto, int idTipoUsuario) {
+    public Usuario(String nombre, String apellidoPaterno, String apellidoMaterno, String correoInstitucional, String numeroTelefonico, String nombreUsuario, String password, byte[] imagen, String nombreCompleto, int idTipoUsuario) {
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
@@ -59,7 +55,7 @@ public class Usuario {
         return idUsuario;
     }
 
-    public Image getImagen() {
+    public byte[] getImagen() {
         return imagen;
     }
 
@@ -111,7 +107,7 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public void setImagen(Image imagen) {
+    public void setImagen(byte[] imagen) {
         this.imagen = imagen;
     }
 
@@ -155,7 +151,5 @@ public class Usuario {
     public String toString() {
         return nombreCompleto;
     }
-    
-    
-    
+     
 }

@@ -1,4 +1,6 @@
 package sspger.controladores;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import java.io.ByteArrayInputStream;
 import sspger.controladores.FXMLFormularioUsuarioController;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -7,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import sspger.modelos.pojo.Usuario;
@@ -42,7 +46,25 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private Label lbNombreUsuarioEncargadoCA;
     @FXML
-    private Button btnModificarUsuario;
+    private FontAwesomeIcon faIconAdmin;
+    @FXML
+    private ImageView ivImagenPerfilAdmin;
+    @FXML
+    private FontAwesomeIcon faIconDirector;
+    @FXML
+    private ImageView ivImagenPerfilDirector;
+    @FXML
+    private FontAwesomeIcon faIconEstudiante;
+    @FXML
+    private ImageView ivImagenPerfilEstudiante;
+    @FXML
+    private FontAwesomeIcon faIconEstudianteConAnteproyecto;
+    @FXML
+    private ImageView ivImagenPerfilEstudianteConAnteproyecto;
+    @FXML
+    private FontAwesomeIcon faIconEncargadoCA;
+    @FXML
+    private ImageView ivImagenPerfilEncargadoCA;
    
     
     @Override
@@ -75,27 +97,57 @@ public class FXMLMenuPrincipalController implements Initializable {
                 ocultarMenus();
                 apMenuAdministrador.setVisible(true);
                 lbNombreUsuarioAdministrador.setText(nombreUsuario);
+                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                    ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
+                    Image imgFotoAdmin = new Image(inputFoto);
+                    faIconAdmin.setVisible(false);
+                    ivImagenPerfilAdmin.setImage(imgFotoAdmin);
+                }
                 break;
             case Constantes.PROFESOR:
             case Constantes.DIRECTOR:
                 ocultarMenus();
                 apMenuDirector.setVisible(true);
                 lbNombreUsuarioDirector.setText(nombreUsuario);
+                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                    ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
+                    Image imgFotoAdmin = new Image(inputFoto);
+                    faIconDirector.setVisible(false);
+                    ivImagenPerfilDirector.setImage(imgFotoAdmin);
+                }
                 break;
             case Constantes.ESTUDIANTE:
                 ocultarMenus();
                 apMenuEstudiante.setVisible(true);
                 lbNombreUsuarioEstudiante.setText(nombreUsuario);
+                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                    ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
+                    Image imgFotoAdmin = new Image(inputFoto);
+                    faIconEstudiante.setVisible(false);
+                    ivImagenPerfilEstudiante.setImage(imgFotoAdmin);
+                }
                 break;
             case Constantes.ESTUDIANTE_CON_ANTEPROYECTO:
                 ocultarMenus();
                 apMenuEstudianteConAnteproyecto.setVisible(true);
                 lbNombreUsuarioEstudianteConAnteproyecto.setText(nombreUsuario);
+                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                    ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
+                    Image imgFotoAdmin = new Image(inputFoto);
+                    faIconEstudianteConAnteproyecto.setVisible(false);
+                    ivImagenPerfilEstudianteConAnteproyecto.setImage(imgFotoAdmin);
+                }
                 break;
             case Constantes.ENCARGADO_CA:
                 ocultarMenus();
                 apMenuEncargadoCA.setVisible(true);
                 lbNombreUsuarioEncargadoCA.setText(nombreUsuario);
+                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                    ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
+                    Image imgFotoAdmin = new Image(inputFoto);
+                    faIconEstudianteConAnteproyecto.setVisible(false);
+                    ivImagenPerfilEstudianteConAnteproyecto.setImage(imgFotoAdmin);
+                }
                 break;
         }
     }
