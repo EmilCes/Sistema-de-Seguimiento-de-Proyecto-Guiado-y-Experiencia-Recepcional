@@ -89,7 +89,7 @@ public class FXMLFormularioUsuarioController implements Initializable {
                 Image imagenFoto = SwingFXUtils.toFXImage(bufferImg, null);
                 imgImagenPerfil.setImage(imagenFoto);
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
         }
     }
@@ -231,7 +231,7 @@ public class FXMLFormularioUsuarioController implements Initializable {
     }
 
     private void limpiarCampos() {
-        imagen = new Image("../../Recursos/456212.png");
+        imagen = new Image("/Recursos/456212.png");
         tfNombre.setText("");
         tfApellidoPaterno.setText("");
         tfApellidoMaterno.setText("");

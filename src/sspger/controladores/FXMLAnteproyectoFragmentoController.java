@@ -72,7 +72,7 @@ public class FXMLAnteproyectoFragmentoController implements Initializable {
 
     @FXML
     private void clicBtnVerAvances(ActionEvent event) {
-        FXMLAnteproyectoFormularioController anteproyectoFormularioController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
+        //FXMLAnteproyectoFormularioController anteproyectoFormularioController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLAnteproyectoFormulario.fxml");
     }
     
 }
