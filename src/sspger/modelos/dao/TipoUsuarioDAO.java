@@ -13,31 +13,32 @@ import sspger.utils.Constantes;
 
 public class TipoUsuarioDAO {
      public static TipoUsuarioRespuesta obtenerTipoUsuarioRespuesta() {
-        TipoUsuarioRespuesta tipoUsuarioRespuesta = new TipoUsuarioRespuesta();
-        tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
-        Connection conexionBD = ConexionBD.abrirConexionBD();
-        if (conexionBD != null) {
-            try {
-                String consulta = "SELECT idTipoUsuario, descripcion FROM TipoUsuario;";
-                PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
-                ResultSet respuestaBaseDatos = prepararSentencia.executeQuery();
-                ArrayList<TipoUsuario> tipoUsuariosConsulta = new ArrayList();
-                while (respuestaBaseDatos.next()) {
-                    TipoUsuario tipoUsuario = new TipoUsuario();
-                    tipoUsuario.setIdTipoUsuario(respuestaBaseDatos.getInt("idTipoUsuario"));
-                    tipoUsuario.setDescripcion(respuestaBaseDatos.getString("descripcion"));
-                    tipoUsuariosConsulta.add(tipoUsuario);
-                }
-                tipoUsuarioRespuesta.setTiposUsuarios(tipoUsuariosConsulta);
-                conexionBD.close();
-            } catch (SQLException e) {
-                tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+    TipoUsuarioRespuesta tipoUsuarioRespuesta = new TipoUsuarioRespuesta();
+    tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+    Connection conexionBD = ConexionBD.abrirConexionBD();
+    if (conexionBD != null) {
+        try {
+            String consulta = "SELECT idTipoUsuario, descripcion FROM TipoUsuario WHERE descripcion IN ('Profesor', 'Estudiante');";
+            PreparedStatement prepararSentencia = conexionBD.prepareStatement(consulta);
+            ResultSet respuestaBaseDatos = prepararSentencia.executeQuery();
+            ArrayList<TipoUsuario> tipoUsuariosConsulta = new ArrayList<>();
+            while (respuestaBaseDatos.next()) {
+                TipoUsuario tipoUsuario = new TipoUsuario();
+                tipoUsuario.setIdTipoUsuario(respuestaBaseDatos.getInt("idTipoUsuario"));
+                tipoUsuario.setDescripcion(respuestaBaseDatos.getString("descripcion"));
+                tipoUsuariosConsulta.add(tipoUsuario);
             }
-        } else {
-            tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+            tipoUsuarioRespuesta.setTiposUsuarios(tipoUsuariosConsulta);
+            conexionBD.close();
+        } catch (SQLException e) {
+            tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
         }
-        return tipoUsuarioRespuesta;
+    } else {
+        tipoUsuarioRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
     }
+    return tipoUsuarioRespuesta;
+}
+
     
    public static TipoUsuario obtenerTipoUsuarioPorId(int id) {
     TipoUsuario tipoUsuario = new TipoUsuario();

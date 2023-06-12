@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import sspger.modelos.ConexionBD;
 import sspger.modelos.pojo.Anteproyecto;
 import sspger.modelos.pojo.AnteproyectoRespuesta;
+import sspger.modelos.pojo.AvanceAnteproyecto;
 import sspger.utils.Constantes;
 
 public class AnteproyectoDAO {
@@ -427,5 +428,9 @@ public class AnteproyectoDAO {
         }
         return respuesta;
     }
+
+   
+
+    
 
 }

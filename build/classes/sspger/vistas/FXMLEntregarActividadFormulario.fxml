@@ -10,135 +10,127 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apEntregarActividadFormulario" prefHeight="600.0" prefWidth="889.0" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLFormularioUsuarioController">
+<AnchorPane fx:id="apEntregarActividadFormulario" prefHeight="600.0" prefWidth="889.0" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLEntregarActividadFormularioController">
    <children>
       <Pane prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
-         <children>
-            <Pane layoutX="66.0" layoutY="142.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="63.0" layoutY="4.0" text="Nombre" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <Pane layoutX="66.0" layoutY="196.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="21.0" layoutY="4.0" text="Apellido Paterno" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <Pane layoutX="67.0" layoutY="250.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="21.0" layoutY="4.0" text="Apellido Materno" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <Pane layoutX="66.0" layoutY="304.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="8.0" layoutY="4.0" text="Correo Institucional" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <Pane layoutX="66.0" layoutY="358.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="12.0" layoutY="5.0" text="Número telefónico" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <Pane layoutX="66.0" layoutY="412.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="45.0" layoutY="5.0" text="Contraseña" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <ComboBox fx:id="cbTipoUsuario" layoutX="343.0" layoutY="93.0" prefHeight="29.0" prefWidth="164.0" style="-fx-border-color: black; -fx-background-color: white; -fx-border-radius: 10px;" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
-            <Pane layoutX="66.0" layoutY="88.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
-               <children>
-                  <Label layoutX="26.0" layoutY="5.0" text="Tipo de Usuario" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-               <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
-                  <URL value="@css/FXMLGeneral.css" />
-               </stylesheets>
-            </Pane>
-            <TextField fx:id="tfNombre" alignment="CENTER" layoutX="345.0" layoutY="147.0" promptText="Nombre(s)" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <TextField fx:id="tfApellidoPaterno" alignment="CENTER" layoutX="344.0" layoutY="200.0" promptText="Apellido Paterno" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <TextField fx:id="tfApellidoMaterno" alignment="CENTER" layoutX="344.0" layoutY="254.0" promptText="Apellido Materno" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <TextField fx:id="tfCorreo" alignment="CENTER" layoutX="344.0" layoutY="308.0" promptText="Correo Institucional" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <TextField fx:id="tfNumeroTelefonico" alignment="CENTER" layoutX="344.0" layoutY="363.0" promptText="2288776655" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <Pane layoutX="585.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: black;">
-               <children>
-                  <ImageView fx:id="imgImagenPerfil" fitHeight="196.0" fitWidth="196.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Recursos/456212.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Button fx:id="btnSeleccionarFoto" layoutX="575.0" layoutY="306.0" mnemonicParsing="false" onAction="#clicBtnSeleccionarFoto" prefHeight="29.0" prefWidth="219.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Seleccionar Foto" textFill="WHITE" />
-            <Button fx:id="btnGuardarUsuario" layoutX="601.0" layoutY="393.0" mnemonicParsing="false" onAction="#clicBtnGuardarUsuario" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Guardar Usuario" textFill="WHITE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <TextField fx:id="tfContraseña" alignment="CENTER" layoutX="345.0" layoutY="417.0" promptText="Contraseña" style="-: #7d7d7d; -fx-background-radius: 10px;" styleClass="textfield" stylesheets="@css/FXMLGeneral.css" />
-            <Label layoutX="202.0" layoutY="27.0" text="Ingresa los datos correspondientes al usuario">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-         </children>
          <styleClass>
             <String fx:value="white-bg" />
             <String fx:value="shadow" />
          </styleClass>
+         <children>
+            <Pane layoutX="46.0" layoutY="36.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="45.0" layoutY="4.0" text="Actividad" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Label fx:id="lbTitulo" layoutX="256.0" layoutY="40.0" prefHeight="29.0" prefWidth="525.0" text="Titulo de la actividad">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="46.0" layoutY="87.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="16.0" layoutY="5.0" text="Fecha de Inicio" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Pane layoutX="46.0" layoutY="138.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" text="Fecha de Cierre" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Label fx:id="lbFechaInicio" layoutX="256.0" layoutY="91.0" prefHeight="29.0" prefWidth="525.0" text="Titulo de la actividad">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbFechaFin" layoutX="256.0" layoutY="142.0" prefHeight="29.0" prefWidth="525.0" text="Titulo de la actividad">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutX="46.0" layoutY="191.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="32.0" layoutY="4.0" text="Descripción" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Text fx:id="txDescripcion" layoutX="256.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="515.6441040039062">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="btnSubirArchivo" layoutX="546.0" layoutY="284.0" mnemonicParsing="false" onAction="#clicBtnSubirArchivo" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Subir Archivo" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Pane fx:id="paneArchivoConfirmacion" layoutX="709.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label">
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="12.0" layoutY="40.0" size="35" />
+               </children>
+            </Pane>
+            <Button fx:id="btnVolver" layoutX="274.0" layoutY="418.0" mnemonicParsing="false" onAction="#clicBtnVolver" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Volver" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEntregar" layoutX="458.0" layoutY="418.0" mnemonicParsing="false" onAction="#clicBtnEntregar" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Entregar" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Pane layoutX="46.0" layoutY="281.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="28.0" layoutY="4.0" text="Comentarios" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <TextArea fx:id="taComentarios" layoutX="245.0" layoutY="279.0" prefHeight="82.0" prefWidth="264.0" promptText="Descripción de la actividad." styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+         </children>
       </Pane>
-      <Label layoutX="25.0" layoutY="8.0" text="Entregar Actividad">
+      <Label layoutX="28.0" layoutY="16.0" text="Entregar Actividad">
          <font>
             <Font size="48.0" />
          </font>
