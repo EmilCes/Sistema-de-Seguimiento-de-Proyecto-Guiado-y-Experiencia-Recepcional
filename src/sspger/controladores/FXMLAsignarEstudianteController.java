@@ -1,6 +1,7 @@
 package sspger.controladores;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import java.io.ByteArrayInputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -18,7 +20,6 @@ import sspger.modelos.dao.AlumnoDAO;
 import sspger.modelos.dao.AnteproyectoDAO;
 import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.pojo.Alumno;
-import sspger.modelos.pojo.Anteproyecto;
 import sspger.utils.Constantes;
 import sspger.utils.Utilidades;
 
@@ -75,6 +76,8 @@ public class FXMLAsignarEstudianteController implements Initializable {
         alumno = null;
         numeroEstudiantes -= 1;
         cargarInformacionNumeroEstudiantes();
+        faUsuario.setVisible(true);
+        ivImagenUsuario.setVisible(false);
     }
 
     private void validarCampoMatricula() {
@@ -99,6 +102,10 @@ public class FXMLAsignarEstudianteController implements Initializable {
             case (Constantes.OPERACION_EXITOSA):
                 if (alumno.getIdAlumno() != 0) {
                     lbNombreEstudiante.setText(alumno.getNombreCompleto());
+                    ByteArrayInputStream inputFoto = new ByteArrayInputStream(alumno.getImagenUsuario());
+                    Image imgFoto = new Image(inputFoto);
+                    ivImagenUsuario.setImage(imgFoto);
+                    faUsuario.setVisible(false);
                 } else {
                     lbNombreEstudiante.setText("");
                     Utilidades.mostrarDialogoSimple("Estudiante no encontrado",
@@ -129,6 +136,7 @@ public class FXMLAsignarEstudianteController implements Initializable {
                         Utilidades.mostrarDialogoSimple("Alumno asignado a anteproyecto",
                                 "El alumno fue asignado al anteproyecto correctamente",
                                 Alert.AlertType.INFORMATION);
+                        UsuarioDAO.actualizarTipoUsuario(Constantes.ESTUDIANTE_CON_ANTEPROYECTO, alumno.getIdUsuario());
                         resetearPantalla();
                         break;
                 }
