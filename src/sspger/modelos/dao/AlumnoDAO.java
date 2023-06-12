@@ -18,7 +18,7 @@ public class AlumnoDAO {
         if (conexion != null) {
             try {
                 String consulta = "SELECT a.idAlumno, a.idUsuario, a.idAnteproyecto, CONCAT(u.nombre, ' ', "
-                        + "apellidoPaterno, ' ', apellidoMaterno) AS nombreCompleto FROM Alumnos a "
+                        + "apellidoPaterno, ' ', apellidoMaterno) AS nombreCompleto, u.imagenUsuario FROM Alumnos a "
                         + "INNER JOIN Usuarios u ON a.idUsuario = u.idUsuario WHERE matricula = ?";
                 PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
                 prepararSentencia.setString(1, matricula);
@@ -29,6 +29,7 @@ public class AlumnoDAO {
                     alumno.setIdUsuario(resultado.getInt("idUsuario"));
                     alumno.setIdAnteproyecto(resultado.getInt("idAnteproyecto"));
                     alumno.setNombreCompleto(resultado.getString("nombreCompleto"));
+                    alumno.setImagenUsuario(resultado.getBytes("imagenUsuario"));
                 }
                 conexion.close();
             } catch (SQLException ex) {
@@ -88,6 +89,28 @@ public class AlumnoDAO {
             alumnoRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
         }
         return alumnoRespuesta;
+    }
+    
+    public static int registrarAlumno(int idUsuario, String matricula) {
+        int respuesta;
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        if (conexionBD != null) {
+            try {
+                String sentencia = "INSERT INTO Alumnos (idUsuario, matricula) VALUES (?, ?)";
+                PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
+                prepararSentencia.setInt(1, idUsuario);
+                prepararSentencia.setString(2, matricula);
+                int filasAfectadas = prepararSentencia.executeUpdate();
+                respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
+                conexionBD.close();
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+                respuesta = Constantes.ERROR_CONSULTA;
+            }
+        } else {
+            respuesta = Constantes.ERROR_CONEXION;
+        }
+        return respuesta;
     }
     
 }

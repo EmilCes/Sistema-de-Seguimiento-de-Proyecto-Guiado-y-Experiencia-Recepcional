@@ -24,6 +24,7 @@ import sspger.modelos.dao.CuerpoAcademicoDAO;
 import sspger.modelos.dao.LGACDAO;
 import sspger.modelos.dao.ProfesorDAO;
 import sspger.modelos.dao.TipoAnteproyectoDAO;
+import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.pojo.Alumno;
 import sspger.modelos.pojo.AlumnoRespuesta;
 import sspger.modelos.pojo.Anteproyecto;
@@ -31,8 +32,10 @@ import sspger.modelos.pojo.CuerpoAcademico;
 import sspger.modelos.pojo.CuerpoAcademicoRespuesta;
 import sspger.modelos.pojo.LGAC;
 import sspger.modelos.pojo.LGACRespuesta;
+import sspger.modelos.pojo.Profesor;
 import sspger.modelos.pojo.TipoAnteproyecto;
 import sspger.modelos.pojo.TipoAnteproyectoRespuesta;
+import sspger.modelos.pojo.Usuario;
 import sspger.utils.Constantes;
 import sspger.utils.UsuarioSingleton;
 import sspger.utils.Utilidades;
@@ -125,8 +128,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
 
     private boolean siendoModificado;
     private boolean comboBoxModificado;
-
-
+    private Usuario usuario = UsuarioSingleton.getInstancia().getUsuario();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -147,6 +149,24 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
 
         int idUsuario = UsuarioSingleton.getInstancia().getUsuario().getIdUsuario();
         idProfesor = ProfesorDAO.obtenerProfesorPorIdUsuario(idUsuario).getIdProfesor();
+
+        ocultarBotones();
+        taNotas.setVisible(false);
+        btnEnviarAprobacion.setVisible(true);
+        btnGuardarBorrador.setVisible(true);
+        if (usuario.getIdTipoUsuario() == Constantes.DIRECTOR) {
+            Profesor profesor = ProfesorDAO.obtenerProfesorPorIdUsuario(usuario.getIdUsuario());
+            int idCuerpoAcademico = profesor.getIdCuerpoAcademico();
+            CuerpoAcademico cuerpoAcademicoSeleccionado = null;
+            for (CuerpoAcademico cuerpoAcademico : cbCuerpoAcademico.getItems()) {
+                if (cuerpoAcademico.getIdCuerpoAcademico() == idCuerpoAcademico) {
+                    cuerpoAcademicoSeleccionado = cuerpoAcademico;
+                    break;
+                }
+            }
+            cbCuerpoAcademico.setValue(cuerpoAcademicoSeleccionado);
+            cbCuerpoAcademico.setDisable(true);
+        }
     }
 
     private void cargarInformacionCuerposAcademicos() {
@@ -216,16 +236,20 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
 
     private void obtenerTextoComboBox() {
         if (cbCuerpoAcademico.getValue() != null) {
-            idCuerpoAcademico = cbCuerpoAcademico.getSelectionModel().getSelectedItem().getIdCuerpoAcademico();
+            CuerpoAcademico cuerpoAcademico = cbCuerpoAcademico.getSelectionModel().getSelectedItem();
+            idCuerpoAcademico = cuerpoAcademico.getIdCuerpoAcademico();
         }
         if (cbLGAC.getValue() != null) {
-            idLGAC = cbLGAC.getSelectionModel().getSelectedItem().getIdLGAC();
+            LGAC lgac = cbLGAC.getSelectionModel().getSelectedItem();
+            idLGAC = lgac.getIdLGAC();
         }
         if (cbModalidadTrabajoRecepcional.getValue() != null) {
-            idTipoAnteproyecto = cbModalidadTrabajoRecepcional.getSelectionModel().getSelectedItem().getIdTipoProyecto();
+            TipoAnteproyecto tipoAnteproyecto = cbModalidadTrabajoRecepcional.getSelectionModel().getSelectedItem();
+            idTipoAnteproyecto = tipoAnteproyecto.getIdTipoProyecto();
         }
         if (cbNumeroEstudiantes.getValue() != null) {
-            numeroEstudiantes = cbNumeroEstudiantes.getValue();
+            int numeroEstudiantesInt = cbNumeroEstudiantes.getSelectionModel().getSelectedItem();
+            numeroEstudiantes = numeroEstudiantesInt;
         }
     }
 
@@ -350,6 +374,11 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 modificarAnteproyecto(nuevoAnteproyecto);
             } else {
                 registrarAnteproyecto(nuevoAnteproyecto);
+                Usuario usuarioActual = UsuarioSingleton.getInstancia().getUsuario();
+                if (usuarioActual.getIdTipoUsuario() != Constantes.DIRECTOR) {
+                    UsuarioDAO.actualizarTipoUsuario(Constantes.DIRECTOR, usuarioActual.getIdUsuario());
+                    ProfesorDAO.modificarCuerpoAcademico(usuarioActual.getIdUsuario(), idCuerpoAcademico);
+                }
             }
         }
 
@@ -465,6 +494,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 limpiarCampos();
                 break;
         }
+        regresar();
     }
 
     private void modificarAnteproyecto(Anteproyecto anteproyecto) {
@@ -487,6 +517,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                         Alert.AlertType.INFORMATION);
                 break;
         }
+        regresar();
     }
 
     private void cargarInformacionComboBox(Anteproyecto anteproyecto) {
@@ -498,7 +529,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 break;
             }
         }
-        cbCuerpoAcademico.setValue(cuerpoAcademicoSeleccionado);
+        cbCuerpoAcademico.getSelectionModel().select(cuerpoAcademicoSeleccionado);
 
         int idLGAC = anteproyecto.getIdLAGC();
         LGAC lgacSeleccionado = null;
@@ -508,7 +539,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 break;
             }
         }
-        cbLGAC.setValue(lgacSeleccionado);
+        cbLGAC.getSelectionModel().select(lgacSeleccionado);
 
         int idTipoAnteproyecto = anteproyecto.getIdTipoAnteproyecto();
         TipoAnteproyecto tipoAnteproyectoSeleccionado = null;
@@ -518,9 +549,9 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 break;
             }
         }
-        cbModalidadTrabajoRecepcional.setValue(tipoAnteproyectoSeleccionado);
+        cbModalidadTrabajoRecepcional.getSelectionModel().select(tipoAnteproyectoSeleccionado);
 
-        cbNumeroEstudiantes.setValue(anteproyecto.getNumeroEstudiantes());
+        cbNumeroEstudiantes.getSelectionModel().select(anteproyecto.getNumeroEstudiantes());
     }
 
     private void cargarInformacionComboBoxModificacion(Anteproyecto anteproyecto) {
@@ -532,7 +563,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 break;
             }
         }
-        cbLGAC.setValue(lgacSeleccionado);
+        cbLGAC.getSelectionModel().select(lgacSeleccionado);
 
         int idTipoAnteproyecto = anteproyecto.getIdTipoAnteproyecto();
         TipoAnteproyecto tipoAnteproyectoSeleccionado = null;
@@ -542,9 +573,9 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 break;
             }
         }
-        cbModalidadTrabajoRecepcional.setValue(tipoAnteproyectoSeleccionado);
+        cbModalidadTrabajoRecepcional.getSelectionModel().select(tipoAnteproyectoSeleccionado);
 
-        cbNumeroEstudiantes.setValue(anteproyecto.getNumeroEstudiantes());
+        cbNumeroEstudiantes.getSelectionModel().select(anteproyecto.getNumeroEstudiantes());
     }
 
     private void ocultarBotones() {
@@ -747,9 +778,10 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     }
 
     private void modificarAnteproyectoCargarInformacion() {
-
+        cbLGAC.setDisable(true);
+        cbModalidadTrabajoRecepcional.setDisable(true);
+        cbNumeroEstudiantes.setDisable(true);
         Anteproyecto anteproyecto = new Anteproyecto();
-        System.out.println(idCuerpoAcademico + " " + idLGAC + " " + idTipoAnteproyecto + " " + numeroEstudiantes + " ");
         cargarInformacionLGAC(idCuerpoAcademico);
         //anteproyecto.setIdCuerpoAcademico(idCuerpoAcademico);
         anteproyecto.setIdLAGC(idLGAC);
@@ -772,9 +804,9 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
             btnGuardarBorrador.setVisible(true);
         }
     }
-    
-    private void regresar(){
-        switch(UsuarioSingleton.getInstancia().getUsuario().getIdTipoUsuario()){
+
+    private void regresar() {
+        switch (UsuarioSingleton.getInstancia().getUsuario().getIdTipoUsuario()) {
             case Constantes.PROFESOR:
             case Constantes.DIRECTOR:
                 Utilidades.cambiarPane(apCrearAnteproyecto, "/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml");

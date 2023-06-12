@@ -9,18 +9,21 @@ public class Alumno {
     private int idAnteproyecto;
     private String matricula;
     private String nombreCompleto;
+    private byte[] imagenUsuario;
 
     public Alumno() {
     }
 
-    public Alumno(int codigoRespuesta, int idAlumno, int idUsuario, int idAnteproyecto, String matricula, String nombreCompleto) {
+    public Alumno(int codigoRespuesta, int idAlumno, int idUsuario, int idAnteproyecto, String matricula, String nombreCompleto, byte[] imagenUsuario) {
         this.codigoRespuesta = codigoRespuesta;
         this.idAlumno = idAlumno;
         this.idUsuario = idUsuario;
         this.idAnteproyecto = idAnteproyecto;
         this.matricula = matricula;
         this.nombreCompleto = nombreCompleto;
+        this.imagenUsuario = imagenUsuario;
     }
+
 
     public int getCodigoRespuesta() {
         return codigoRespuesta;
@@ -46,6 +49,10 @@ public class Alumno {
         return nombreCompleto;
     }
 
+    public byte[] getImagenUsuario() {
+        return imagenUsuario;
+    }
+
     public void setCodigoRespuesta(int codigoRespuesta) {
         this.codigoRespuesta = codigoRespuesta;
     }
@@ -68,6 +75,10 @@ public class Alumno {
 
     public void setNombreCompleto(String nombreCompleto) {
         this.nombreCompleto = nombreCompleto;
+    }
+
+    public void setImagenUsuario(byte[] imagenUsuario) {
+        this.imagenUsuario = imagenUsuario;
     }
         
 }
