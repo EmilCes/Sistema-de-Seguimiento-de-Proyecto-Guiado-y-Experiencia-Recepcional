@@ -153,9 +153,7 @@ public class FXMLModificarUsuarioController implements Initializable {
             case(Constantes.OPERACION_EXITOSA):
                 Utilidades.mostrarDialogoSimple("Usuario Modificado", "El usuario ha sido modificado exitosamente", Alert.AlertType.INFORMATION);
                 UsuarioSingleton.getInstancia().setUsuario(usuario);
-         }
-                 
-                 
+         }                
     }
     
     @FXML

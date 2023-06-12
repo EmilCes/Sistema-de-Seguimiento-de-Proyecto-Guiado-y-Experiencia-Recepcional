@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +9,119 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAnteproyectoAvancesController">
+<AnchorPane id="AnchorPane" fx:id="apAvancesAnteproyecto" prefHeight="600.0" prefWidth="889.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAnteproyectoAvancesController">
     <stylesheets>
-        <URL value="@/sspger/vistas/css/fxmlanteproyectoavances.css"/>
+        <URL value="@/sspger/vistas/css/fxmlanteproyectoavances.css" />
     </stylesheets>
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <children>
+            <Pane layoutX="67.0" layoutY="127.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="51.0" layoutY="5.0" text="Estudiante:" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Pane layoutX="67.0" layoutY="182.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="63.0" layoutY="4.0" text="Director:" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Pane layoutX="67.0" layoutY="72.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="34.0" layoutY="4.0" text="Anteproyecto:" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Pane layoutX="67.0" layoutY="237.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="5.0" layoutY="4.0" text="Total de actividades" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Button fx:id="btnVolver" layoutX="182.0" layoutY="402.0" mnemonicParsing="false" onAction="#clicBtnVolver" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Volver" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Pane layoutX="67.0" layoutY="292.0" prefHeight="38.0" prefWidth="210.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="15.0" layoutY="4.0" text="Promedio General" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <Button fx:id="btnVerActividades" layoutX="502.0" layoutY="402.0" mnemonicParsing="false" onAction="#clicBtnVerActividades" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Actividades" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Label fx:id="lbAnteproyecto" layoutX="334.0" layoutY="75.0" prefHeight="29.0" prefWidth="498.0" text="Anteproyecto Hola hol ahokanas">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbDirector" layoutX="334.0" layoutY="186.0" prefHeight="29.0" prefWidth="389.0" text="Anteproyecto Hola hol ahokanas">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbTotalActividades" layoutX="334.0" layoutY="241.0" prefHeight="29.0" prefWidth="448.0" text="Anteproyecto Hola hol ahokanas">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbPromedioGeneral" layoutX="334.0" layoutY="295.0" prefHeight="29.0" prefWidth="448.0" text="Anteproyecto Hola hol ahokanas">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbEstudiantes" layoutX="334.0" layoutY="132.0" prefHeight="27.0" prefWidth="329.0" promptText="Estudiante(s)" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
+         </children>
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="27.0" layoutY="10.0" text="Avances de anteproyecto">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
