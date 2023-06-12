@@ -93,42 +93,62 @@ public class UsuarioDAO {
         }
         return respuesta;
     }
-    
-    
-public static int modificarUsuario(Usuario usuario) {
-    int respuesta;
-    Connection conexionBD = ConexionBD.abrirConexionBD();
-    if (conexionBD != null) {
-        try {
-            String sentencia = "UPDATE Usuarios SET nombre = ?, apellidoPaterno = ?, apellidoMaterno = ?, " +
-                    "correoInstitucional = ?, numeroTelefonico = ?, nombreUsuario = ?, password = ?, " +
-                    "imagenUsuario = ?, idTipoUsuario = ? WHERE idUsuario = ?";
 
-            PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
-            prepararSentencia.setString(1, usuario.getNombre());
-            prepararSentencia.setString(2, usuario.getApellidoPaterno());
-            prepararSentencia.setString(3, usuario.getApellidoMaterno());
-            prepararSentencia.setString(4, usuario.getCorreoInstitucional());
-            prepararSentencia.setString(5, usuario.getNumeroTelefonico());
-            prepararSentencia.setString(6, usuario.getNombreUsuario());
-            prepararSentencia.setString(7, usuario.getPassword());
-            prepararSentencia.setBytes(8, usuario.getImagen());
-            prepararSentencia.setInt(9, usuario.getIdTipoUsuario());
-            prepararSentencia.setInt(10, usuario.getIdUsuario());
-            
-            int filasAfectadas = prepararSentencia.executeUpdate();
-            respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
-            conexionBD.close();
-        } catch (SQLException e) {
-            System.out.print(e.getMessage());
-            respuesta = Constantes.ERROR_CONSULTA;
+    public static int modificarUsuario(Usuario usuario) {
+        int respuesta;
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        if (conexionBD != null) {
+            try {
+                String sentencia = "UPDATE Usuarios SET nombre = ?, apellidoPaterno = ?, apellidoMaterno = ?, "
+                        + "correoInstitucional = ?, numeroTelefonico = ?, nombreUsuario = ?, password = ?, "
+                        + "imagenUsuario = ?, idTipoUsuario = ? WHERE idUsuario = ?";
+
+                PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
+                prepararSentencia.setString(1, usuario.getNombre());
+                prepararSentencia.setString(2, usuario.getApellidoPaterno());
+                prepararSentencia.setString(3, usuario.getApellidoMaterno());
+                prepararSentencia.setString(4, usuario.getCorreoInstitucional());
+                prepararSentencia.setString(5, usuario.getNumeroTelefonico());
+                prepararSentencia.setString(6, usuario.getNombreUsuario());
+                prepararSentencia.setString(7, usuario.getPassword());
+                prepararSentencia.setBytes(8, usuario.getImagen());
+                prepararSentencia.setInt(9, usuario.getIdTipoUsuario());
+                prepararSentencia.setInt(10, usuario.getIdUsuario());
+
+                int filasAfectadas = prepararSentencia.executeUpdate();
+                respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
+                conexionBD.close();
+            } catch (SQLException e) {
+                System.out.print(e.getMessage());
+                respuesta = Constantes.ERROR_CONSULTA;
+            }
+        } else {
+            respuesta = Constantes.ERROR_CONEXION;
         }
-    } else {
-        respuesta = Constantes.ERROR_CONEXION;
+
+        return respuesta;
     }
 
-    return respuesta;
-}
-
+    public static Usuario obtenerUltimoRegistro() {
+        Usuario usuario = new Usuario();
+        Connection conexion = ConexionBD.abrirConexionBD();
+        if (conexion != null) {
+            try {
+                String consulta = "SELECT idUsuario FROM Usuarios ORDER BY idUsuario DESC LIMIT 1";
+                PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
+                ResultSet resultado = prepararSentencia.executeQuery();
+                usuario.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+                if (resultado.next()) {
+                    usuario.setIdUsuario(resultado.getInt("idUsuario"));
+                }
+                conexion.close();
+            } catch (SQLException e) {
+                usuario.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+            }
+        } else {
+            usuario.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+        }
+        return usuario;
+    }
 
 }
