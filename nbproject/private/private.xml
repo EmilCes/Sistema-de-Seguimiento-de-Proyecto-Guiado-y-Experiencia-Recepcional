@@ -3,17 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/ActividadDAO.java</file>
-            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/EstadoAnteproyectoDAO.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/pojo/Actividad.java</file>
-            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/css/fxmlmodificaractividad.css</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLFormularioUsuarioController.java</file>
-            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAñadirActividadController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLVerActividadesController.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLEntregarActividadFormularioController.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLModificarActividadController.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLModificarActividad.fxml</file>
-            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/AlumnoDAO.java</file>
             <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAnteproyectoAvancesController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/ActividadDAO.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/EstadoAnteproyectoDAO.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLActividadFragmento.fxml</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLAnteproyectosPorDirector.fxml</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/css/fxmlactividadfragmento.css</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAnteproyectoFragmentoController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAñadirActividadController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLActividadFragmentoController.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/AlumnoDAO.java</file>
+            <file>file:/Users/kirbithalbertocubillashernandez/Documents/4to%20Semestre/Proyecto%20de%20construcción/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLVerActividades.fxml</file>
         </group>
     </open-files>
 </project-private>

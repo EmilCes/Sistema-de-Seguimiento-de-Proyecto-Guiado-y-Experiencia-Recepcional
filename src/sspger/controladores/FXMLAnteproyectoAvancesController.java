@@ -38,7 +38,8 @@ public class FXMLAnteproyectoAvancesController implements Initializable {
     private Label lbPromedioGeneral;
     @FXML
     private ComboBox<String> cbEstudiantes;
-
+    
+    private int idAnteproyecto;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -51,11 +52,12 @@ public class FXMLAnteproyectoAvancesController implements Initializable {
 
     @FXML
     private void clicBtnVerActividades(ActionEvent event) {
-        FXMLModificarActividadController modificarActividadController = Utilidades.cambiarPaneObtenerControlador(apAvancesAnteproyecto, "/sspger/vistas/FXMLModificarActividad.fxml");
-        modificarActividadController.cargarInformacionActividad(4);
+        FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apAvancesAnteproyecto, "/sspger/vistas/FXMLVerActividades.fxml");
+        verActividadesController.setIdAnteproyecto(idAnteproyecto);
     }
     
     public void cargarAvanceAnteproyecto(int idAnteproyecto){
+        this.idAnteproyecto = idAnteproyecto;
         lbAnteproyecto.setText(AvanceAnteproyectoDAO.obtenerNombreAnteproyectoPorIdAnteproyecto(idAnteproyecto));
         lbDirector.setText(AvanceAnteproyectoDAO.obtenerNombreProfesorPorIdAnteproyecto(idAnteproyecto));
         lbTotalActividades.setText(String.valueOf(AvanceAnteproyectoDAO.obtenerCantidadActividadesPorAnteproyecto(idAnteproyecto)));

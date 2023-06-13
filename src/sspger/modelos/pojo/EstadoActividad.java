@@ -40,5 +40,10 @@ public class EstadoActividad {
         this.codigoRespuesta = codigoRespuesta;
     }
     
+     @Override
+    public String toString() {
+        return descripcion;
+    }
+    
     
 }

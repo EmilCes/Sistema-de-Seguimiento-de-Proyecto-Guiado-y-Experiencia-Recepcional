@@ -12,8 +12,10 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import sspger.modelos.ConexionBD;
 import sspger.modelos.pojo.Actividad;
+import sspger.modelos.pojo.ActividadRespuesta;
 import sspger.utils.Constantes;
 
 
@@ -127,6 +129,42 @@ public static Actividad obtenerInformacionActividaPorIdActividad(int idActividad
 }
 
 
+public static ActividadRespuesta obtenerActividadesPorIdEstadoYIdAnteproyecto(int idEstado, int idAnteproyecto){
+    ActividadRespuesta actividadRespuesta = new ActividadRespuesta();
+    actividadRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+    Connection conexion = ConexionBD.abrirConexionBD();
+    if(conexion != null){
+        try{
+            String sentencia = "SELECT a.idActividad, titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado, ea.calificacion FROM Actividades a "
+                    + "INNER JOIN EntregaActividad ea ON ea.idActividad = a.idActividad WHERE idEstado = ? AND idAnteproyecto = ?";
+                PreparedStatement prepararSentencia = conexion.prepareStatement(sentencia);
+                prepararSentencia.setInt(1, idEstado);
+                prepararSentencia.setInt(2, idAnteproyecto);
+                ResultSet respuestaBaseDatos = prepararSentencia.executeQuery();
+                ArrayList<Actividad> actividadConsulta = new ArrayList();
+                while(respuestaBaseDatos.next()){
+                    Actividad actividad = new Actividad();
+                    actividad.setIdActividad(respuestaBaseDatos.getInt("idActividad"));
+                    actividad.setTitulo(respuestaBaseDatos.getString("titulo"));
+                    actividad.setDescripcion(respuestaBaseDatos.getString("descripcion"));
+                    actividad.setFechaInicio(respuestaBaseDatos.getString("fechaInicio"));
+                    actividad.setFechaFin(respuestaBaseDatos.getString("fechaFin"));
+                    actividad.setIdAnteproyecto(respuestaBaseDatos.getInt("idAnteproyecto"));
+                    actividad.setIdEstadoActividad(respuestaBaseDatos.getInt("idEstado"));
+                    actividad.setCalificacion(respuestaBaseDatos.getFloat("calificacion"));
+                    actividadConsulta.add(actividad);
+                }
+                actividadRespuesta.setActividades(actividadConsulta);
+                conexion.close();
+            } catch(SQLException e){
+                System.out.println(e.getMessage());
+                actividadRespuesta.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+            }
+        } else{
+            actividadRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+        }
+        return actividadRespuesta;
+    }
     
     
 

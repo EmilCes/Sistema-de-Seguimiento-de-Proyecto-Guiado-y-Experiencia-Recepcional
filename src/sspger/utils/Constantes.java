@@ -23,4 +23,9 @@ public class Constantes {
     public static final int ESTUDIANTE_CON_ANTEPROYECTO = 4;
     public static final int ENCARGADO_CA = 5;
     public static final int DIRECTOR = 6;
+    
+    //Estado Actividad
+    public static final int SIN_ENTREGA = 1;
+    public static final int CON_ENTREGA = 2;
+    public static final int CALIFICADA = 3;
 }
