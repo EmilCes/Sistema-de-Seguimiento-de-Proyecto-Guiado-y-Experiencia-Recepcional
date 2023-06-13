@@ -355,7 +355,7 @@ public class AnteproyectoDAO {
                 String consulta = "SELECT idAnteproyecto, nombreProyectoInvestigacion, nombreTrabajoRecepcional, "
                         + "requisitos, resultadosEsperados, numEstudiantes, duracionAproximada, descripcionTrabajoRecepcional, "
                         + " descripcionProyectoInvestigacion, bibliografiaRecomendada, lineaInvestigacion, idLAGC, idTipoAnteproyecto, "
-                        + " idCuerpoAcademico, idEstado, notas FROM Anteproyecto WHERE idAnteproyecto = ?";
+                        + " idCuerpoAcademico, idEstado, notas, idProfesor FROM Anteproyecto WHERE idAnteproyecto = ?";
                 PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
                 prepararSentencia.setInt(1, idAnteproyecto);
                 ResultSet resultado = prepararSentencia.executeQuery();
@@ -377,6 +377,7 @@ public class AnteproyectoDAO {
                     anteproyecto.setIdCuerpoAcademico(resultado.getInt("idCuerpoAcademico"));
                     anteproyecto.setIdEstado(resultado.getInt("idEstado"));
                     anteproyecto.setNotas(resultado.getString("notas"));
+                    anteproyecto.setIdProfesor(resultado.getInt("idProfesor"));
                 }
                 conexion.close();
             } catch (SQLException e) {

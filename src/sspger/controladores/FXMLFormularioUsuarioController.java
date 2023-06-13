@@ -24,6 +24,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import sspger.modelos.dao.AlumnoDAO;
+import sspger.modelos.dao.ProfesorDAO;
 import sspger.modelos.dao.TipoUsuarioDAO;
 import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.pojo.TipoUsuario;
@@ -69,11 +71,9 @@ public class FXMLFormularioUsuarioController implements Initializable {
     @FXML
     private Button btnSeleccionarFoto;
 
-
     public void initialize(URL url, ResourceBundle rb) {
         configurarCbTipoUsuario();
     }
-
 
     @FXML
     private void clicBtnSeleccionarFoto(ActionEvent event) {
@@ -97,8 +97,8 @@ public class FXMLFormularioUsuarioController implements Initializable {
 
     @FXML
     private void clicBtnGuardarUsuario(ActionEvent event) {
-        resetearEstilos();
         validarCampos();
+        resetearEstilos();
     }
 
     private void guardarUsuario() throws IOException {
@@ -123,9 +123,24 @@ public class FXMLFormularioUsuarioController implements Initializable {
         usuario.setImagen(Files.readAllBytes(archivoFoto.toPath()));
 
         UsuarioDAO.guardarUsuario(usuario);
-        
+        Usuario ultimoRegistro = UsuarioDAO.obtenerUltimoRegistro();
+
+        if (opcionSeleccionada.getIdTipoUsuario() == Constantes.PROFESOR) {
+            ProfesorDAO.registrarProfesor(ultimoRegistro.getIdUsuario());
+        }
+
+        if (opcionSeleccionada.getIdTipoUsuario() == Constantes.ESTUDIANTE) {
+            String nombre = tfNombre.getText().substring(0, 2);
+            String apellidoPaterno = tfApellidoPaterno.getText().substring(0, 2);
+            String apellidoMaterno = tfApellidoMaterno.getText().substring(0, 2);
+
+            String matricula = ("ZS" + nombre + apellidoPaterno + apellidoMaterno + tipoUsuario).toUpperCase();
+            AlumnoDAO.registrarAlumno(ultimoRegistro.getIdUsuario(), matricula);
+        }
+
         limpiarCampos();
         Utilidades.mostrarDialogoSimple("Usuario Guardado", "El usuario se guardó exitosamente", Alert.AlertType.INFORMATION);
+
     }
 
     private void validarCampos() {
@@ -198,8 +213,8 @@ public class FXMLFormularioUsuarioController implements Initializable {
                 guardarUsuario();
             } catch (IOException ex) {
                 Utilidades.mostrarDialogoSimple("Selecciona una imagen",
-                    "Para guardar el registro del alumno debes seleccionar su foto desde la opción Seleccionar Foto.",
-                    Alert.AlertType.WARNING);
+                        "Para guardar el registro del alumno debes seleccionar su foto desde la opción Seleccionar Foto.",
+                        Alert.AlertType.WARNING);
             }
         }
     }
@@ -242,8 +257,5 @@ public class FXMLFormularioUsuarioController implements Initializable {
         cbTipoUsuario.setValue(null);
         imgImagenPerfil.setImage(imagen);
     }
-
-
-
 
 }
