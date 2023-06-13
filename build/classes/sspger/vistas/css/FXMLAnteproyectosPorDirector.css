@@ -16,8 +16,8 @@
 }
 
 .combo-box .list-view .list-cell:hover {
-    -fx-background-color: black; 
-    -fx-text-fill: white; 
+    -fx-background-color: white; 
+    -fx-text-fill: black; 
 }
 
 .combo-box .list-view .list-cell:selected .text {
@@ -34,4 +34,10 @@
 	-fx-background-color:  WHITE;
 	-fx-text-fill: RED;
 }
+
+.combo-box .cell {
+-fx-background-color: black;
+-fx-text-fill: #fafafa;
+}
+
 

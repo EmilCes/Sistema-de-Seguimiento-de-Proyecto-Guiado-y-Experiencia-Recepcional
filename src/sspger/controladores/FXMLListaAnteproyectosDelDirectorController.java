@@ -92,6 +92,7 @@ public class FXMLListaAnteproyectosDelDirectorController implements Initializabl
                     spListaAnteproyectos.setVisible(false);
                     pnAnteproyectosNoDisponibles.setVisible(true);
                 }
+                break;
         }
     }
 

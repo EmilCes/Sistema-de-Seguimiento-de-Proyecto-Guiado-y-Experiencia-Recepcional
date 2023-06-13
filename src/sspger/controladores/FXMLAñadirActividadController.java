@@ -13,6 +13,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import sspger.modelos.dao.ActividadDAO;
+import sspger.modelos.dao.EntregaActividadDAO;
 import sspger.modelos.pojo.Actividad;
 import sspger.utils.Constantes;
 import sspger.utils.Utilidades;
@@ -151,6 +152,9 @@ public class FXMLAñadirActividadController implements Initializable {
                 Utilidades.mostrarDialogoSimple("Actividad añadida al cronograma",
                         "Actividad guardada correctamente",
                         Alert.AlertType.INFORMATION);
+                Actividad ultimaActividad;
+                ultimaActividad = ActividadDAO.obtenerUltimaActividad();
+                EntregaActividadDAO.registrarIdActividad(ultimaActividad.getIdActividad());
                 limpiarCampos();
                 break;
         }

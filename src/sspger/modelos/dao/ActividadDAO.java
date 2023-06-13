@@ -1,11 +1,4 @@
-
 package sspger.modelos.dao;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -18,8 +11,6 @@ import sspger.modelos.pojo.Actividad;
 import sspger.modelos.pojo.ActividadRespuesta;
 import sspger.utils.Constantes;
 
-
-
 public class ActividadDAO {
 
     public static int guardarActividad(Actividad actividad) {
@@ -27,8 +18,8 @@ public class ActividadDAO {
         Connection conexionBD = ConexionBD.abrirConexionBD();
         if (conexionBD != null) {
             try {
-                String sentencia = "INSERT INTO Actividades (titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado) " +
-                                   " VALUES (?, ?, ?, ?, ?, ?)";
+                String sentencia = "INSERT INTO Actividades (titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado) "
+                        + " VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
                 prepararSentencia.setString(1, actividad.getTitulo());
                 prepararSentencia.setString(2, actividad.getDescripcion());
@@ -48,83 +39,82 @@ public class ActividadDAO {
         }
         return respuesta;
     }
-    
-  public static int modificarActividad(Actividad actividad) {
-    int respuesta;
-    Connection conexionBD = ConexionBD.abrirConexionBD();
-    if (conexionBD != null) {
-        try {
-            String sentencia = "UPDATE Actividades SET titulo = ?, descripcion = ?, fechaInicio = ?, fechaFin = ? WHERE idActividad = ?";
 
-            PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
-            prepararSentencia.setString(1, actividad.getTitulo());
-            prepararSentencia.setString(2, actividad.getDescripcion());
-            prepararSentencia.setString(3, actividad.getFechaInicio());
-            prepararSentencia.setString(4, actividad.getFechaFin());
-            prepararSentencia.setInt(5, actividad.getIdActividad());
-
-            int filasAfectadas = prepararSentencia.executeUpdate();
-            respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-            respuesta = Constantes.ERROR_CONSULTA;
-        } finally {
+    public static int modificarActividad(Actividad actividad) {
+        int respuesta;
+        Connection conexionBD = ConexionBD.abrirConexionBD();
+        if (conexionBD != null) {
             try {
-                if (conexionBD != null) {
-                    conexionBD.close();
-                }
+                String sentencia = "UPDATE Actividades SET titulo = ?, descripcion = ?, fechaInicio = ?, fechaFin = ? WHERE idActividad = ?";
+
+                PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
+                prepararSentencia.setString(1, actividad.getTitulo());
+                prepararSentencia.setString(2, actividad.getDescripcion());
+                prepararSentencia.setString(3, actividad.getFechaInicio());
+                prepararSentencia.setString(4, actividad.getFechaFin());
+                prepararSentencia.setInt(5, actividad.getIdActividad());
+
+                int filasAfectadas = prepararSentencia.executeUpdate();
+                respuesta = (filasAfectadas == 1) ? Constantes.OPERACION_EXITOSA : Constantes.ERROR_CONSULTA;
             } catch (SQLException e) {
-                System.out.println("Error al cerrar la conexión: " + e.getMessage());
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+                respuesta = Constantes.ERROR_CONSULTA;
+            } finally {
+                try {
+                    if (conexionBD != null) {
+                        conexionBD.close();
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Error al cerrar la conexión: " + e.getMessage());
+                }
             }
+        } else {
+            respuesta = Constantes.ERROR_CONEXION;
         }
-    } else {
-        respuesta = Constantes.ERROR_CONEXION;
+        return respuesta;
     }
-    return respuesta;
-}
 
+    public static Actividad obtenerInformacionActividaPorIdActividad(int idActividad) {
+        Actividad actividad = new Actividad();
+        Connection conexion = ConexionBD.abrirConexionBD();
 
-    
-    
-    
-    
-public static Actividad obtenerInformacionActividaPorIdActividad(int idActividad) {
-    Actividad actividad = new Actividad();
-    Connection conexion = ConexionBD.abrirConexionBD();
-    
-    if (conexion != null) {
-        try {
-            String consulta = "SELECT titulo, descripcion, fechaInicio, fechaFin FROM Actividades WHERE idActividad = ?";
-            PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
-            prepararSentencia.setInt(1, idActividad);
-            ResultSet resultado = prepararSentencia.executeQuery();
-            
-            if (resultado.next()) {
-                actividad.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
-                actividad.setTitulo(resultado.getString("titulo"));
-                actividad.setDescripcion(resultado.getString("descripcion"));
-                
-                // Conversión de tipo de Date a String
-                Date fechaInicio = resultado.getDate("fechaInicio");
-                String fechaInicioString = fechaInicio.toString();
-                actividad.setFechaInicio(fechaInicioString);
-                
-                Date fechaFin = resultado.getDate("fechaFin");
-                String fechaFinString = fechaFin.toString();
-                actividad.setFechaFin(fechaFinString);
-            } else {
+        if (conexion != null) {
+            try {
+                String consulta = "SELECT titulo, descripcion, fechaInicio, fechaFin FROM Actividades WHERE idActividad = ?";
+                PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
+                prepararSentencia.setInt(1, idActividad);
+                ResultSet resultado = prepararSentencia.executeQuery();
+
+                if (resultado.next()) {
+                    actividad.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+                    actividad.setTitulo(resultado.getString("titulo"));
+                    actividad.setDescripcion(resultado.getString("descripcion"));
+
+                    // Conversión de tipo de Date a String
+                    Date fechaInicio = resultado.getDate("fechaInicio");
+                    String fechaInicioString = fechaInicio.toString();
+                    actividad.setFechaInicio(fechaInicioString);
+
+                    Date fechaFin = resultado.getDate("fechaFin");
+                    String fechaFinString = fechaFin.toString();
+                    actividad.setFechaFin(fechaFinString);
+                } else {
+                    actividad.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+                }
+
+                conexion.close();
+            } catch (SQLException e) {
                 actividad.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
             }
-            
-            conexion.close();
-        } catch (SQLException e) {
-            actividad.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+        } else {
+            actividad.setCodigoRespuesta(Constantes.ERROR_CONEXION);
         }
-    } else {
-        actividad.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+
+        return actividad;
     }
     
+
     return actividad;
 }
 
@@ -167,5 +157,26 @@ public static ActividadRespuesta obtenerActividadesPorIdEstadoYIdAnteproyecto(in
     }
     
     
+    public static Actividad obtenerUltimaActividad() {
+        Actividad actividad = new Actividad();
+        Connection conexion = ConexionBD.abrirConexionBD();
+        if (conexion != null) {
+            try {
+                String consulta = "SELECT idActividad FROM Actividades ORDER BY idActividad DESC LIMIT 1";
+                PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
+                ResultSet resultado = prepararSentencia.executeQuery();
+                actividad.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+                if (resultado.next()) {
+                    actividad.setIdActividad(resultado.getInt("idActividad"));
+                }
+                conexion.close();
+            } catch (SQLException e) {
+                actividad.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
+            }
+        } else {
+            actividad.setCodigoRespuesta(Constantes.ERROR_CONEXION);
+        }
+        return actividad;
+    }
 
 }
