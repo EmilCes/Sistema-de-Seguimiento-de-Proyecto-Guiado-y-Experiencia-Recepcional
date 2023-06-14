@@ -159,36 +159,36 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
              taComentarios.setStyle("");
          }
         
-    public void cargarInformacionEntrega(int idActividad, int idAnteproyecto){
-        EntregaActividad entregaActividad = EntregaActividadDAO.cargarInfomacionEntregaPorIdActividad(idActividad);
-        switch (entregaActividad.getCodigoRespuesta()) {
-            case Constantes.ERROR_CONEXION:
-                Utilidades.mostrarDialogoSimple("Error de Conexión",
-                        "No se pudo conectar con la base de datos. Intente de nuevo o hágalo más tarde.",
-                        Alert.AlertType.ERROR);
-                break;
-            case Constantes.ERROR_CONSULTA:
-                Utilidades.mostrarDialogoSimple("Error en la información",
-                        "La información de la entrega no puede ser recuperada, intentelo mas tarde",
-                        Alert.AlertType.WARNING);
-                break;
-            case Constantes.OPERACION_EXITOSA:
-                taComentarios.setText(entregaActividad.getComentarios());
-                paneArchivoConfirmacion.setVisible(true);
-                cargarInformacionActividad(idActividad, idAnteproyecto);
-                try {
+    public void cargarInformacionEntrega(int idActividad, int idAnteproyecto) {
+    EntregaActividad entregaActividad = EntregaActividadDAO.cargarInfomacionEntregaPorIdActividad(idActividad);
+    switch (entregaActividad.getCodigoRespuesta()) {
+        case Constantes.ERROR_CONEXION:
+            Utilidades.mostrarDialogoSimple("Error de Conexión",
+                    "No se pudo conectar con la base de datos. Intente de nuevo o hágalo más tarde.",
+                    Alert.AlertType.ERROR);
+            break;
+        case Constantes.ERROR_CONSULTA:
+            Utilidades.mostrarDialogoSimple("Error en la información",
+                    "La información de la entrega no puede ser recuperada, intentelo más tarde",
+                    Alert.AlertType.WARNING);
+            break;
+        case Constantes.OPERACION_EXITOSA:
+            taComentarios.setText(entregaActividad.getComentarios());
+            paneArchivoConfirmacion.setVisible(true);
+            cargarInformacionActividad(idActividad, idAnteproyecto);
+            try {
                 File tempFile = File.createTempFile("temp", ".pdf");  // Crear un archivo temporal
-                Files.write(tempFile.toPath(), entregaActividad.getArchivo());  // Escribir los bytes en el archivo temporal
-                this.archivoSeleccionado = tempFile;  // Asignar el archivo temporal a archivoSeleccionado
-                lbNombreArchivo.setText(tempFile.getName());  // Mostrar el nombre del archivo en la etiqueta
+                Files.write(archivoSeleccionado.toPath(), entregaActividad.getArchivo());  // Escribir los bytes en el archivo temporal
+                lbNombreArchivo.setText(archivoSeleccionado.getName());  // Mostrar el nombre del archivo en la etiqueta
             } catch (IOException ex) {
                 Utilidades.mostrarDialogoSimple("Error",
                         "Error al cargar el archivo: " + ex.getMessage(),
                         Alert.AlertType.ERROR);
             }
-                break;
-            }
+            break;
     }
+}
+
         
      
 }

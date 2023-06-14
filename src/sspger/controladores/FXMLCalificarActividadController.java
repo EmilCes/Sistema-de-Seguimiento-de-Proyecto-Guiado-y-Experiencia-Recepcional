@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package sspger.controladores;
 
 import java.net.URL;
@@ -16,11 +13,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
-/**
- * FXML Controller class
- *
- * @author kirbithalbertocubillashernandez
- */
 public class FXMLCalificarActividadController implements Initializable {
 
     @FXML
