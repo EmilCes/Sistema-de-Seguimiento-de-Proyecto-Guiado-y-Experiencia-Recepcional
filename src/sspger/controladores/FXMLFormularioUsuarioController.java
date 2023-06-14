@@ -97,8 +97,9 @@ public class FXMLFormularioUsuarioController implements Initializable {
 
     @FXML
     private void clicBtnGuardarUsuario(ActionEvent event) {
-        validarCampos();
         resetearEstilos();
+        validarCampos();
+        
     }
 
     private void guardarUsuario() throws IOException {

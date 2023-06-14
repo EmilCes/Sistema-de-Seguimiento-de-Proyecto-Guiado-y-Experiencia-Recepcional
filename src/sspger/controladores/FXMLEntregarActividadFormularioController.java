@@ -55,6 +55,8 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
 
     @FXML
     private Label lbNombreArchivo;
+    @FXML
+    private Label idEncabezado;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -171,10 +173,11 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
                 paneArchivoConfirmacion.setVisible(true);
                 cargarInformacionActividad(idActividad, idAnteproyecto);
                 try {
+                    idEncabezado.setText("Modificar Entrega");
                     File tempFile = File.createTempFile("temp", ".pdf");  // Crear un archivo temporal
                     Files.write(tempFile.toPath(), entregaActividad.getArchivo());  // Escribir los bytes en el archivo temporal
                     this.archivoSeleccionado = tempFile;  // Asignar el archivo temporal a archivoSeleccionado
-                    lbNombreArchivo.setText(tempFile.getName());  // Mostrar el nombre del archivo en la etiqueta
+                    lbNombreArchivo.setText(archivoSeleccionado.getName());  // Mostrar el nombre del archivo en la etiqueta
                 } catch (IOException ex) {
                     Utilidades.mostrarDialogoSimple("Error",
                             "Error al cargar el archivo: " + ex.getMessage(),
