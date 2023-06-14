@@ -125,6 +125,7 @@ public class FXMLVerActividadesController implements Initializable {
     }
     
     public void setIdAnteproyecto(int idAnteproyecto){
+        System.out.println(idAnteproyecto);
         this.idAnteproyecto = idAnteproyecto;
     }
     

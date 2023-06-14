@@ -19,7 +19,7 @@ public class ActividadDAO {
         if (conexionBD != null) {
             try {
                 String sentencia = "INSERT INTO Actividades (titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado) "
-                        + " VALUES (?, ?, ?, ?, ?, ?)";
+                        + "VALUES (?, ?, ?, ?, ?, ?)";
                 PreparedStatement prepararSentencia = conexionBD.prepareStatement(sentencia);
                 prepararSentencia.setString(1, actividad.getTitulo());
                 prepararSentencia.setString(2, actividad.getDescripcion());
@@ -113,26 +113,21 @@ public class ActividadDAO {
 
         return actividad;
     }
-    
 
-    return actividad;
-}
-
-
-public static ActividadRespuesta obtenerActividadesPorIdEstadoYIdAnteproyecto(int idEstado, int idAnteproyecto){
-    ActividadRespuesta actividadRespuesta = new ActividadRespuesta();
-    actividadRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
-    Connection conexion = ConexionBD.abrirConexionBD();
-    if(conexion != null){
-        try{
-            String sentencia = "SELECT a.idActividad, titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado, ea.calificacion FROM Actividades a "
-                    + "INNER JOIN EntregaActividad ea ON ea.idActividad = a.idActividad WHERE idEstado = ? AND idAnteproyecto = ?";
+    public static ActividadRespuesta obtenerActividadesPorIdEstadoYIdAnteproyecto(int idEstado, int idAnteproyecto) {
+        ActividadRespuesta actividadRespuesta = new ActividadRespuesta();
+        actividadRespuesta.setCodigoRespuesta(Constantes.OPERACION_EXITOSA);
+        Connection conexion = ConexionBD.abrirConexionBD();
+        if (conexion != null) {
+            try {
+                String sentencia = "SELECT a.idActividad, titulo, descripcion, fechaInicio, fechaFin, idAnteproyecto, idEstado, ea.calificacion FROM Actividades a "
+                        + "INNER JOIN EntregaActividad ea ON ea.idActividad = a.idActividad WHERE idEstado = ? AND idAnteproyecto = ?";
                 PreparedStatement prepararSentencia = conexion.prepareStatement(sentencia);
                 prepararSentencia.setInt(1, idEstado);
                 prepararSentencia.setInt(2, idAnteproyecto);
                 ResultSet respuestaBaseDatos = prepararSentencia.executeQuery();
-                ArrayList<Actividad> actividadConsulta = new ArrayList();
-                while(respuestaBaseDatos.next()){
+                ArrayList<Actividad> actividadConsulta = new ArrayList<>();
+                while (respuestaBaseDatos.next()) {
                     Actividad actividad = new Actividad();
                     actividad.setIdActividad(respuestaBaseDatos.getInt("idActividad"));
                     actividad.setTitulo(respuestaBaseDatos.getString("titulo"));
@@ -146,17 +141,16 @@ public static ActividadRespuesta obtenerActividadesPorIdEstadoYIdAnteproyecto(in
                 }
                 actividadRespuesta.setActividades(actividadConsulta);
                 conexion.close();
-            } catch(SQLException e){
+            } catch (SQLException e) {
                 System.out.println(e.getMessage());
                 actividadRespuesta.setCodigoRespuesta(Constantes.ERROR_CONSULTA);
             }
-        } else{
+        } else {
             actividadRespuesta.setCodigoRespuesta(Constantes.ERROR_CONEXION);
         }
         return actividadRespuesta;
     }
-    
-    
+
     public static Actividad obtenerUltimaActividad() {
         Actividad actividad = new Actividad();
         Connection conexion = ConexionBD.abrirConexionBD();
@@ -178,5 +172,5 @@ public static ActividadRespuesta obtenerActividadesPorIdEstadoYIdAnteproyecto(in
         }
         return actividad;
     }
-
 }
+

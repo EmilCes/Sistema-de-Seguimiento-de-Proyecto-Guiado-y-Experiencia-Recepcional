@@ -29,6 +29,14 @@ public class Actividad {
         this.calificacion = calificacion;
     }
 
+    public Actividad(String titulo, String descripcion, String fechaInicio, String fechaFin, int idAnteproyecto) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.idAnteproyecto = idAnteproyecto;
+    }
+
    
 
     
