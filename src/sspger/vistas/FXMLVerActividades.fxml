@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
@@ -10,7 +9,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?xml version="1.0" encoding="UTF-8"?>
 <AnchorPane fx:id="apVerActividades" prefHeight="555.0" prefWidth="889.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLVerActividadesController">
    <children>
       <Label text="Sin Actividades" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="250.0">
