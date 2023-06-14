@@ -52,9 +52,8 @@ public class FXMLAnteproyectoAvancesController implements Initializable {
 
     @FXML
     private void clicBtnVerActividades(ActionEvent event) {
-       //FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apAvancesAnteproyecto, "/sspger/vistas/FXMLVerActividades.fxml");
-      // verActividadesController.setIdAnteproyecto(idAnteproyecto);
-        Utilidades.cambiarPane(apAvancesAnteproyecto, "/sspger/vistas/FXMLVerActividades.fxml");
+        FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apAvancesAnteproyecto, "/sspger/vistas/FXMLVerActividades.fxml");
+        verActividadesController.setIdAnteproyecto(idAnteproyecto);
     }
     
     public void cargarAvanceAnteproyecto(int idAnteproyecto){
