@@ -47,6 +47,7 @@ public class FXMLVerActividadesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        vbActividades.setSpacing(10);
         configurarCbEstados();
         buscarActividadesPorIdEstado(Constantes.SIN_ENTREGA);
         cbEstadosActividades.valueProperty().addListener(new ChangeListener<EstadoActividad>() {
@@ -97,7 +98,6 @@ public class FXMLVerActividadesController implements Initializable {
                         () -> Math.max(vbActividades.getHeight(), 450),
                         vbActividades.heightProperty()
                 ));
-                System.out.println(actividades.size());
                 if(actividades.size() > 0){
                     mostrarActividades(actividades);
                 } else{

@@ -263,7 +263,41 @@
                   </AnchorPane>
                </left>
                <center>
-                  <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                  <AnchorPane fx:id="apMenuPrincipal" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                           <children>
+                              <Pane layoutX="220.0" layoutY="43.0" prefHeight="110.0" prefWidth="405.0" style="-fx-background-color: #000000;" styleClass="pane-label" stylesheets="@css/FXMLGeneral.css">
+                                 <children>
+                                    <Label layoutX="95.0" layoutY="20.0" text="SSPGER" textAlignment="CENTER" textFill="WHITE">
+                                       <font>
+                                          <Font size="60.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Text layoutX="210.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de Gestión de Proyecto Guiado y Experiencía Recepcional" textAlignment="CENTER" wrappingWidth="427.2572021484375">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <Label layoutX="335.0" layoutY="400.0" text="¡Bienvenido!">
+                                 <font>
+                                    <Font size="37.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="200.0" fitWidth="250.0" layoutX="300.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Recursos/uv_logo.jpeg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                           </styleClass>
+                        </Pane>
+                     </children></AnchorPane>
                </center>
             </BorderPane>
          </children>

@@ -12,16 +12,8 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/AlumnoDAO.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/EntregaActividadDAO.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/pojo/AlumnoRespuesta.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAnteproyectoFormularioController.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/css/FXMLAnteproyectosPorDirector.css</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLModificarUsuario.fxml</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLListaAnteproyectosDelDirectorController.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLModificarUsuarioController.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/modelos/dao/UsuarioDAO.java</file>
-            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml</file>
+            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLVerActividadesController.java</file>
+            <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAnteproyectoAvancesController.java</file>
             <file>file:/Users/cesar/Documents/UV/4.%20Cuarto%20Periodo/Principios%20de%20Construcción/Proyecto/SSPGER/Sistema-de-Seguimiento-de-Proyecto-Guiado-y-Experiencia-Recepcional/src/sspger/controladores/FXMLAñadirActividadController.java</file>
         </group>
     </open-files>

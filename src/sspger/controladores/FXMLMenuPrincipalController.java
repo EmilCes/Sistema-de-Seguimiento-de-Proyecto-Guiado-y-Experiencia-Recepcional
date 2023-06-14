@@ -1,4 +1,5 @@
 package sspger.controladores;
+
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.io.ByteArrayInputStream;
 import sspger.controladores.FXMLFormularioUsuarioController;
@@ -18,13 +19,10 @@ import sspger.utils.Constantes;
 import sspger.utils.UsuarioSingleton;
 import sspger.utils.Utilidades;
 
-
-
-
 public class FXMLMenuPrincipalController implements Initializable {
 
     @FXML
-    private AnchorPane apMenuPrincipal;    
+    private AnchorPane apMenuPrincipal;
     @FXML
     private AnchorPane apMenuDirector;
     @FXML
@@ -34,7 +32,7 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private AnchorPane apMenuEstudianteConAnteproyecto;
     @FXML
-    private AnchorPane apMenuEncargadoCA; 
+    private AnchorPane apMenuEncargadoCA;
     @FXML
     private Label lbNombreUsuarioAdministrador;
     @FXML
@@ -65,30 +63,29 @@ public class FXMLMenuPrincipalController implements Initializable {
     private FontAwesomeIcon faIconEncargadoCA;
     @FXML
     private ImageView ivImagenPerfilEncargadoCA;
-   
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         personalizarMenuPrincipal();
-    }    
-       
-    private void irInicioSesion(){
+    }
+
+    private void irInicioSesion() {
         Stage escenarioBase = (Stage) apMenuPrincipal.getScene().getWindow();
         escenarioBase.setScene(Utilidades.inicializarEscena("vistas/FXMLInicioSesion.fxml"));
         Utilidades.centrarEscenario(escenarioBase);
-        escenarioBase.setTitle("Inicio Sesíon");    
-        escenarioBase.show();   
+        escenarioBase.setTitle("Inicio Sesíon");
+        escenarioBase.show();
     }
-    
-    private void ocultarMenus(){
+
+    private void ocultarMenus() {
         apMenuAdministrador.setVisible(false);
         apMenuDirector.setVisible(false);
         apMenuEstudiante.setVisible(false);
         apMenuEstudianteConAnteproyecto.setVisible(false);
         apMenuEncargadoCA.setVisible(false);
     }
-    
-    public void personalizarMenuPrincipal(){
+
+    public void personalizarMenuPrincipal() {
         Usuario usuario = UsuarioSingleton.getInstancia().getUsuario();
         int idTipoUsuario = usuario.getIdTipoUsuario();
         String nombreUsuario = usuario.getNombre();
@@ -97,7 +94,7 @@ public class FXMLMenuPrincipalController implements Initializable {
                 ocultarMenus();
                 apMenuAdministrador.setVisible(true);
                 lbNombreUsuarioAdministrador.setText(nombreUsuario);
-                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                if (usuario.getImagen() != null && usuario.getImagen().length > 0) {
                     ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
                     Image imgFotoAdmin = new Image(inputFoto);
                     faIconAdmin.setVisible(false);
@@ -109,7 +106,7 @@ public class FXMLMenuPrincipalController implements Initializable {
                 ocultarMenus();
                 apMenuDirector.setVisible(true);
                 lbNombreUsuarioDirector.setText(nombreUsuario);
-                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                if (usuario.getImagen() != null && usuario.getImagen().length > 0) {
                     ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
                     Image imgFotoAdmin = new Image(inputFoto);
                     faIconDirector.setVisible(false);
@@ -120,7 +117,7 @@ public class FXMLMenuPrincipalController implements Initializable {
                 ocultarMenus();
                 apMenuEstudiante.setVisible(true);
                 lbNombreUsuarioEstudiante.setText(nombreUsuario);
-                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                if (usuario.getImagen() != null && usuario.getImagen().length > 0) {
                     ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
                     Image imgFotoAdmin = new Image(inputFoto);
                     faIconEstudiante.setVisible(false);
@@ -131,7 +128,7 @@ public class FXMLMenuPrincipalController implements Initializable {
                 ocultarMenus();
                 apMenuEstudianteConAnteproyecto.setVisible(true);
                 lbNombreUsuarioEstudianteConAnteproyecto.setText(nombreUsuario);
-                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                if (usuario.getImagen() != null && usuario.getImagen().length > 0) {
                     ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
                     Image imgFotoAdmin = new Image(inputFoto);
                     faIconEstudianteConAnteproyecto.setVisible(false);
@@ -142,7 +139,7 @@ public class FXMLMenuPrincipalController implements Initializable {
                 ocultarMenus();
                 apMenuEncargadoCA.setVisible(true);
                 lbNombreUsuarioEncargadoCA.setText(nombreUsuario);
-                if(usuario.getImagen() != null && usuario.getImagen().length > 0){
+                if (usuario.getImagen() != null && usuario.getImagen().length > 0) {
                     ByteArrayInputStream inputFoto = new ByteArrayInputStream(usuario.getImagen());
                     Image imgFotoAdmin = new Image(inputFoto);
                     faIconEstudianteConAnteproyecto.setVisible(false);
@@ -156,7 +153,7 @@ public class FXMLMenuPrincipalController implements Initializable {
     private void clicBtnCerrarSesion(ActionEvent event) {
         irInicioSesion();
     }
-     
+
     //Director    
     @FXML
     private void clicBtnCrearAnteproyecto(ActionEvent event) {
@@ -168,16 +165,11 @@ public class FXMLMenuPrincipalController implements Initializable {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml");
     }
 
-    
     //Administrador
-   @FXML
-private void clicBtnRegistrarUsuario(ActionEvent event) {
+    @FXML
+    private void clicBtnRegistrarUsuario(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLFormularioUsuario.fxml");
-}
-
-
-
-
+    }
 
     //Estudiante Sin Anteproyecto
     @FXML
@@ -198,7 +190,7 @@ private void clicBtnRegistrarUsuario(ActionEvent event) {
 
     @FXML
     private void clicBtnModificarUsuario(ActionEvent event) {
-       Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLModificarUsuario.fxml");
+        Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLModificarUsuario.fxml");
     }
-    
+
 }

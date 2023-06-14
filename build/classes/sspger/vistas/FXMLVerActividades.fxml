@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apVerActividades" prefHeight="555.0" prefWidth="889.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLVerActividadesController">
+<AnchorPane fx:id="apVerActividades" prefHeight="555.0" prefWidth="889.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLVerActividadesController">
    <children>
       <Label text="Sin Actividades" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="250.0">
          <font>
@@ -36,7 +36,7 @@
             <URL value="@css/FXMLLlistasAnteproyectos.css" />
          </stylesheets>
       </ScrollPane>
-      <Pane prefHeight="53.0" prefWidth="799.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css" AnchorPane.bottomAnchor="422.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="80.0">
+      <Pane prefHeight="200.0" prefWidth="200.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css" AnchorPane.bottomAnchor="433.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="80.0">
          <children>
             <ComboBox fx:id="cbEstadosActividades" layoutX="570.0" layoutY="10.0" prefWidth="220.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css">
                <styleClass>

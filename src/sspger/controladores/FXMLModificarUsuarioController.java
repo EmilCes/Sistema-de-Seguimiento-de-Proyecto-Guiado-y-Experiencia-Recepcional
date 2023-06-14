@@ -72,6 +72,7 @@ public class FXMLModificarUsuarioController implements Initializable {
     }
 
     public void cargarInformacionUsuario(Usuario usuario) {
+        archivoFoto = null;
         tfNombreUsuario.setText(usuario.getNombreUsuario());
         TipoUsuario tipoUsuario = TipoUsuarioDAO.obtenerTipoUsuarioPorId(usuario.getIdTipoUsuario());
         cbTipoUsuario.setValue(tipoUsuario);
@@ -107,7 +108,13 @@ public class FXMLModificarUsuarioController implements Initializable {
         TipoUsuario opcionSeleccionada = cbTipoUsuario.getValue();
 
         Usuario usuario = UsuarioSingleton.getInstancia().getUsuario();
-        Usuario usuarioNuevo = new Usuario(usuario.getIdUsuario(), nombre, apellidoPaterno, apellidoMaterno, correoInstitucional, numeroTelefonico, nombreUsuario, password, Files.readAllBytes(archivoFoto.toPath()), nombreUsuario, usuario.getIdTipoUsuario(), usuario.getCodigoRespuesta());
+        Usuario usuarioNuevo = new Usuario(usuario.getIdUsuario(), nombre, apellidoPaterno, apellidoMaterno, correoInstitucional, numeroTelefonico, nombreUsuario, password, null, nombreUsuario, usuario.getIdTipoUsuario(), usuario.getCodigoRespuesta());
+        
+        if(archivoFoto == null)
+            usuarioNuevo.setImagen(usuario.getImagen());
+        else
+            usuarioNuevo.setImagen(Files.readAllBytes(archivoFoto.toPath()));
+        
         if (nombre.isEmpty()) {
             tfNombre.setStyle("-fx-border-color: red");
             camposValidos = false;
