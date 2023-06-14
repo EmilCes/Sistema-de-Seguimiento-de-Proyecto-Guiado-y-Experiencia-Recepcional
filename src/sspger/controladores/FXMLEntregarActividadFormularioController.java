@@ -1,4 +1,3 @@
-
 package sspger.controladores;
 
 import java.io.File;
@@ -49,36 +48,33 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
     private TextArea taComentarios;
     @FXML
     private Text txDescripcion;
-    
+
     private int idActividad;
     private int idAnteproyecto;
     private File archivoSeleccionado;
- 
+
     @FXML
     private Label lbNombreArchivo;
 
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }    
+
+    }
 
     @FXML
     private void clicBtnSubirArchivo(ActionEvent event) {
-    FileChooser dialogoArchivo = new FileChooser();
-    dialogoArchivo.setTitle("Selecciona un archivo");
-    FileChooser.ExtensionFilter filtroPDF = new FileChooser.ExtensionFilter("Archivos PDF (*.pdf)", "*.pdf");
-    dialogoArchivo.getExtensionFilters().add(filtroPDF);
-    Stage escenarioActual = (Stage) taComentarios.getScene().getWindow();
-    archivoSeleccionado = dialogoArchivo.showOpenDialog(escenarioActual);
+        FileChooser dialogoArchivo = new FileChooser();
+        dialogoArchivo.setTitle("Selecciona un archivo");
+        FileChooser.ExtensionFilter filtroPDF = new FileChooser.ExtensionFilter("Archivos PDF (*.pdf)", "*.pdf");
+        dialogoArchivo.getExtensionFilters().add(filtroPDF);
+        Stage escenarioActual = (Stage) taComentarios.getScene().getWindow();
+        archivoSeleccionado = dialogoArchivo.showOpenDialog(escenarioActual);
 
-    if (archivoSeleccionado != null) {
+        if (archivoSeleccionado != null) {
             paneArchivoConfirmacion.setVisible(true);
             lbNombreArchivo.setText(archivoSeleccionado.getName());
+        }
     }
-}
-
-    
 
     @FXML
     private void clicBtnVolver(ActionEvent event) {
@@ -96,18 +92,17 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
         }
     }
 
-    
-    public void cargarInformacionActividad(int idActividad, int idAnteproyecto){
+    public void cargarInformacionActividad(int idActividad, int idAnteproyecto) {
         this.idActividad = idActividad;
         this.idAnteproyecto = idAnteproyecto;
         Actividad actividad = ActividadDAO.obtenerInformacionActividaPorIdActividad(idActividad);
         lbTitulo.setText(actividad.getTitulo());
         lbFechaFin.setText(actividad.getFechaFin());
         lbFechaInicio.setText(actividad.getFechaInicio());
-        txDescripcion.setText(actividad.getDescripcion());        
+        txDescripcion.setText(actividad.getDescripcion());
     }
-    
-        private void validarCampos() throws IOException {
+
+    private void validarCampos() throws IOException {
         boolean camposValidos = true;
 
         if (taComentarios.getText().isEmpty()) {
@@ -120,7 +115,6 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
             camposValidos = false;
         }
 
-    
         if (camposValidos) {
             EntregaActividad entregaActividad = new EntregaActividad();
             entregaActividad.setIdEstado(Constantes.CON_ENTREGA);
@@ -128,13 +122,13 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
             entregaActividad.setComentarios(taComentarios.getText());
             entregaActividad.setArchivo(Files.readAllBytes(archivoSeleccionado.toPath()));
             guardarEntregaActividad(entregaActividad);
+        }
+
     }
-    
-}
-        
-        private void guardarEntregaActividad(EntregaActividad entregaActividad){
-            int codigoRespuesta = EntregaActividadDAO.guardarEntregaActividad(entregaActividad);
-            switch (codigoRespuesta) {
+
+    private void guardarEntregaActividad(EntregaActividad entregaActividad) {
+        int codigoRespuesta = EntregaActividadDAO.guardarEntregaActividad(entregaActividad);
+        switch (codigoRespuesta) {
             case Constantes.ERROR_CONEXION:
                 Utilidades.mostrarDialogoSimple("Error de Conexión",
                         "No se pudo conectar con la base de datos. Intente de nuevo o hágalo más tarde.",
@@ -152,14 +146,14 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
                 FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apEntregarActividadFormulario, "/sspger/vistas/FXMLVerActividades.fxml");
                 verActividadesController.setIdAnteproyecto(idAnteproyecto);
                 break;
-            }
         }
-        
-         private void resetearEstilos() {
-             taComentarios.setStyle("");
-         }
-        
-    public void cargarInformacionEntrega(int idActividad, int idAnteproyecto){
+    }
+
+    private void resetearEstilos() {
+        taComentarios.setStyle("");
+    }
+
+    public void cargarInformacionEntrega(int idActividad, int idAnteproyecto) {
         EntregaActividad entregaActividad = EntregaActividadDAO.cargarInfomacionEntregaPorIdActividad(idActividad);
         switch (entregaActividad.getCodigoRespuesta()) {
             case Constantes.ERROR_CONEXION:
@@ -177,18 +171,17 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
                 paneArchivoConfirmacion.setVisible(true);
                 cargarInformacionActividad(idActividad, idAnteproyecto);
                 try {
-                File tempFile = File.createTempFile("temp", ".pdf");  // Crear un archivo temporal
-                Files.write(tempFile.toPath(), entregaActividad.getArchivo());  // Escribir los bytes en el archivo temporal
-                this.archivoSeleccionado = tempFile;  // Asignar el archivo temporal a archivoSeleccionado
-                lbNombreArchivo.setText(tempFile.getName());  // Mostrar el nombre del archivo en la etiqueta
-            } catch (IOException ex) {
-                Utilidades.mostrarDialogoSimple("Error",
-                        "Error al cargar el archivo: " + ex.getMessage(),
-                        Alert.AlertType.ERROR);
-            }
+                    File tempFile = File.createTempFile("temp", ".pdf");  // Crear un archivo temporal
+                    Files.write(tempFile.toPath(), entregaActividad.getArchivo());  // Escribir los bytes en el archivo temporal
+                    this.archivoSeleccionado = tempFile;  // Asignar el archivo temporal a archivoSeleccionado
+                    lbNombreArchivo.setText(tempFile.getName());  // Mostrar el nombre del archivo en la etiqueta
+                } catch (IOException ex) {
+                    Utilidades.mostrarDialogoSimple("Error",
+                            "Error al cargar el archivo: " + ex.getMessage(),
+                            Alert.AlertType.ERROR);
+                }
                 break;
-            }
+        }
     }
-        
-     
+
 }

@@ -9,13 +9,13 @@ public class EntregaActividad {
     private String comentarios;
     private byte[] archivo;
     private String observaciones;
-    private float calificacion;
+    private int calificacion;
     private int idEstado;
     
     public EntregaActividad() {
     }
 
-    public EntregaActividad(int codigoRespuesta, int idEntrega, int idActividad, String comentarios, byte[] archivo, String observaciones, float calificacion) {
+    public EntregaActividad(int codigoRespuesta, int idEntrega, int idActividad, String comentarios, byte[] archivo, String observaciones, int calificacion) {
         this.codigoRespuesta = codigoRespuesta;
         this.idEntrega = idEntrega;
         this.idActividad = idActividad;
@@ -49,7 +49,7 @@ public class EntregaActividad {
         return observaciones;
     }
 
-    public float getCalificacion() {
+    public int getCalificacion() {
         return calificacion;
     }
 
@@ -77,7 +77,7 @@ public class EntregaActividad {
         this.observaciones = observaciones;
     }
 
-    public void setCalificacion(float calificacion) {
+    public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
     }
 
