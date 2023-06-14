@@ -34,6 +34,7 @@ public class FXMLModificarActividadController implements Initializable {
     private String fechaInicio;
     private String fechaFin;
     private int idActividad;
+    private int idAnteproyecto;
     
     
     @Override
@@ -48,6 +49,8 @@ public class FXMLModificarActividadController implements Initializable {
 
     @FXML
     private void clicBtnCancelar(ActionEvent event) {
+        FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apModificarActividad, "/sspger/vistas/FXMLVerActividades.fxml");
+        verActividadesController.setIdAnteproyecto(idAnteproyecto);
     }
     
     
@@ -142,8 +145,9 @@ public class FXMLModificarActividadController implements Initializable {
         
     }
     
-    public void cargarInformacionActividad(int idActividad){
+    public void cargarInformacionActividad(int idActividad, int idAnteproyecto){
         this.idActividad = idActividad;
+        this.idAnteproyecto = idAnteproyecto;
         Actividad actividad = ActividadDAO.obtenerInformacionActividaPorIdActividad(idActividad);
         switch (actividad.getCodigoRespuesta()) {
             case Constantes.ERROR_CONEXION:

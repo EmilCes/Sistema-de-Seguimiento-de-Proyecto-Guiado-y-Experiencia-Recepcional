@@ -10,7 +10,8 @@ public class EntregaActividad {
     private byte[] archivo;
     private String observaciones;
     private float calificacion;
-
+    private int idEstado;
+    
     public EntregaActividad() {
     }
 
@@ -79,5 +80,15 @@ public class EntregaActividad {
     public void setCalificacion(float calificacion) {
         this.calificacion = calificacion;
     }
+
+    public int getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(int idEstado) {
+        this.idEstado = idEstado;
+    }
       
+    
+    
 }
