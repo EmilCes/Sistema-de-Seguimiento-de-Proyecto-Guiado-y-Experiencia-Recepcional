@@ -74,7 +74,6 @@ public class FXMLAsignarEstudianteController implements Initializable {
         tfMatriculaEstudiante.setText("");
         lbNombreEstudiante.setText("");
         alumno = null;
-        numeroEstudiantes -= 1;
         cargarInformacionNumeroEstudiantes();
         faUsuario.setVisible(true);
         ivImagenUsuario.setVisible(false);
