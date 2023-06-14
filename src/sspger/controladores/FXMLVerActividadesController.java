@@ -110,7 +110,6 @@ public class FXMLVerActividadesController implements Initializable {
     private void mostrarActividades(ArrayList<Actividad> actividades){
         try{
             for(Actividad actividad : actividades){
-                System.out.println(actividad.getTitulo());
                 FXMLLoader cargadorActividadFragmento = new FXMLLoader(getClass().getResource("/sspger/vistas/FXMLActividadFragmento.fxml"));
                 Pane actividadFragmento;
                 actividadFragmento = cargadorActividadFragmento.load();
@@ -125,7 +124,6 @@ public class FXMLVerActividadesController implements Initializable {
     }
     
     public void setIdAnteproyecto(int idAnteproyecto){
-        System.out.println(idAnteproyecto);
         this.idAnteproyecto = idAnteproyecto;
     }
     

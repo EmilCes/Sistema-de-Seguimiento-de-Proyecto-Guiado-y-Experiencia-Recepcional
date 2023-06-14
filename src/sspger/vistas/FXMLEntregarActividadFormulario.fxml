@@ -27,7 +27,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -45,7 +44,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -58,7 +56,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -81,7 +78,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -97,7 +93,6 @@
             </Button>
             <Pane fx:id="paneArchivoConfirmacion" layoutX="709.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label">
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
                <children>
@@ -123,7 +118,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>

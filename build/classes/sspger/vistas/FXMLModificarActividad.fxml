@@ -9,9 +9,6 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" fx:id="apModificarActividad" prefHeight="600.0" prefWidth="889.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLModificarActividadController">
-    <stylesheets>
-        <URL value="@/sspger/vistas/css/fxmlmodificaractividad.css" />
-    </stylesheets>
    <children>
       <Pane focusTraversable="true" layoutX="10.0" layoutY="10.0" prefHeight="870.0" prefWidth="816.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <children>
