@@ -65,6 +65,8 @@ public class FXMLAsignarEstudianteController implements Initializable {
     private void cargarInformacionNumeroEstudiantes() {
         lbNumeroEstudiantes.setText(String.valueOf(numeroEstudiantes));
     }
+    
+    
 
     private void resetearEstilos() {
         tfMatriculaEstudiante.setStyle("");
@@ -136,6 +138,7 @@ public class FXMLAsignarEstudianteController implements Initializable {
                                 "El alumno fue asignado al anteproyecto correctamente",
                                 Alert.AlertType.INFORMATION);
                         UsuarioDAO.actualizarTipoUsuario(Constantes.ESTUDIANTE_CON_ANTEPROYECTO, alumno.getIdUsuario());
+                        numeroEstudiantes = numeroEstudiantes - 1;
                         resetearPantalla();
                         break;
                 }
@@ -144,8 +147,13 @@ public class FXMLAsignarEstudianteController implements Initializable {
                         "Se han agregado todos los estudiantes posibles", Alert.AlertType.WARNING);
             }
         } else {
-            Utilidades.mostrarDialogoSimple("Estudiante con anteproyecto",
-                    "El estudiante ya tiene un anteproyecto asignado", Alert.AlertType.WARNING);
+            if(alumno == null){
+                Utilidades.mostrarDialogoSimple("Error de busqueda", "Primero busca a un alumno", 
+                        Alert.AlertType.WARNING);
+            } else{
+                Utilidades.mostrarDialogoSimple("Alumno con anteproyecto", "El alumno ya cuenta con un anteproyecto", 
+                        Alert.AlertType.WARNING);
+            }
         }
 
     }

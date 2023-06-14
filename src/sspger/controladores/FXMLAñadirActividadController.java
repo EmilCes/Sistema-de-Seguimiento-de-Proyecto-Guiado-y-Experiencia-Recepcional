@@ -114,7 +114,7 @@ public class FXMLAñadirActividadController implements Initializable {
             fechasValidas = false;
             dpFechaEntrega.setStyle("-fx-border-color: red");
             Utilidades.mostrarDialogoSimple("Fecha Entrega",
-                        "La fecha de entrea no puede ser antes que hoy.",
+                        "La fecha de entrega no puede ser antes que hoy.",
                         Alert.AlertType.WARNING);
         }
         
