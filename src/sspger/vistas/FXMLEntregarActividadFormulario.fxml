@@ -27,7 +27,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -45,7 +44,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -58,7 +56,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -81,7 +78,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -97,7 +93,6 @@
             </Button>
             <Pane fx:id="paneArchivoConfirmacion" layoutX="726.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label" visible="false">
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
                <children>
@@ -123,7 +118,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -131,7 +125,7 @@
             <Label fx:id="lbNombreArchivo" layoutX="684.0" layoutY="353.0" prefHeight="17.0" prefWidth="141.0" />
          </children>
       </Pane>
-      <Label layoutX="28.0" layoutY="16.0" text="Entregar Actividad">
+      <Label fx:id="idEncabezado" layoutX="28.0" layoutY="16.0" text="Entregar Actividad">
          <font>
             <Font size="48.0" />
          </font>

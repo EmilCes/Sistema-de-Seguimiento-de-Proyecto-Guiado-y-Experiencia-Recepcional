@@ -10,9 +10,6 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" fx:id="apAvancesAnteproyecto" prefHeight="600.0" prefWidth="889.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLAnteproyectoAvancesController">
-    <stylesheets>
-        <URL value="@/sspger/vistas/css/fxmlanteproyectoavances.css" />
-    </stylesheets>
    <children>
       <Pane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <children>
@@ -25,7 +22,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -38,7 +34,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -51,7 +46,6 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -64,11 +58,10 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
-            <Button fx:id="btnVolver" layoutX="182.0" layoutY="402.0" mnemonicParsing="false" onAction="#clicBtnVolver" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Volver" textFill="WHITE">
+            <Button fx:id="btnVolver" layoutX="182.0" layoutY="402.0" mnemonicParsing="false" onAction="#clicBtnVolver" prefHeight="49.0" prefWidth="166.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Volver" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
@@ -82,11 +75,10 @@
                   </Label>
                </children>
                <stylesheets>
-                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
-            <Button fx:id="btnVerActividades" layoutX="502.0" layoutY="402.0" mnemonicParsing="false" onAction="#clicBtnVerActividades" prefHeight="49.0" prefWidth="166.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Actividades" textFill="WHITE">
+            <Button fx:id="btnVerActividades" layoutX="502.0" layoutY="402.0" mnemonicParsing="false" onAction="#clicBtnVerActividades" prefHeight="49.0" prefWidth="166.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Actividades" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>

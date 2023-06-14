@@ -64,6 +64,8 @@ public class FXMLActividadFragmentoController implements Initializable {
 
     @FXML
     private void clicBtnCalificar(ActionEvent event) {
+        FXMLCalificarActividadController calificarActividadController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLCalificarActividad.fxml");
+        calificarActividadController.cargarInformacionEntrega(idActividad, idAnteproyecto);
     }
 
     @FXML
@@ -129,6 +131,7 @@ public class FXMLActividadFragmentoController implements Initializable {
         btnModificarEntrega.setVisible(false);
         lbCalificacion.setVisible(false);
         lbCantidad.setVisible(false);
+        btnVerActividad.setVisible(false);
     }
     
 }
