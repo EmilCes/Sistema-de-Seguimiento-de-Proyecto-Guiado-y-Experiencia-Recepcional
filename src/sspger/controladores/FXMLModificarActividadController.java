@@ -39,7 +39,6 @@ public class FXMLModificarActividadController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
 
     @FXML
@@ -51,14 +50,6 @@ public class FXMLModificarActividadController implements Initializable {
     private void clicBtnCancelar(ActionEvent event) {
         FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apModificarActividad, "/sspger/vistas/FXMLVerActividades.fxml");
         verActividadesController.setIdAnteproyecto(idAnteproyecto);
-    }
-    
-    
-    private void limpiarCampos() {
-        tfNombreActividad.setText("");
-        taDescripcionActividad.setText("");
-        dpFechaEntrega.setValue(null);
-        dpFechaInicio.setValue(null);
     }
 
     private void resetearEstilos() {
