@@ -61,7 +61,6 @@ public class FXMLAnteproyectoAvancesController implements Initializable {
         lbAnteproyecto.setText(AvanceAnteproyectoDAO.obtenerNombreAnteproyectoPorIdAnteproyecto(idAnteproyecto));
         lbDirector.setText(AvanceAnteproyectoDAO.obtenerNombreProfesorPorIdAnteproyecto(idAnteproyecto));
         lbTotalActividades.setText(String.valueOf(AvanceAnteproyectoDAO.obtenerCantidadActividadesPorAnteproyecto(idAnteproyecto)));
-        
         ArrayList<String> nombresEstudiantes = AvanceAnteproyectoDAO.obtenerNombresCompletosPorIdAnteproyecto(idAnteproyecto);
         cbEstudiantes.getItems().addAll(nombresEstudiantes);
         

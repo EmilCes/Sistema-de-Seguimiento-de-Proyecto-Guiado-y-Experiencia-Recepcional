@@ -95,7 +95,7 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Pane fx:id="paneArchivoConfirmacion" layoutX="709.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label">
+            <Pane fx:id="paneArchivoConfirmacion" layoutX="726.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label" visible="false">
                <stylesheets>
                   <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
@@ -128,6 +128,7 @@
                </stylesheets>
             </Pane>
             <TextArea fx:id="taComentarios" layoutX="245.0" layoutY="279.0" prefHeight="82.0" prefWidth="264.0" promptText="Descripción de la actividad." styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+            <Label fx:id="lbNombreArchivo" layoutX="684.0" layoutY="353.0" prefHeight="17.0" prefWidth="141.0" />
          </children>
       </Pane>
       <Label layoutX="28.0" layoutY="16.0" text="Entregar Actividad">
