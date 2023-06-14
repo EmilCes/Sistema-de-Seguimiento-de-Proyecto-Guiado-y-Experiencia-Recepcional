@@ -14,6 +14,7 @@ import sspger.modelos.pojo.Actividad;
 import sspger.modelos.pojo.Usuario;
 import sspger.utils.Constantes;
 import sspger.utils.UsuarioSingleton;
+import sspger.utils.Utilidades;
 
 
 public class FXMLActividadFragmentoController implements Initializable {
@@ -42,11 +43,13 @@ public class FXMLActividadFragmentoController implements Initializable {
     private Button btnModificarEntrega;
     
     private AnchorPane apPadre;
+    private int idActividad;
+    private int idAnteproyecto;
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ocultarBotones();
     }    
 
     @FXML
@@ -55,6 +58,8 @@ public class FXMLActividadFragmentoController implements Initializable {
 
     @FXML
     private void clicBtnModificarActividad(ActionEvent event) {
+        FXMLModificarActividadController modificarActividadController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLModificarActividad.fxml");
+        modificarActividadController.cargarInformacionActividad(idActividad, idAnteproyecto);
     }
 
     @FXML
@@ -63,15 +68,20 @@ public class FXMLActividadFragmentoController implements Initializable {
 
     @FXML
     private void clicBtnEntregar(ActionEvent event) {
+        FXMLEntregarActividadFormularioController entregarActividadFormularioController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLEntregarActividadFormulario.fxml");
+        entregarActividadFormularioController.cargarInformacionActividad(idActividad, idAnteproyecto);
     }
 
     @FXML
     private void clicBtnModificarEntrega(ActionEvent event) {
+        FXMLEntregarActividadFormularioController entregarActividadFormularioController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLEntregarActividadFormulario.fxml");
+        entregarActividadFormularioController.cargarInformacionEntrega(idActividad, idAnteproyecto);
     }
     
     public void configurarFragmentoActividad(Actividad actividad, AnchorPane apPadre){
+        this.idActividad = actividad.getIdActividad();
         this.apPadre = apPadre;
-        ocultarBotones();
+        this.idAnteproyecto = actividad.getIdAnteproyecto();
         lbNombreAnteproyecto.setText(actividad.getTitulo());
         lbFechaIncio.setText(actividad.getFechaInicio());
         lbFechaEntrega.setText(actividad.getFechaFin());
@@ -99,7 +109,7 @@ public class FXMLActividadFragmentoController implements Initializable {
                 btnEntregar.setVisible(true);
                 break;
             case Constantes.CON_ENTREGA:
-                btnCalificar.setVisible(true);
+                btnModificarEntrega.setVisible(true);
                 break;
             case Constantes.CALIFICADA:
                 lbCalificacion.setVisible(true);

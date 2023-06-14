@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import sspger.modelos.dao.UsuarioDAO;
 import sspger.modelos.pojo.Usuario;
 import sspger.utils.Constantes;
 import sspger.utils.UsuarioSingleton;
@@ -193,4 +194,12 @@ public class FXMLMenuPrincipalController implements Initializable {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLModificarUsuario.fxml");
     }
 
+    @FXML
+    private void clicBtnVerActividades(ActionEvent event) {
+        Usuario usuario = UsuarioSingleton.getInstancia().getUsuario();
+        int idAnteproyecto = UsuarioDAO.ObtenerIdAnteproyectoPorIdUsuario(usuario.getIdUsuario());
+        FXMLVerActividadesController verActividadesController = Utilidades.cambiarPaneObtenerControlador(apMenuPrincipal, "/sspger/vistas/FXMLVerActividades.fxml");
+        verActividadesController.setIdAnteproyecto(idAnteproyecto);
+    }
+    
 }

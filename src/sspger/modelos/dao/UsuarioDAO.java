@@ -150,5 +150,26 @@ public class UsuarioDAO {
         }
         return usuario;
     }
+    
+    public static int ObtenerIdAnteproyectoPorIdUsuario(int idUsuario) {
+    int idAnteproyecto = 0;
+    Connection conexion = ConexionBD.abrirConexionBD();
+    if (conexion != null) {
+        try {
+            String consulta = "SELECT idAnteproyecto FROM Alumnos WHERE idUsuario = ?";
+            PreparedStatement prepararSentencia = conexion.prepareStatement(consulta);
+            prepararSentencia.setInt(1, idUsuario);
+            ResultSet resultado = prepararSentencia.executeQuery();
+            if (resultado.next()) {
+                idAnteproyecto = resultado.getInt("idAnteproyecto");
+            }
+            conexion.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    return idAnteproyecto;
+}
+
 
 }

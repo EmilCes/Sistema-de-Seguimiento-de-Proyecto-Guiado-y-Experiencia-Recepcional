@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
 <?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import java.lang.*?>
 <?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apEntregarActividadFormulario" prefHeight="600.0" prefWidth="889.0" visible="true" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLEntregarActividadFormularioController">
+
+<AnchorPane id="AnchorPane" fx:id="apCalificarActividad" prefHeight="600.0" prefWidth="889.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sspger.controladores.FXMLCalificarActividadController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
-         <styleClass>
-            <String fx:value="white-bg" />
-            <String fx:value="shadow" />
-         </styleClass>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="889.0" stylesheets="@css/FXMLMenuPrincipal.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
          <children>
             <Pane layoutX="46.0" layoutY="36.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
                <children>
@@ -27,6 +23,7 @@
                   </Label>
                </children>
                <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -44,6 +41,7 @@
                   </Label>
                </children>
                <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -56,6 +54,7 @@
                   </Label>
                </children>
                <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
@@ -78,54 +77,71 @@
                   </Label>
                </children>
                <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
-            <Text fx:id="txDescripcion" layoutX="256.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="515.6441040039062">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Button fx:id="btnSubirArchivo" layoutX="546.0" layoutY="284.0" mnemonicParsing="false" onAction="#clicBtnSubirArchivo" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Subir Archivo" textFill="WHITE">
+            <Button fx:id="btnDescargarArchivo" layoutX="546.0" layoutY="284.0" mnemonicParsing="false" onAction="#clicBtnDescargarArchivo" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Descargar" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Pane fx:id="paneArchivoConfirmacion" layoutX="726.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label" visible="false">
+            <Pane fx:id="paneArchivoConfirmacion" layoutX="726.0" layoutY="281.0" prefHeight="55.0" prefWidth="58.0" styleClass="pane-label">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="FILE" layoutX="18.0" layoutY="36.0" size="27" />
+               </children>
                <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
-               <children>
-                  <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="12.0" layoutY="40.0" size="35" />
-               </children>
             </Pane>
             <Button fx:id="btnVolver" layoutX="274.0" layoutY="418.0" mnemonicParsing="false" onAction="#clicBtnVolver" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Volver" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button fx:id="btnEntregar" layoutX="458.0" layoutY="418.0" mnemonicParsing="false" onAction="#clicBtnEntregar" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Entregar" textFill="WHITE">
+            <Button fx:id="btnCalificar" layoutX="458.0" layoutY="418.0" mnemonicParsing="false" onAction="#clicBtnCalificar" prefHeight="49.0" prefWidth="127.0" style="-fx-font: white;" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Entregar" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
             <Pane layoutX="46.0" layoutY="281.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
                <children>
-                  <Label layoutX="28.0" layoutY="4.0" text="Comentarios" textFill="WHITE">
+                  <Label layoutX="17.0" layoutY="4.0" text="Observaciones" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </children>
                <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
                   <URL value="@css/FXMLGeneral.css" />
                </stylesheets>
             </Pane>
-            <TextArea fx:id="taComentarios" layoutX="245.0" layoutY="279.0" prefHeight="82.0" prefWidth="264.0" promptText="Descripción de la actividad." styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
+            <TextArea fx:id="taObservaciones" layoutX="245.0" layoutY="279.0" prefHeight="82.0" prefWidth="264.0" promptText="Observaciones" styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
             <Label fx:id="lbNombreArchivo" layoutX="684.0" layoutY="353.0" prefHeight="17.0" prefWidth="141.0" />
+            <Pane layoutX="587.0" layoutY="35.0" prefHeight="38.0" prefWidth="184.0" styleClass="pane-label">
+               <children>
+                  <Label layoutX="34.0" layoutY="5.0" text="Calificacion" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <stylesheets>
+                  <URL value="@css/FXMLRegistrarUsuario.css" />
+                  <URL value="@css/FXMLGeneral.css" />
+               </stylesheets>
+            </Pane>
+            <ComboBox fx:id="cbCalificacion" layoutX="604.0" layoutY="92.0" prefWidth="150.0" promptText="Calificacion" styleClass="combobox" stylesheets="@css/FXMLGeneral.css" />
+            <TextArea fx:id="taObservaciones1" layoutX="245.0" layoutY="189.0" prefHeight="59.0" prefWidth="264.0" promptText="Descripción de la actividad." styleClass="textarea" stylesheets="@css/FXMLGeneral.css" />
          </children>
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
       </Pane>
-      <Label layoutX="28.0" layoutY="16.0" text="Entregar Actividad">
+      <Label layoutX="26.0" layoutY="20.0" text="Calificar Actividad">
          <font>
             <Font size="48.0" />
          </font>
