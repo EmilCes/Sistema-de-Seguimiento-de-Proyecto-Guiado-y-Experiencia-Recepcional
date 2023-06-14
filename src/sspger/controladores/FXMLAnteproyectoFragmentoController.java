@@ -21,19 +21,19 @@ import sspger.utils.Utilidades;
 public class FXMLAnteproyectoFragmentoController implements Initializable {
 
     @FXML
-    private Pane pnAnteproyecto;
-    @FXML
     private Label lbNombreAnteproyecto;
     @FXML
     private Label lbNombreDirector;
     @FXML
     private Label lbEstadoAnteproyecto;
+    @FXML
+    private Pane pnAnteproyecto;
+    @FXML
+    private Button btnVerAvances;
     
     private AnchorPane apPadre;
     private int idEstadoAnteproyecto;
     private int idAnteproyecto;
-    @FXML
-    private Button btnVerAvances;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,9 +72,9 @@ public class FXMLAnteproyectoFragmentoController implements Initializable {
 
     @FXML
     private void clicBtnVerAvances(ActionEvent event) {
-        Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLAnteproyectoAvances.fxml");
         FXMLAnteproyectoAvancesController anteproyectoAvancesController = Utilidades.cambiarPaneObtenerControlador(apPadre, "/sspger/vistas/FXMLAnteproyectoAvances.fxml");
         anteproyectoAvancesController.cargarAvanceAnteproyecto(idAnteproyecto);
     }
+
     
 }

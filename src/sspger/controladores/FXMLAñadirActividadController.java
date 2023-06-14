@@ -89,7 +89,7 @@ public class FXMLAñadirActividadController implements Initializable {
             actividad.setFechaInicio(fechaInicio);
             actividad.setFechaFin(fechaEntrega);
             actividad.setIdAnteproyecto(idAnteproyecto);
-            actividad.setIdEstadoActividad(1);
+            actividad.setIdEstadoActividad(Constantes.SIN_ENTREGA);
             guardarActividad(actividad);
         }
 

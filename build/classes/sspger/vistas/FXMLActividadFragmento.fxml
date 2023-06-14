@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="pnActividad" prefHeight="146.0" prefWidth="745.0" stylesheets="@css/FXMLLlistasAnteproyectos.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLActividadFragmentoController">
+   <children>
+      <Label fx:id="lbNombreAnteproyecto" layoutX="30.0" layoutY="16.0" text="Nombre Actividad" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Label layoutX="30.0" layoutY="91.0" text="Fecha de Entrega" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="69.0" text="Fecha de Inicio" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbFechaEntrega" layoutX="167.0" layoutY="91.0" text="Fecha" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbFechaIncio" layoutX="167.0" layoutY="69.0" text="Fecha" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbCalificacion" layoutX="291.0" layoutY="78.0" text="Calificacion:" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnVerActividad" layoutX="626.0" layoutY="81.0" mnemonicParsing="false" onAction="#clicBtnVerActividad" prefHeight="40.0" prefWidth="100.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Ver Actividad" textFill="WHITE" />
+      <Button fx:id="btnModificarActividad" layoutX="514.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnModificarActividad" prefHeight="40.0" prefWidth="100.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Modificar" textFill="WHITE" visible="false" />
+      <Label fx:id="lbCantidad" layoutX="391.0" layoutY="78.0" text="10" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCalificar" layoutX="514.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnCalificar" prefHeight="40.0" prefWidth="100.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Calificar" textFill="WHITE" visible="false" />
+      <Button fx:id="btnEntregar" layoutX="514.0" layoutY="80.0" mnemonicParsing="false" onAction="#clicBtnEntregar" prefHeight="40.0" prefWidth="100.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Entregar" textFill="WHITE" visible="false" />
+      <Button fx:id="btnModificarEntrega" layoutX="491.0" layoutY="81.0" mnemonicParsing="false" onAction="#clicBtnModificarEntrega" prefHeight="40.0" prefWidth="127.0" styleClass="buttonD" stylesheets="@css/FXMLGeneral.css" text="Modificar Entrega" textFill="WHITE" visible="false" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <styleClass>
+      <String fx:value="nav-lista" />
+      <String fx:value="shadow" />
+      <String fx:value="elemento-lista" />
+   </styleClass>
+</Pane>

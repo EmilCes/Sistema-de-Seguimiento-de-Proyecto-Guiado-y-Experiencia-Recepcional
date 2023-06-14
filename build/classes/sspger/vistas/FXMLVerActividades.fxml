@@ -1,0 +1,66 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<AnchorPane fx:id="apVerActividades" prefHeight="555.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sspger.controladores.FXMLVerActividadesController">
+   <children>
+      <Label text="Sin Actividades" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="250.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="spListaActividades" hbarPolicy="NEVER" layoutX="184.0" layoutY="240.0" prefHeight="600.0" prefWidth="889.0" vmax="100.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+         <content>
+            <VBox fx:id="vbActividades" prefHeight="405.0" prefWidth="818.0" style="-fx-background-color: white;" styleClass="white-bg" stylesheets="@css/FXMLMenuPrincipal.css">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@css/FXMLMenuPrincipal.css" />
+            <URL value="@css/FXMLLlistasAnteproyectos.css" />
+         </stylesheets>
+      </ScrollPane>
+      <Pane prefHeight="53.0" prefWidth="799.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css" AnchorPane.bottomAnchor="422.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="80.0">
+         <children>
+            <ComboBox fx:id="cbEstadosActividades" layoutX="570.0" layoutY="10.0" prefWidth="220.0" stylesheets="@css/FXMLAnteproyectosPorDirector.css">
+               <styleClass>
+                  <String fx:value="combobox" />
+                  <String fx:value="jfx-combo-box" />
+               </styleClass>
+            </ComboBox>
+            <Label layoutX="500.0" layoutY="10.0" text="Estado:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="seleccionar-director" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="44.0" layoutY="11.0" text="Actividades" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

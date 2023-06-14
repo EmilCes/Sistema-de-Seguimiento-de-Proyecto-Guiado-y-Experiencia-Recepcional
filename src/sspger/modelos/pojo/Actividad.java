@@ -12,19 +12,34 @@ public class Actividad {
     private String fechaFin;
     private int idEstadoActividad;
     private int idAnteproyecto;
+    private float calificacion;
 
     public Actividad() {
     }
 
-    public Actividad(int codigoRespuesta, int idActividad, String titulo, String descripcion, String fechaInicio, String fechaFin, int idAnteproyecto) {
+    public Actividad(int codigoRespuesta, int idActividad, String titulo, String descripcion, String fechaInicio, String fechaFin, int idEstadoActividad, int idAnteproyecto, float calificacion) {
         this.codigoRespuesta = codigoRespuesta;
         this.idActividad = idActividad;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.idEstadoActividad = idEstadoActividad;
+        this.idAnteproyecto = idAnteproyecto;
+        this.calificacion = calificacion;
+    }
+
+    public Actividad(String titulo, String descripcion, String fechaInicio, String fechaFin, int idAnteproyecto) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
         this.idAnteproyecto = idAnteproyecto;
     }
+
+   
+
+    
 
     public int getCodigoRespuesta() {
         return codigoRespuesta;
@@ -89,6 +104,16 @@ public class Actividad {
     public void setIdEstadoActividad(int idEstadoActividad) {
         this.idEstadoActividad = idEstadoActividad;
     }
+
+    public float getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(float calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    
     
     
     

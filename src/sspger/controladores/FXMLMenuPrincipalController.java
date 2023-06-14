@@ -166,7 +166,6 @@ public class FXMLMenuPrincipalController implements Initializable {
     @FXML
     private void clicBtnVerAnteproyectos(ActionEvent event) {
         Utilidades.cambiarPane(apMenuPrincipal, "/sspger/vistas/FXMLListaAnteproyectosDelDirector.fxml");
-
     }
 
     
