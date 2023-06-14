@@ -147,7 +147,7 @@
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
                                  </graphic>
@@ -173,11 +173,6 @@
                                  </font>
                               </Label>
                               <Line endX="100.0" layoutX="106.0" layoutY="195.0" scaleX="0.8" startX="-100.0" stroke="WHITE" />
-                              <Button layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#clicBtnVerAnteproyectos" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Ver Anteproyecto">
-                                 <graphic>
-                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
-                                 </graphic>
-                              </Button>
                               <Button layoutX="14.0" layoutY="514.0" mnemonicParsing="false" onAction="#clicBtnCerrarSesion" stylesheets="@css/FXMLMenuPrincipal.css">
                                  <graphic>
                                     <FontAwesomeIcon glyphName="SIGN_OUT" size="1.5em" />
@@ -192,12 +187,12 @@
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnCrearAnteproyecto" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Crear Anteproyecto">
+                              <Button layoutX="16.0" layoutY="219.0" mnemonicParsing="false" onAction="#clicBtnVerActividades" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@css/FXMLMenuPrincipal.css" text="Ver Actividades">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" text="" />
                                  </graphic>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#clicBtnModificarUsuario" prefHeight="37.0" prefWidth="39.0" style="-fx-border-color: white;" stylesheets="@css/FXMLMenuPrincipal.css">
                                  <graphic>
                                     <FontAwesomeIcon fill="WHITE" glyphName="GEAR" size="1.5em" />
                                  </graphic>

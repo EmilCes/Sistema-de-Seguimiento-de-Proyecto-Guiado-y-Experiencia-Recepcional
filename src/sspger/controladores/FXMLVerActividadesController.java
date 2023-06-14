@@ -47,6 +47,7 @@ public class FXMLVerActividadesController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        spListaActividades.setVisible(true);
         configurarCbEstados();
         buscarActividadesPorIdEstado(Constantes.SIN_ENTREGA);
         cbEstadosActividades.valueProperty().addListener(new ChangeListener<EstadoActividad>() {
