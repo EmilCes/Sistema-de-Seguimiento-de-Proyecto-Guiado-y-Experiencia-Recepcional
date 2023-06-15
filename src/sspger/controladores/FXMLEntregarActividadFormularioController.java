@@ -55,6 +55,8 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
 
     @FXML
     private Label lbNombreArchivo;
+    @FXML
+    private Label idEncabezado;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -88,7 +90,7 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
         try {
             validarCampos();
         } catch (IOException ex) {
-            Utilidades.mostrarDialogoSimple("Error", "Error en la conexion", Alert.AlertType.ERROR);
+            Utilidades.mostrarDialogoSimple("Error", "Error en la conexión", Alert.AlertType.ERROR);
         }
     }
 
@@ -163,7 +165,7 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
                 break;
             case Constantes.ERROR_CONSULTA:
                 Utilidades.mostrarDialogoSimple("Error en la información",
-                        "La información de la entrega no puede ser recuperada, intentelo mas tarde",
+                        "La información de la entrega no puede ser recuperada, intentelo más tarde",
                         Alert.AlertType.WARNING);
                 break;
             case Constantes.OPERACION_EXITOSA:
@@ -171,10 +173,11 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
                 paneArchivoConfirmacion.setVisible(true);
                 cargarInformacionActividad(idActividad, idAnteproyecto);
                 try {
+                    idEncabezado.setText("Modificar Entrega");
                     File tempFile = File.createTempFile("temp", ".pdf");  // Crear un archivo temporal
                     Files.write(tempFile.toPath(), entregaActividad.getArchivo());  // Escribir los bytes en el archivo temporal
                     this.archivoSeleccionado = tempFile;  // Asignar el archivo temporal a archivoSeleccionado
-                    lbNombreArchivo.setText(tempFile.getName());  // Mostrar el nombre del archivo en la etiqueta
+                    lbNombreArchivo.setText(archivoSeleccionado.getName());  // Mostrar el nombre del archivo en la etiqueta
                 } catch (IOException ex) {
                     Utilidades.mostrarDialogoSimple("Error",
                             "Error al cargar el archivo: " + ex.getMessage(),
@@ -183,5 +186,5 @@ public class FXMLEntregarActividadFormularioController implements Initializable 
                 break;
         }
     }
-
 }
+
