@@ -328,7 +328,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
             camposValidos = false;
         }
 
-        if (cbNumeroEstudiantes.getValue() == 0 || cbNumeroEstudiantes.getValue() == null) {
+        if (cbNumeroEstudiantes.getValue() == null || cbNumeroEstudiantes.getValue() == 0) {
             cbNumeroEstudiantes.setStyle("-fx-border-color: red");
             camposValidos = false;
         }
@@ -385,23 +385,24 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     }
 
     private void validarCamposBorrador() {
+        resetearEstilos();
         obtenerTextoDeCamposTexto();
         obtenerTextoComboBox();
 
-        boolean nombreAnteproyecto = false;
+        boolean camposValidos = true;
 
         if (cbCuerpoAcademico.getValue() == null) {
-            idCuerpoAcademico = 0;
+            cbCuerpoAcademico.setStyle("-fx-border-color: red");
+            camposValidos = false;
         }
 
         if (nombreProyectoInvestigacion == null || nombreProyectoInvestigacion.isEmpty() || nombreProyectoInvestigacion.trim().equals("")) {
             nombreProyectoInvestigacion = null;
-        } else {
-            nombreAnteproyecto = true;
         }
 
         if (cbLGAC.getValue() == null) {
-            idLGAC = 0;
+            cbLGAC.setStyle("-fx-border-color: red");
+            camposValidos = false;
         }
 
         if (lineaInvestigacion == null || lineaInvestigacion.isEmpty() || lineaInvestigacion.trim().equals("")) {
@@ -413,7 +414,8 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
         }
 
         if (cbModalidadTrabajoRecepcional.getValue() == null) {
-            idTipoAnteproyecto = 0;
+            cbModalidadTrabajoRecepcional.setStyle("-fx-border-color: red");
+            camposValidos = false;
         }
 
         if (nombreTrabajoRecepcional == null || nombreTrabajoRecepcional.isEmpty() || nombreTrabajoRecepcional.trim().equals("")) {
@@ -424,8 +426,9 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
             requisitos = null;
         }
 
-        if (cbNumeroEstudiantes.getValue() == null) {
-            numeroEstudiantes = 0;
+        if (cbNumeroEstudiantes.getValue() == null || cbNumeroEstudiantes.getValue() == 0) {
+            cbNumeroEstudiantes.setStyle("-fx-border-color: red");
+            camposValidos = false;
         }
 
         if (descripcionProyectoInvestigacion == null || descripcionProyectoInvestigacion.isEmpty() || descripcionProyectoInvestigacion.trim().equals("")) {
@@ -444,7 +447,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
             bibliografiaRecomendada = null;
         }
 
-        if (nombreAnteproyecto) {
+        if (camposValidos) {
             Anteproyecto nuevoAnteproyecto = new Anteproyecto();
             nuevoAnteproyecto.setIdEstado(idEstado);
             nuevoAnteproyecto.setIdCuerpoAcademico(idCuerpoAcademico);
@@ -468,8 +471,9 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
             }
         } else {
             Utilidades.mostrarDialogoSimple("Borrador sin información",
-                    "El Nombre del Proyecto de Investigación es necesario para guardar como borrador el "
-                    + "anteproyecto.", Alert.AlertType.WARNING);
+                    "Es necesario que selecciones la información del cuerpo academico, LGAC, modalidad del " +
+                    "trabajo recepcional y el numero de estudiantes para poder guardar como borrador.",
+                    Alert.AlertType.WARNING);
         }
 
     }
@@ -551,7 +555,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
         }
         cbModalidadTrabajoRecepcional.getSelectionModel().select(tipoAnteproyectoSeleccionado);
 
-        cbNumeroEstudiantes.getSelectionModel().select(anteproyecto.getNumeroEstudiantes());
+        cbNumeroEstudiantes.setValue(anteproyecto.getNumeroEstudiantes());
     }
 
     private void cargarInformacionComboBoxModificacion(Anteproyecto anteproyecto) {
@@ -575,7 +579,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
         }
         cbModalidadTrabajoRecepcional.getSelectionModel().select(tipoAnteproyectoSeleccionado);
 
-        cbNumeroEstudiantes.getSelectionModel().select(anteproyecto.getNumeroEstudiantes());
+        cbNumeroEstudiantes.setValue(anteproyecto.getNumeroEstudiantes());
     }
 
     private void ocultarBotones() {
@@ -740,15 +744,23 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     }
 
     private void validarCampoNotas() {
+        taNotas.setStyle("");
         String notas = taNotas.getText();
-        if (!notas.isEmpty() && !notas.trim().equals("")) {
-            mandarCorreccionesAnteproyecto();
+        if (taNotas.getText() != null) {
+            if (!notas.isEmpty() && !notas.trim().equals("")) {
+                mandarCorreccionesAnteproyecto();
+            } else {
+                taNotas.setStyle("-fx-border-color: red");
+                Utilidades.mostrarDialogoSimple("Faltan notas de correción",
+                        "Antes de envíar una correción debes llenar el campo notas",
+                        Alert.AlertType.WARNING);
+            }
         } else {
+            taNotas.setStyle("-fx-border-color: red");
             Utilidades.mostrarDialogoSimple("Faltan notas de correción",
                     "Antes de envíar una correción debes llenar el campo notas",
                     Alert.AlertType.WARNING);
         }
-
     }
 
     private void mandarCorreccionesAnteproyecto() {
@@ -773,6 +785,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
                 Utilidades.mostrarDialogoSimple("Correcciones envíadas",
                         "Correcciones envíadas correctamente",
                         Alert.AlertType.INFORMATION);
+                regresar();
                 break;
         }
     }
@@ -783,7 +796,7 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
         cbNumeroEstudiantes.setDisable(true);
         Anteproyecto anteproyecto = new Anteproyecto();
         cargarInformacionLGAC(idCuerpoAcademico);
-        //anteproyecto.setIdCuerpoAcademico(idCuerpoAcademico);
+        anteproyecto.setIdCuerpoAcademico(idCuerpoAcademico);
         anteproyecto.setIdLAGC(idLGAC);
         anteproyecto.setIdTipoAnteproyecto(idTipoAnteproyecto);
         anteproyecto.setNumeroEstudiantes(numeroEstudiantes);
@@ -850,7 +863,6 @@ public class FXMLAnteproyectoFormularioController implements Initializable {
     @FXML
     private void clicBtnEnviarCorrecciones(ActionEvent event) {
         validarCampoNotas();
-        regresar();
     }
 
     @FXML
